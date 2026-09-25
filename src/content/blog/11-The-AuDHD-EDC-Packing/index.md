@@ -32,41 +32,54 @@ Before you start throwing junk into a bag, you need rules. Otherwise, you’re j
 
 ---
 
-## 1. The Sensory Shield
+## 1. The Split Key System: Car vs House
+
+Keys are universally the first casualty of an absent mind. A single massive bunch feels like dragging an anchor, so splitting them into dedicated, functional modules keeps each half light, purposeful, and idiot-proof.
+
+* **The Car Key Setup:** Paired with a VAFOTON 240W Short USB-C Cable (21cm) on the ring. It bends double on itself into a clean fob loop. No messy cable spaghetti, no frantic rooting through the bottom of a backpack—just a fast, rugged charging lead instantly ready when your phone or laptop drops into the red mid-commute.
+* **The House Keys Setup:** Tamed inside an Orbitkey holder to kill that maddening jingle that slowly grates your nerves on a long walk. Tucked neatly onto the ring are two vital safeguards:
+  * **SanDisk Ultra Dual Drive Go (128GB):** While I rely on Proton Drive for my day-to-day cloud storage, having a local fallback on your physical keys is non-negotiable. I keep this drive partitioned: one half runs Ventoy loaded with live Linux ISOs for emergency system rescues or diagnostics, while the rest is raw physical storage for shifting heavy project files off-grid when network speeds crawl or cloud sync fails.
+  * **Resqme Car Escape Tool:** A spring-loaded window breaker and seatbelt cutter that clips securely without adding bulk, handling the real-world safety check without the macho survivalist posturing.
+
+---
+
+## 2. The Sensory Shield
 
 The world is loud, abrasive, and relentlessly uncaring. When sensory static piles up, your executive function doesn't slowly degrade—it collapses. Noise and glare aren't minor gripes; they are slow poisons.
 
 ![Earbuds and earplugs laid out on a clean desk surface](https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1000&q=80)
 
-* [**Apple AirPods Pro**](https://www.apple.com/uk/airpods-pro/) **or** [**Sony WH-1000XM5**](https://www.sony.co.uk/electronics/headband-headphones/wh-1000xm5): Noise cancellation isn't for background tunes; it's acoustic body armour. It cuts through the low-frequency drone of supermarket chillers, scraping chairs, and the unbearable scrape of ambient human chatter.
-* [**Loop Quiet 2 Earplugs**](https://www.loopearplugs.com/en-gb/products/quiet): Lithium-ion batteries die; simple silicone doesn't. Kept on the zip pull like an old cook's pocket sharpener, they are immediate relief when an environment turns hostile.
-* [**Dedicated Microfibre Cloth**](https://www.amazon.co.uk/dp/B0050R68LS): A single greasy fingerprint on your lenses will quietly gnaw at your sanity for two hours before you realise why you want to put your fist through drywall. Clean glass is baseline sanity.
-* **A Heavy Tactile Coin or Fidget:** When the kinetic restlessness hits, your hands need something to grip, roll, and anchor against. A heavy piece of machined metal gives that chaotic energy somewhere to go without you chewing your knuckles off.
+* **Google Pixel Buds Pro:** Active noise cancellation isn't for background tunes; it's acoustic body armour. They cut through the low-frequency drone of supermarket chillers, scraping chairs, and the unbearable scrape of ambient human chatter with a low profile that stays comfortable for hours.
+* **Loop Quiet 2 Earplugs:** Lithium-ion batteries die; simple silicone doesn't. Kept on the bag's zip pull like an old cook's pocket steel, they offer immediate acoustic relief the second an environment turns hostile.
+* **A Proper Microfibre Cloth:** A single greasy smudge on your lenses will quietly gnaw at your sanity for two hours before you realise why you want to put your fist through drywall. Clean glass is baseline sanity.
+* **A Heavy Tactile Coin or Fidget:** When kinetic restlessness hits, your hands need something to grip, roll, and anchor against. A heavy piece of machined metal gives chaotic energy somewhere to go without you chewing your knuckles raw.
 
 ---
 
-## 2. Offloading the Meat Computer
+## 3. Offloading the Meat Computer
 
-Working memory is a treacherous thing. Rely on it, and it will drop your keys in the bin and forget where you parked your life. Digital note apps are loaded with landmines—you pull out a screen to write down a sudden spark, hit an Instagram notification, and boom, the thought is gone forever.
+Working memory is a treacherous thing. Rely on it, and it will drop your keys in the bin and forget where you parked your life. Digital note apps are loaded with landmines—you pull out a screen to write down a sudden spark, hit an app badge, and boom, the thought is gone forever.
 
 ![Pocket notebook open with a multi-pen](https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=80)
 
-* [**Field Notes Kraft Mixed 3-Pack**](https://cultpens.com/products/field-notes-kraft-mixed-3-pack): Paper doesn't ping, nag, or demand an update. It just sits there, waiting for the ink. A quick scribble, a rough wireframe, a fleeting thought—captured before it evaporates.
-* [**Uni Jetstream 4&1 Multi-Pen**](https://cultpens.com/products/uni-ball-jetstream-4-1-multi-pen): One tool, four ink colours, a pencil, and an eraser. It’s the kitchen workhorse knife of stationeries: functional, unpretentious, and completely reliable.
-* [**Matador Waterproof Travel Pill Canister**](https://www.matadorequipment.co.uk/products/waterproof-travel-pill-canister): An airtight, aluminium capsule holding an afternoon stimulant and a couple of emergency analgesics. Running out of neurochemical bandwidth miles from home isn't an inconvenience; it's an unforced disaster.
+* **Field Notes Kraft Dot-Grid Notebook:** Paper doesn't ping, nag, or demand a firmware update. It just sits there, waiting for the ink. A quick scribble, a rough wireframe, a fleeting thought—captured before it evaporates.
+* **Uni Jetstream 4&1 Multi-Pen:** One tool, four ink colours, a pencil, and an eraser. It’s the kitchen workhorse knife of stationeries: functional, unpretentious, and completely reliable.
+* **Matador Waterproof Travel Pill Canister:** An airtight aluminium capsule holding an afternoon stimulant and emergency analgesics. Running out of neurochemical bandwidth miles from home isn't an inconvenience; it's an unforced disaster.
 
 ---
 
-## 3. Cutting the Friction
+## 4. The Utility Rig: Cutting the Daily Friction
 
 It’s almost never the grand disasters that break you; it’s the paper cuts. The tiny, nagging snags that slowly bleed out your remaining focus.
 
-![A portable battery and compact gear organised on a tabletop](https://images.unsplash.com/photo-1609592424316-249533f81e3a?auto=format&fit=crop&w=1000&q=80)
+Instead of loose tools rattling at the bottom of the bag, I keep the functional hardware consolidated into a compact fabric magazine pouch with an elastic side loop. It’s clean, silent, and keeps everything indexed where muscle memory expects it to be:
 
-* [**Mr. Green Ultra-Thin Travel Nail Clippers**](https://www.amazon.co.uk/dp/B071NWG9Q9): A rogue hangnail or jagged edge will hook onto your sweater and command 100% of your brain’s processing power until you bite it bloody. These fold surgical-flat and kill the problem dead.
-* [**Anker Nano Power Bank (Lightning & USB-C)**](https://www.anker.com/uk/products/a1653-anker-nano-power-bank-built-in-usb-c-connector): Tangled cords are an administrative hellscape. A battery block that slots straight into the tail of your phone eliminates low-battery dread when you desperately need train tickets or a map home.
+* **Olight Pro Torch:** Phone flashlights are clumsy battery drains. Having a dedicated high-output, reliable beam ready in an instant cuts through poorly lit paths, unlit car boots, or hunting under desks without torching your mobile's power.
+* **Swann-Morton Retractable Scalpel:** Forget giant, intimidating folding knives with oversized pocket clips. A proper British surgical retractable handle gives you clean, surgical-grade precision for splitting delivery boxes, clean scoring, or slicing through stubborn packaging without looking like you’re looking for a brawl.
+* **B-2 Probe by STLTH:** Slipped into the elastic pen loop on the side of the pouch. A precision, low-profile utility probe built for fine manipulation, prying open tight electronics tabs, scraping labels, and sorting out fiddly components when your fingers or a flat edge simply won't reach.
+* **Mr. Green Travel Nail Clippers:** A rogue hangnail or jagged edge will hook onto your jumper and command 100% of your brain’s processing power until you bite it bloody. These fold surgical-flat and kill the problem dead.
+* **Anker Nano Power Bank:** Tangled leads add an unnecessary executive tax. A battery block that slots straight into the tail of your phone eliminates low-battery dread when you desperately need train tickets or navigation.
 * **Emergency Sugar or Protein:** AuDHD interoception is notoriously broken. You don’t get hungry; you suddenly discover you’re shaky, sweating, and furious at an inanimate object. Carry a snack before low blood sugar makes a fool of you.
-* [**Gerber Shard Keychain Tool**](https://www.heinnie.com/gerber-shard): Airline-safe, rugged, and completely unthreatening. It splits courier tape, pops caps, and pries open stubborn battery covers without looking like you’re ready to enlist.
 
 ---
 
@@ -78,7 +91,7 @@ The pack itself determines whether this system survives or dies a messy death in
 
 Do not buy bags sporting forty bespoke tactical compartments. Those aren't pockets; they are blind drawers where your gear crawls away to die. 
 
-Grab a low-profile sling like the [**Bellroy Lite Sling Mini**](https://bellroy.com/products/lite-sling-mini) (available with direct UK shipping/currency) or [**Alpaka Go Sling Nano**](https://alpakagear.co.uk/products/go-sling-nano). The non-negotiable detail is a **light, high-contrast interior**. When you pull the zip, you want eyes-on everything in one glance. If you have to dig past your wrist like a vet delivering a calf, the bag will quickly fill up with receipts and sweet wrappers, and you’ll leave it behind.
+Grab a low-profile sling like the Bellroy Lite Sling Mini or Alpaka Go Sling Nano. The non-negotiable detail is a **light, high-contrast interior**. When you pull the zip, you want eyes-on everything in one glance. If you have to dig past your wrist like a vet delivering a calf, the bag will quickly fill up with receipts and sweet wrappers, and you’ll leave it behind.
 
 ---
 
