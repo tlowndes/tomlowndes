@@ -7,11 +7,11 @@ URL: "https://dovetechnology.com"
 
 ## Building a new corporate website
 
-![Dove Website](/public/dove_website_homepage.png)
+![Dove Website](/dove_website_homepage.png)
 
 In the last year, I've had the amazing opportunity to develop the new corporate website for Dove Technology. This extensive project allowed me to explore various aspects of web development and design, culminating in a website that is easy to use and navigate. Using a combination of WordPress and Elementor Pro, we crafted a website that not only meets the company needs, but has driven an uptake in visits and conversions. More of the work can be seen here on my behance page - [Dove Website](https://www.behance.net/gallery/175320829/Dove-Tecnology-Website)
 
-![Dove product page](/public/dove_product_page.png)
+![Dove product page](/dove_product_page.png)
 
 **Design:** The visual aspects were thoughtfully designed to reflect Dove Technology's brand identity. The sleek, modern design highlights the company's advanced solutions, creating an appealing and professional online image.
 
