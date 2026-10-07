@@ -38,18 +38,18 @@ Before I wrote the new app I mocked up the design and agreed the layout first. T
 - **Templates get renamed.** A template InDesign file becomes `J-0043 Spring Campaign.indd` automatically.
 - **Keyboard first.** `Ctrl+1` to `Ctrl+4` picks a type, `Enter` creates, `Esc` goes back. Hands never leave the keys.
 
-## App two: Capture, for Android
+## App two: Vault Capture, for Android
 
 The second problem: I'd have a thought or find a link on my phone and want it in Obsidian *now*. Adding a to-do or saving a link meant opening the app, finding the right note and scrolling to the right spot. That's too many steps. I wanted to add a task or a read-it-later link without navigating around Obsidian at all.
 
-So Capture does two jobs and nothing else:
+So Vault Capture does two jobs and nothing else:
 
 - **Task:** adds a line to the `## Active` list in my Quick Task note, with a due date (Today, Tomorrow or pick one).
 - **Read later:** saves a link into my Read It Later inbox in the vault.
 
-![Capture app mockup](/capture-mockup.png)
+![Vault Capture app mockup](/capture-mockup.png)
 
-The bit I'm happiest with is that it shows up in the Android Share sheet. See something worth keeping in Chrome, YouTube or Reddit, hit Share, tap Capture, and it's saved with no screen at all.
+The bit I'm happiest with is that it shows up in the Android Share sheet. See something worth keeping in Chrome, YouTube or Reddit, hit Share, tap Vault Capture, and it's saved with no screen at all.
 
 It writes plain Markdown straight into my synced vault. No server, no account, nothing to break.
 
@@ -57,7 +57,7 @@ It writes plain Markdown straight into my synced vault. No server, no account, n
 
 Neither app worked first time. Both were also built with tools I'd barely touched, which turned out to be the real adventure.
 
-**Learning new programs.** The folder app is Electron and Node.js. Capture is Kotlin in Android Studio. I'd used neither properly before, so a lot of this was working out how things fit together as I went.
+**Learning new programs.** The folder app is Electron and Node.js. Vault Capture is Kotlin in Android Studio. I'd used neither properly before, so a lot of this was working out how things fit together as I went.
 
 Android Studio has a seriously steep learning curve. There's a lot to take in before you write your first line: SDKs, Gradle, emulators and settings everywhere. Then, to test on my real phone, I had to find and switch on developer mode and work out how to get the app from my PC onto the device. None of it was hard once I knew it, but none of it was obvious either.
 
@@ -79,6 +79,6 @@ Looking at the two side by side, they're the same idea:
 
 ## What's next
 
-Both apps are on GitHub: the [folder app](https://github.com/tlowndes/Auto-folder-creation/tree/desktop-app) and [Capture](https://github.com/tlowndes/ObsidianCapture). I'll keep building more tools for my own use. If something annoys me enough twice, it's probably getting an app.
+Both apps are on GitHub: the [folder app](https://github.com/tlowndes/Auto-folder-creation/tree/desktop-app) and [Vault Capture](https://github.com/tlowndes/ObsidianCapture). I'll keep building more tools for my own use. If something annoys me enough twice, it's probably getting an app.
 
 Small, boring tools beat big clever systems every time. You can see both on my [projects page](/projects).

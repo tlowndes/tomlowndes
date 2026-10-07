@@ -1,24 +1,33 @@
 ---
-title: "Dove Technology - Website"
-description: "Building a new corporate website"
+title: "Dove Technology: Website & Video"
+description: "Redesigning Dove Technology's corporate website, which cut bounce rate by 25% and lifted engagement by 40%"
 date: "Mar 18 2024"
-URL: "https://dovetechnology.com"
+demoURL: "https://dovetechnology.com"
 ---
 
-## Building a new corporate website
+## A corporate website people actually use
+
+Most corporate websites are built by committee and it shows: a homepage that tries to say everything, a menu with eleven items, and visitors who take one look and leave. Dove Technology needed the opposite. As Lead Creative Designer, I led the redesign.
 
 ![Dove Website](/dove_website_homepage.png)
 
-In the last year, I've had the amazing opportunity to develop the new corporate website for Dove Technology. This extensive project allowed me to explore various aspects of web development and design, culminating in a website that is easy to use and navigate. Using a combination of WordPress and Elementor Pro, we crafted a website that not only meets the company needs, but has driven an uptake in visits and conversions. More of the work can be seen here on my behance page - [Dove Website](https://www.behance.net/gallery/175320829/Dove-Tecnology-Website)
+The result speaks for itself. After launch, bounce rate dropped by 25% and engagement rose by 40%. Built with WordPress and Elementor Pro, the new site is easier to navigate and has driven more visits and conversions. There's more of it on my [Behance page](https://www.behance.net/gallery/235057167/Dove-Technology-Website-Video).
+
+### Results
+
+- **25%** lower bounce rate
+- **40%** higher engagement
 
 ![Dove product page](/dove_product_page.png)
 
-**Design:** The visual aspects were thoughtfully designed to reflect Dove Technology's brand identity. The sleek, modern design highlights the company's advanced solutions, creating an appealing and professional online image.
+## What went into it
 
-**Coding:** Utilizing Wordpess and Elementor, I developed a strong and responsive website that is optimized for performance across all devices. This ensures a smooth and consistent experience for users, whether they're viewing the site on a computer, tablet, or phone.
+**Design:** the visuals were built around Dove Technology's brand identity. Sleek and modern, so the company's advanced products look as capable as they are.
 
-**Product Photography:** Top-notch product images were taken to showcase Dove Technology's products in the best light.
+**Build:** WordPress and Elementor, made responsive and tuned for performance, so it works just as well on a phone as on a desktop.
 
-**Video Content:** Engaging and informative videos were created to provide visitors with a dynamic way to learn more about Dove Technology's products and services. These videos introduce an interactive element to the website, making the information more accessible and engaging.
+**Product photography:** I shot the product images myself, because a technical product only looks good if the photograph makes it so.
 
-This project has a good learning experiance and I'm proud of the outcome. 
+**Introduction film:** I directed, shot and edited a 45-second introduction film. Forty-five seconds is plenty of time to tell a visitor what Dove does, and not nearly enough to bore them. [Watch it on Behance](https://www.behance.net/gallery/235057167/Dove-Technology-Website-Video).
+
+It was a big project, and a good one to learn on. I'm proud of how it turned out.

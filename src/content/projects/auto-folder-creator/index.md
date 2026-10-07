@@ -5,38 +5,42 @@ date: "Oct 7 2026"
 repoURL: "https://github.com/tlowndes/Auto-folder-creation/tree/desktop-app"
 ---
 
-## Building a faster way to start projects
+## Starting a project shouldn't feel like admin
 
-Every new project used to start the same way: making the same folders, naming them the same way and creating a brief by hand. I'd already automated it once with a [Python script triggered by Caps Lock + D](/blog/03-auto-folder-creation/), so I decided to turn it into a proper desktop app.
+Every new job begins the same way. Make a folder. Make the same subfolders inside it. Name everything the same way you did last time, and try to remember what you called it. Then, somewhere in the middle of it, start doing the actual work. It's dull, it's repetitive and it's exactly the kind of thing a computer should be doing for you.
 
-Pick a project type, type a name and hit Enter, and it builds the whole structure for you.
+I'd already automated it once, with a [Python script triggered by Caps Lock + D](/blog/03-auto-folder-creation/). It worked, but it lived in a terminal window, and I had to run it every time. So I rebuilt it as a proper desktop app.
 
 ![Auto Folder Creator main window](/afc-final-create.png)
 
-**Design:** a clean, keyboard-first window with a live preview of the folder tree before anything is created.
+## One keystroke, one structure
 
-**Coding:** built with Electron and Node.js, with job numbers (`J-0043 Spring Campaign`), per-type templates and a one-click undo.
+Pick a project type, type a name, hit Enter. The folders, a Word brief and any template files appear, named properly, with a job number on the front. Before anything is created, a live preview shows exactly what's about to be made, so there are no surprises on disk.
 
-**Why it matters:** consistent filing across every design, video and idea project, with no setup time.
+**Design:** a clean, keyboard-first window with big type buttons and the folder tree previewed beside them.
 
-## Features
+**Coding:** built with Electron and Node.js.
 
-- **Job numbers** like `J-0043 Spring Campaign`, from one shared counter, switchable per project type
-- **Live preview** of the folder tree before anything is created
-- **Organise existing**: numbers old project folders oldest-first, fills in missing subfolders, with one-click undo
-- **Templates** per type, nested subfolders (`Export/Web`) and a recent projects list
-- Keyboard first: `Ctrl+1-4` picks a type, `Enter` creates, `Esc` goes back
+## The rules it plays by
+
+- **Job numbers** like `J-0043 Spring Campaign`, from one shared counter. Each project type can switch numbering off.
+- **Your files stay where they are.** The "Organise existing" tool numbers old project folders (oldest first), fills in missing subfolders and adds a brief. It never moves what's already inside, and there's an undo button for the nervous.
+- **Templates get renamed** to match the project, so a template file becomes `J-0043 Spring Campaign.indd` without you touching it.
+- **Nested subfolders:** `Export/Web` creates `Web` inside `Export`.
+- **Keyboard first:** `Ctrl+1` to `Ctrl+4` picks a type, `Enter` creates, `Esc` goes back. A recent projects list and a duplicate warning keep you honest.
 
 ![Organise existing folders](/afc-final-organise.png)
 
-## Early designs
+## From terminal to app
 
-Concept sketches showing how the idea moved from a terminal prompt to a windowed app.
+Concept sketches showing how the idea grew from a terminal prompt into a windowed app.
 
 ![Sketch of the original terminal script](/afc-sketch-1-terminal.svg)
 
 ![Wireframe of the first app layout](/afc-sketch-2-wireframe.svg)
 
 ![Layout options: tabs, cards or sidebar](/afc-sketch-3-options.svg)
+
+It's a small tool, but it's the sort of small tool that quietly saves a few minutes, dozens of times a month, forever.
 
 **Built with:** Electron, Node.js, HTML/CSS.

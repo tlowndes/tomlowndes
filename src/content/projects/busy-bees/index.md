@@ -1,19 +1,50 @@
 ---
-title: "Busy Bees"
-description: "A brief look at my previous job"
+title: "Busy Bees Childcare"
+description: "Social graphics, web banners, video thumbnails and a parent-app landing page for a nursery group"
 date: "Jan 18 2024"
-URL: ""
-draft: true
-
+demoURL: "https://www.busybeeschildcare.co.uk/app"
 ---
 
-During my time at Busy Bees Nurseries, I worked as a graphic designer and videographer, where I was part of a small, agile team dedicated to creating impactful visual content. My role encompassed a broad range of responsibilities, allowing me to make meaningful contributions across several key areas of design and communication.
+## Making nurseries look friendly at scale
 
-One of my primary focuses was brand development. I worked on crafting and evolving the visual identity of Busy Bees, ensuring consistency and resonance across all touchpoints. Whether it was designing for digital platforms or creating print collateral, I strived to maintain a cohesive brand image that connected with our audience.
+A nursery group is a strange client. Your audience is anxious parents, tired staff and candidates deciding whether to spend their working lives with other people's toddlers. Every graphic has to be warm, clear and fast to read, usually before someone's thumb has finished scrolling past it.
 
-In addition to branding, I contributed to business communications by designing engaging materials that effectively conveyed our key messages. From corporate presentations to marketing campaigns, my designs were tailored to align with strategic goals and enhance the clarity of our communication.
+I was Creative Designer at Busy Bees Nurseries until 2021, working in a small, agile team across brand, digital and print, business communications, video and photography. This page covers the digital side.
 
-Multimedia production was another significant aspect of my role. I created high-quality video content and photography that showcased the values and offerings of Busy Bees. These projects often required a hands-on approach, from storyboarding and shooting to editing and post-production, ensuring a polished final product.
+![Busy Bees web banner](/busybees-banner.jpg)
 
-Working in a small team gave me the opportunity to collaborate closely with colleagues, manage multiple projects simultaneously, and adapt to the dynamic needs of the organization. This experience not only honed my technical skills but also deepened my understanding of effective communication and creative problem-solving.
+## Social media
 
+Most of the work was social graphics, and they had jobs to do. Recruitment posts had to make a stranger want to join a team. Announcements had to be clear at a glance. Safety campaigns had to land with a parent in about two seconds.
+
+The key to all of it was the mascot. A cartoon bee in a hi-vis jacket and a woolly hat can say "please don't give your under-fives sparklers" without sounding like a lecture.
+
+![Safety Buzz social graphic](/busybees-safety.jpg)
+
+![Vacancy social graphic](/busybees-vacancy.jpg)
+
+![Awards social graphic](/busybees-awards.jpg)
+
+![Social graphic](/busybees-italy.jpg)
+
+## Banners, thumbnails and the YouTube channel
+
+The same visual language ran through web banners, video thumbnails and the Busy Bees YouTube channel, so that a parent, a candidate or a child watching a story session could tell where they were within a second.
+
+![Busy Bees YouTube channel](/busybees-youtube.jpg)
+
+![Video thumbnail](/busybees-video-1.jpg)
+
+## The parent app landing page
+
+I also designed the landing page for the Busy Bees parent app, the place where parents get photos, updates and milestones from their child's day. It had to explain what the app does in about ten seconds and get a worried parent to the user guide.
+
+![Busy Bees parent app landing page](/busybees-app-landing.jpg)
+
+The page is live at [busybeeschildcare.co.uk/app](https://www.busybeeschildcare.co.uk/app).
+
+**Design:** social graphics, banners, video thumbnails and the app landing page.
+
+**Brand:** keeping the bee mascot and colour palette consistent across everything.
+
+**Impact:** banners, posters and leaflets for more than 350 nurseries across Europe.
