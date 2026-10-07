@@ -2,6 +2,7 @@
 title: "Capture for Android"
 description: "A tiny Android app that drops tasks and links straight into my Obsidian vault"
 date: "Oct 7 2026"
+repoURL: "https://github.com/tlowndes/ObsidianCapture"
 ---
 
 ## Straight into your vault
@@ -27,4 +28,4 @@ It does two jobs and nothing else:
 
 **Built with:** Kotlin and Android Studio.
 
-I wrote more about how this and my [Auto Folder Creator](/projects/auto-folder-creator) came together in the blog post *Tiny Tools, Less Friction* (coming soon).
+I wrote more about how this and my [Auto Folder Creator](/projects/auto-folder-creator) came together in the blog post [Tiny Tools, Less Friction](/blog/11-tiny-tools-less-friction/).

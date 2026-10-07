@@ -2,7 +2,7 @@
 title: "Tiny Tools, Less Friction: Two Apps I Built to Stop Starting From Zero"
 description: "How a folder-making script grew into a desktop app, and why I built an Android app that drops tasks and links straight into my Obsidian vault."
 date: 2026-10-07
-draft: true
+draft: false
 ---
 
 <!-- DRAFT: remove `draft: true` when ready. Anything marked TODO is a story only Tom can fill in. -->
@@ -17,9 +17,7 @@ That led to two small apps. One for my PC, one for my phone.
 
 This one started life as a Python script. If you missed it, [here's the original post](/blog/03-auto-folder-creation/): hit Caps Lock + D, a terminal pops up, pick a project type, type a name, done.
 
-It worked, but it was a terminal prompt. No preview, no job numbers, and no way to tidy up the folders I'd made before the script existed. And there's no Python on my main PC these days, so it was time to rebuild it as a proper desktop app.
-
-The real problem was that I had to run it every single time, and it only really lived on one machine. I wanted something clean that felt like a proper app: friendlier to use, and not tied to a terminal window and a script. That's the whole reason it became an Electron app.
+It worked, but it was a terminal prompt: no preview, no job numbers, and no way to tidy up the folders I'd made before the script existed. I had to run it every single time, it only really lived on one machine, and there's no Python on my main PC these days. I wanted something clean that felt like a proper app: friendlier to use, and not tied to a terminal window and a script. That's why it became an Electron app.
 
 ![Concept sketch of the original terminal script](/afc-sketch-1-terminal.svg)
 
@@ -42,9 +40,7 @@ Before I wrote the new app I mocked up the design and agreed the layout first. T
 
 ## App two: Capture, for Android
 
-The second problem: I'd have a thought or find a link on my phone and want it in Obsidian *now*, without opening Obsidian, finding the right note and scrolling to the right heading. By then I'd already lost the thread.
-
-Adding a to-do or saving a link in Obsidian on my phone meant opening the app, finding the right note and scrolling to the right spot. That's too many steps. I wanted to add a task or a read-it-later link without navigating around Obsidian at all.
+The second problem: I'd have a thought or find a link on my phone and want it in Obsidian *now*. Adding a to-do or saving a link meant opening the app, finding the right note and scrolling to the right spot. That's too many steps. I wanted to add a task or a read-it-later link without navigating around Obsidian at all.
 
 So Capture does two jobs and nothing else:
 
@@ -83,6 +79,6 @@ Looking at the two side by side, they're the same idea:
 
 ## What's next
 
-I'm planning to publish both apps once they're tidy, and keep building more tools for my own use. If something annoys me enough twice, it's probably getting an app.
+Both apps are on GitHub: the [folder app](https://github.com/tlowndes/Auto-folder-creation/tree/desktop-app) and [Capture](https://github.com/tlowndes/ObsidianCapture). I'll keep building more tools for my own use. If something annoys me enough twice, it's probably getting an app.
 
 Small, boring tools beat big clever systems every time. You can see both on my [projects page](/projects).
