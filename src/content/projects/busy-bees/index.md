@@ -1,8 +1,9 @@
 ---
 title: "Busy Bees"
-description: "A Brief look at my previous job"
+description: "A brief look at my previous job"
 date: "Jan 18 2024"
 URL: ""
+draft: true
 
 ---
 
