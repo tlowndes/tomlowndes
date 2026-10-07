@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect width="800" height="500" fill="#fbf7ea"/><g font-family="Segoe Print, Comic Sans MS, cursive" fill="none" stroke="#3a3a3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 40 L760 42 L758 460 L42 458 Z"/><path d="M40 80 L760 82"/>
+<circle cx="64" cy="60" r="7"/><circle cx="90" cy="60" r="7"/>
+<text x="60" y="130" font-size="22" fill="#3a3a3a" stroke="none">Select project type:</text>
+<text x="80" y="180" font-size="22" fill="#3a3a3a" stroke="none">1) Personal</text>
+<text x="80" y="220" font-size="22" fill="#3a3a3a" stroke="none">2) Work</text>
+<text x="80" y="260" font-size="22" fill="#3a3a3a" stroke="none">3) Video</text>
+<text x="80" y="300" font-size="22" fill="#3a3a3a" stroke="none">4) Idea</text>
+<text x="60" y="360" font-size="22" fill="#3a3a3a" stroke="none">Project name: _</text>
+<path d="M420 160 Q470 120 540 150" stroke="#c0392b"/><text x="450" y="200" font-size="20" fill="#c0392b" stroke="none">too clunky!</text>
+<path d="M440 210 L520 190" stroke="#c0392b"/></g>
+<text x="400" y="488" text-anchor="middle" font-family="Segoe Print, cursive" font-size="16" fill="#777">v0 - the original terminal script</text></svg>

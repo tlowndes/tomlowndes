@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect width="800" height="500" fill="#fbf7ea"/><g font-family="Segoe Print, Comic Sans MS, cursive" fill="none" stroke="#3a3a3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M30 40 L260 41 L259 400 L31 399 Z"/><path d="M290 40 L520 41 L519 400 L291 399 Z"/><path d="M550 40 L770 41 L769 400 L551 399 Z"/>
+<text x="45" y="75" font-size="20" fill="#3a3a3a" stroke="none">A: tabs</text><text x="305" y="75" font-size="20" fill="#3a3a3a" stroke="none">B: cards</text><text x="565" y="75" font-size="20" fill="#3a3a3a" stroke="none">C: sidebar</text>
+<path d="M50 100 h50 v26 h-50 z M110 100 h50 v26 h-50 z M170 100 h50 v26 h-50 z"/><path d="M50 160 h170 v36 h-170 z M50 330 h170 v40 h-170 z"/>
+<path d="M310 100 h90 v70 h-90 z M410 100 h90 v70 h-90 z M310 190 h90 v70 h-90 z M410 190 h90 v70 h-90 z M310 330 h190 v40 h-190 z"/>
+<path d="M570 90 v290 M570 90 h-0"/><path d="M585 110 h60 M585 150 h60 M585 190 h60"/><path d="M670 110 h80 v200 h-80 z"/>
+<path d="M395 440 l-8 -8 l8 -8 M395 440 h40" stroke="#c0392b"/><text x="445" y="446" font-size="20" fill="#c0392b" stroke="none">B wins - big type buttons</text></g>
+<text x="400" y="488" text-anchor="middle" font-family="Segoe Print, cursive" font-size="16" fill="#777">v2 - layout options</text></svg>
