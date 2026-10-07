@@ -2,7 +2,6 @@
 title: "Auto Folder Creator"
 description: "A desktop app that builds a consistent project folder structure, job number and brief in one keystroke"
 date: "Oct 7 2026"
-repoURL: "https://github.com/tomlowndes/Auto-folder-creation"
 ---
 
 Auto Folder Creator is the desktop successor to my [Caps Lock + D Python script](/blog/03-auto-folder-creation/). Pick a project type, type a name, hit Enter, and it builds the whole structure: subfolders, a `<name>_brief.docx`, and any template files renamed to the project.
