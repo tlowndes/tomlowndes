@@ -4,9 +4,19 @@ description: "A desktop app that builds a consistent project folder structure, j
 date: "Oct 7 2026"
 ---
 
-Auto Folder Creator is the desktop successor to my [Caps Lock + D Python script](/blog/03-auto-folder-creation/). Pick a project type, type a name, hit Enter, and it builds the whole structure: subfolders, a `<name>_brief.docx`, and any template files renamed to the project.
+## Building a faster way to start projects
+
+Every new project used to start the same way: making the same folders, naming them the same way and creating a brief by hand. I'd already automated it once with a [Python script triggered by Caps Lock + D](/blog/03-auto-folder-creation/), so I decided to turn it into a proper desktop app.
+
+Pick a project type, type a name and hit Enter, and it builds the whole structure for you.
 
 ![Auto Folder Creator main window](/afc-final-create.png)
+
+**Design:** a clean, keyboard-first window with a live preview of the folder tree before anything is created.
+
+**Coding:** built with Electron and Node.js, with job numbers (`J-0043 Spring Campaign`), per-type templates and a one-click undo.
+
+**Why it matters:** consistent filing across every design, video and idea project, with no setup time.
 
 ## Features
 

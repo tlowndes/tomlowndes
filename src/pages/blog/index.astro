@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
+import BackToPrev from "@components/BackToPrev.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
 
@@ -27,6 +28,11 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
+    <div class="animate mb-10">
+      <BackToPrev href="/">
+        Back to home
+      </BackToPrev>
+    </div>
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
         Blog

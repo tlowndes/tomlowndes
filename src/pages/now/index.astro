@@ -1,5 +1,6 @@
 ---
 import Container from "@components/Container.astro";
+import BackToPrev from "@components/BackToPrev.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import Link from "@components/Link.astro";
 
@@ -8,6 +9,11 @@ import { SITE, NOW, SOCIALS } from "@consts";
 
 <PageLayout title={NOW.TITLE} description={NOW.DESCRIPTION}>
   <Container>
+    <div class="animate mb-10">
+      <BackToPrev href="/">
+        Back to home
+      </BackToPrev>
+    </div>
     <div class="space-y-16">
       <!-- Header -->
       <section class="space-y-4">
