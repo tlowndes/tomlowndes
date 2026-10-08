@@ -5,8 +5,6 @@ date: 2026-10-07
 draft: false
 ---
 
-<!-- DRAFT: remove `draft: true` when ready. Anything marked TODO is a story only Tom can fill in. -->
-
 Starting things is the hard part. Not the doing, the *starting*. Making the same set of folders for the fifth time that week. Having a thought on my phone and nowhere to put it, so it quietly disappears.
 
 If you've read my posts about [ADHD and AuDHD](/blog/09-Autism-wtf/), you'll know friction at the start of a task is where things fall over for me. So I stopped looking for a cleverer system and went after something simpler: fewer steps between a thought and somewhere safe for it.
@@ -24,8 +22,6 @@ It worked, but it was a terminal prompt: no preview, no job numbers, and no way 
 ### Designing before coding
 
 Before I wrote the new app I mocked up the design and agreed the layout first. The result has big type buttons, and a live preview of the folder tree on the right so I can see exactly what I'm about to create.
-
-<!-- TODO (Tom): the sketches are concept sketches made up for the portfolio. Swap in your real notes or screenshots, or keep them captioned as concept sketches. -->
 
 ![Concept sketch: layout options](/afc-sketch-3-options.svg)
 

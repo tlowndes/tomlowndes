@@ -1,7 +1,7 @@
 ---
 title: "Valour Magazine"
 description: "A concept men's lifestyle magazine with a bold cut-out V identity, carried from cover poster to screen print to editorial spreads"
-date: "Mar 1 2024"
+date: "Jun 1 2012"
 ---
 
 ## A magazine with one big idea
@@ -41,3 +41,5 @@ The contents spread lays out the whole issue at a glance, from the perfect cup o
 **Production:** a screen-printed version of the cover design, alongside the digital layouts.
 
 Valour is a concept project, not a published magazine. But it's a good reminder that the simplest idea, committed to all the way through, usually beats the clever one.
+
+I wrote up how it came together, and what went wrong along the way, in the blog post [Hiding the Face: How One Big Letter Became a Magazine](/blog/13-valour-hiding-the-face/).

@@ -1,8 +1,8 @@
 ---
 title: "Typographic Poster Series"
 description: "A series of typographic quote posters for an Etsy shop client, built on font choice, composition and an on-brand look"
-date: "Feb 1 2024"
-draft: true
+date: "Jun 1 2019"
+draft: false
 ---
 
 ## Words on a wall

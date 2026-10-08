@@ -1,8 +1,8 @@
 ---
 title: "Externiture Catalogue"
 description: "Design and layout of a bus stop infrastructure catalogue: cover, photography treatment and product pages with technical specification tables"
-date: "Dec 1 2023"
-draft: true
+date: "Mar 1 2013"
+draft: false
 ---
 
 ## Making a bus stop catalogue worth opening

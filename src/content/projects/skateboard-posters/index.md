@@ -1,8 +1,8 @@
 ---
 title: "Skateboard Posters"
 description: "A skateboard-deck poster concept pairing portrait photography with a graphic built from trucks, bolts and bearings"
-date: "Jan 15 2024"
-draft: true
+date: "Jun 1 2023"
+draft: false
 ---
 
 ## A skateboard with no skateboard graphics
@@ -21,14 +21,12 @@ I reduced those parts to flat white shapes on black and stacked them in mirrored
 
 ## The portrait
 
-The deck window is a crop of the photograph, cut to the exact curve of a real board, so the portrait sits where the grip tape would. Two photographs, two moods: the first in warm, moody colour and the second in black and white, with the same hardware graphic around both.
+The deck window is a crop of the photograph, cut to the exact curve of a real board, so the portrait sits where the grip tape would. The photograph is warm and moody, which gives the cold, flat hardware graphic something to push against.
 
-![Skateboard poster, black and white portrait](/skate-poster-mono.jpg)
+The poster is shown as a framed print on a white brick wall, which is how I imagine it ending up in someone's flat.
 
-Both are shown as framed prints on a white brick wall, which is how I imagine them ending up in someone's flat.
+**Design:** the deck shape, the hardware graphic and the poster layout.
 
-**Design:** the deck shape, the hardware graphic and the poster layouts.
-
-**Photography:** portrait photographs sourced from Unsplash.
+**Photography:** portrait photograph sourced from Unsplash.
 
 **Status:** a concept, not a product.
