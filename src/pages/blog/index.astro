@@ -3,60 +3,282 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
-import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
 
 const data = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  
-type Acc = {
-  [year: string]: CollectionEntry<"blog">[];
+
+function getReadingTime(body: string) {
+  const words = body ? body.trim().split(/\s+/).length : 0;
+  return `${Math.max(1, Math.ceil(words / 200))} min read`;
 }
 
-const posts = data.reduce((acc: Acc, post) => {
-    const year = post.data.date.getFullYear().toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(post);
-    return acc;
-  }, {});
+function getPostImage(post: CollectionEntry<"blog">) {
+  const bodyMatch = post.body ? post.body.match(/!\[.*?\]\((.*?)\)/) : null;
+  return post.data.image || (bodyMatch ? bodyMatch[1] : null);
+}
 
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a)); 
+type Acc = {
+  [year: string]: CollectionEntry<"blog">[];
+};
+
+const posts = data.reduce((acc: Acc, post) => {
+  const year = post.data.date.getFullYear().toString();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
+const latestPost = data[0] || null;
+const allTags = [
+  ...new Set(data.flatMap((post) => post.data.tags || [])),
+].slice(0, 8);
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
-    <div class="animate mb-10">
+    <div class="animate mb-8">
       <BackToPrev href="/">
         Back to home
       </BackToPrev>
     </div>
-    <div class="space-y-10">
-      <div class="animate font-semibold text-black dark:text-white">
-        Blog
-      </div>
-      <div class="space-y-4">
-        {years.map(year => (
-          <section class="animate space-y-4">
-            <div class="font-semibold text-black dark:text-white">
-              {year}
+
+    <div class="space-y-12">
+      <!-- Editorial Journal Header (Now with semantic H1 & RSS link) -->
+      <section class="animate space-y-5 border-b border-black/10 dark:border-white/10 pb-8">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+            Field Notes & Archive // {data.length} {data.length === 1 ? "Entry" : "Entries"}
+          </span>
+          <a
+            href="/rss.xml"
+            class="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/[0.02] px-3 py-1 font-mono text-[11px] text-black/65 hover:border-black/25 hover:text-black dark:border-white/10 dark:bg-white/[0.03] dark:text-white/65 dark:hover:border-white/25 dark:hover:text-white transition"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+            <span>RSS</span>
+          </a>
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+            Writing & <span class="font-serif italic font-normal text-black/65 dark:text-white/65">Field Notes.</span>
+          </h1>
+          <p class="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+            Essays on designing systems for an AuDHD brain, friction-free everyday carry, self-hosted hardware, and calm technology.
+          </p>
+        </div>
+
+        <!-- Search & Topic Filter Bar -->
+        <div class="space-y-3 pt-1">
+          <div class="relative">
+            <input
+              id="blog-search"
+              type="search"
+              placeholder="Search articles by title or topic..."
+              oninput="window.filterBlogPosts()"
+              class="w-full rounded-xl border border-black/10 bg-white/80 px-4 py-2 text-xs text-black placeholder:text-black/40 focus:border-black/30 focus:outline-none dark:border-white/10 dark:bg-neutral-900/70 dark:text-white dark:placeholder:text-white/40 dark:focus:border-white/30 transition"
+            />
+          </div>
+
+          {allTags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              <button
+                onclick="window.setBlogTag('all', this)"
+                class="blog-tag-btn rounded-lg bg-black text-white dark:bg-white dark:text-black px-2.5 py-1 font-mono text-[11px] font-medium transition"
+              >
+                All
+              </button>
+              {allTags.map((tag) => (
+                <button
+                  onclick={`window.setBlogTag('${tag.toLowerCase()}', this)`}
+                  class="blog-tag-btn rounded-lg border border-black/10 bg-black/[0.02] text-black/65 hover:border-black/25 hover:text-black dark:border-white/10 dark:bg-white/[0.03] dark:text-white/65 dark:hover:border-white/25 dark:hover:text-white px-2.5 py-1 font-mono text-[11px] transition"
+                >
+                  #{tag}
+                </button>
+              ))}
             </div>
-            <div>
-              <ul class="flex flex-col gap-4">
-                {
-                  posts[year].map((post) => (
-                    <li>
-                      <ArrowCard entry={post}/>
-                    </li>
-                  ))
-                }
-              </ul>
+          )}
+        </div>
+      </section>
+
+      <!-- Featured Latest Entry -->
+      {latestPost && (
+        <section id="latest-post-spotlight" class="animate space-y-3">
+          <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-black/45 dark:text-white/45">
+            <span>Latest Entry</span>
+            <span>
+              {latestPost.data.date.toLocaleDateString("en-GB", {
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
+              })}
+            </span>
+          </div>
+
+          <a
+            href={`/blog/${latestPost.slug}`}
+            class="group block rounded-2xl border border-black/10 bg-white/80 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 space-y-4"
+          >
+            {getPostImage(latestPost) && (
+              <div class="aspect-[21/9] w-full overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-black/10 dark:ring-white/10">
+                <img
+                  src={getPostImage(latestPost)}
+                  alt={latestPost.data.title}
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            )}
+
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 font-mono text-[11px] text-emerald-700 dark:text-emerald-400">
+                <span>NEW</span>
+                <span>•</span>
+                <span class="text-black/50 dark:text-white/50">
+                  {getReadingTime(latestPost.body)}
+                </span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-black dark:text-white group-hover:underline underline-offset-4">
+                {latestPost.data.title}
+              </h2>
+
+              <p class="text-xs sm:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                {latestPost.data.description}
+              </p>
             </div>
+
+            <div class="flex items-center justify-between pt-3 border-t border-black/10 dark:border-white/10">
+              <div class="flex flex-wrap gap-1.5">
+                {(latestPost.data.tags || []).slice(0, 4).map((tag: string) => (
+                  <span class="rounded bg-black/5 dark:bg-white/10 px-2 py-0.5 font-mono text-[10px] text-black/70 dark:text-white/70">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+              <span class="font-mono text-xs font-medium text-black dark:text-white group-hover:translate-x-1 transition-transform">
+                Read post →
+              </span>
+            </div>
+          </a>
+        </section>
+      )}
+
+      <!-- Chronological Year Archive -->
+      <div class="space-y-10" id="blog-archive-list">
+        {years.map((year) => (
+          <section class="animate blog-year-section space-y-4">
+            <div class="flex items-center gap-3">
+              <h2 class="font-mono text-sm font-semibold text-black dark:text-white">
+                {year}
+              </h2>
+              <div class="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
+              <span class="font-mono text-[11px] text-black/40 dark:text-white/40">
+                {posts[year].length} {posts[year].length === 1 ? "post" : "posts"}
+              </span>
+            </div>
+
+            <ul class="flex flex-col gap-3">
+              {posts[year].map((post) => {
+                const readTime = getReadingTime(post.body);
+                const shortDate = post.data.date.toLocaleDateString("en-GB", {
+                  month: "short",
+                  day: "2-digit",
+                });
+                const tagsList = (post.data.tags || []).map((t: string) =>
+                  t.toLowerCase()
+                );
+
+                return (
+                  <li
+                    class="blog-entry-item"
+                    data-title={post.data.title.toLowerCase()}
+                    data-desc={post.data.description.toLowerCase()}
+                    data-tags={tagsList.join(",")}
+                  >
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white hover:shadow-sm dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
+                    >
+                      <div class="space-y-1 pr-2">
+                        <h3 class="font-semibold text-base text-black dark:text-white group-hover:underline underline-offset-4">
+                          {post.data.title}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-black/65 dark:text-white/65 line-clamp-2 leading-relaxed">
+                          {post.data.description}
+                        </p>
+                        {post.data.tags && post.data.tags.length > 0 && (
+                          <div class="flex flex-wrap gap-1.5 pt-1">
+                            {post.data.tags.slice(0, 4).map((tag: string) => (
+                              <span class="rounded bg-black/5 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[10px] text-black/60 dark:text-white/60">
+                                #{tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 gap-1 font-mono text-[11px] text-black/45 dark:text-white/45 pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5 dark:border-white/5">
+                        <span>{shortDate}</span>
+                        <span class="text-[10px] opacity-75">{readTime}</span>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
           </section>
         ))}
       </div>
     </div>
   </Container>
 </PageLayout>
+
+<script is:inline>
+  window.activeBlogTag = "all";
+
+  window.setBlogTag = function (tag, btn) {
+    window.activeBlogTag = tag;
+    document.querySelectorAll(".blog-tag-btn").forEach((b) => {
+      b.className =
+        "blog-tag-btn rounded-lg border border-black/10 bg-black/[0.02] text-black/65 hover:border-black/25 hover:text-black dark:border-white/10 dark:bg-white/[0.03] dark:text-white/65 dark:hover:border-white/25 dark:hover:text-white px-2.5 py-1 font-mono text-[11px] transition";
+    });
+    btn.className =
+      "blog-tag-btn rounded-lg bg-black text-white dark:bg-white dark:text-black px-2.5 py-1 font-mono text-[11px] font-medium transition";
+
+    window.filterBlogPosts();
+  };
+
+  window.filterBlogPosts = function () {
+    const searchInput = document.getElementById("blog-search");
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    const tag = window.activeBlogTag || "all";
+
+    const spotlight = document.getElementById("latest-post-spotlight");
+    if (spotlight) {
+      spotlight.style.display = query === "" && tag === "all" ? "" : "none";
+    }
+
+    document.querySelectorAll(".blog-entry-item").forEach((item) => {
+      const title = item.getAttribute("data-title") || "";
+      const desc = item.getAttribute("data-desc") || "";
+      const tags = (item.getAttribute("data-tags") || "").split(",");
+
+      const matchesSearch =
+        query === "" || title.includes(query) || desc.includes(query);
+      const matchesTag = tag === "all" || tags.includes(tag);
+
+      item.style.display = matchesSearch && matchesTag ? "" : "none";
+    });
+
+    document.querySelectorAll(".blog-year-section").forEach((section) => {
+      const visiblePosts = Array.from(
+        section.querySelectorAll(".blog-entry-item")
+      ).filter((el) => el.style.display !== "none");
+      section.style.display = visiblePosts.length > 0 ? "" : "none";
+    });
+  };
+</script>

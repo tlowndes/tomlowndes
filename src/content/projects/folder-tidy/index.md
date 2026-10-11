@@ -2,6 +2,7 @@
 title: "Folder Tidy"
 description: "A Windows app that cleans up empty folders, sorts finished downloads into the right place and lets you undo any of it"
 date: "Oct 8 2026"
+image: "/projects/folder-tidy-clean.png"
 ---
 
 ## Folders breed when you're not looking
