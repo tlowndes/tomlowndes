@@ -2,6 +2,7 @@
 title: "Automating File Organization in the Downloads Folder with Python"
 description: "Coding a Download folder cleaner in python."
 date: "08/06/2024"
+tags: [tech, workflow, design, ui/ux, coding]
 ---
 
 Managing files in your Downloads folder can quickly become a chore, especially if you download a lot of files frequently. To keep your Downloads folder organized without manual intervention, you can create a Python script that automatically moves specific files to designated folders based on their file type or other criteria.

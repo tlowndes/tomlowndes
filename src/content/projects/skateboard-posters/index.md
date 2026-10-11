@@ -2,7 +2,7 @@
 title: "Skateboard Posters"
 description: "A skateboard-deck poster concept pairing portrait photography with a graphic built from trucks, bolts and bearings"
 date: "Jun 1 2023"
-draft: false
+draft: true
 ---
 
 ## A skateboard with no skateboard graphics

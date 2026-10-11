@@ -2,6 +2,7 @@
 title: "My Second Brain - Obsidian"
 description: "Using Obsidian to store information in an easily accessible format."
 date: "06/18/2024"
+tags: [workflow, obsidian]
 ---
 
 In the ever-evolving landscape of design, where imagination meets structure, finding the right tools to enhance your workflow is crucial. Introducing Obsidian – a game-changing tool that's gaining traction for its innovative take on note-taking and managing knowledge. In this article, we delve into how Obsidian, when combined with a daily note-taking routine and a strategic approach to organization, can transform your design journey.

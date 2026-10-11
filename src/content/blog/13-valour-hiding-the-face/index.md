@@ -2,6 +2,7 @@
 title: "Hiding the Face: How One Big Letter Became a Magazine"
 description: "The story behind Valour, a concept men's lifestyle magazine from my final-year university project, from a cut-out V over the cover model's face to a screen print and a full set of editorial spreads."
 date: 2026-10-08
+tags: [projects, design]
 draft: false
 ---
 

@@ -1,3 +1,4 @@
+// src/content/config.ts
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
@@ -36,4 +37,21 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { blog, work, projects };
+const uses = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    category: z.enum(["carry", "sensory", "utility", "digital", "security", "homelab"]),
+    role: z.string(),
+    badge: z.string(),
+    why: z.string(),
+    image: z.string().optional(),
+    buyLink: z.string().optional(),  // <-- Optional Buy/Store URL
+    buyLabel: z.string().optional(), // <-- Optional custom button text (e.g. "Buy on Amazon" or "Official Store")
+    draft: z.boolean().optional(),
+    date: z.coerce.date().optional(),
+    link: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, work, projects, uses };

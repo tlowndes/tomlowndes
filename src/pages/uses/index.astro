@@ -1,190 +1,140 @@
 ---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
-import PageLayout from "@layouts/PageLayout.astro";
 import Link from "@components/Link.astro";
-
 import { SITE, SOCIALS } from "@consts";
 
 const USES = {
   TITLE: "Uses",
-  DESCRIPTION: "A living index of the physical hardware, everyday carry, digital tools, and self-hosted infrastructure I use to stay functional, focused, and calm.",
+  DESCRIPTION: "A living index of the physical hardware, everyday carry, digital tools, and self-hosted infrastructure I use daily.",
 };
+
+const allGear = (await getCollection("uses", ({ data }) => !data.draft));
+
+const categories = [
+  { key: "carry", label: "01. On-Body Carry & The Split Rig" },
+  { key: "sensory", label: "02. Sensory Protection & Working Memory" },
+  { key: "utility", label: "03. The Utility Rig (Daily Hardware)" },
+  { key: "digital", label: "04. Digital Workspace & Terminal" },
+  { key: "security", label: "05. Security, Cloud & Network" },
+  { key: "homelab", label: "06. Homelab & Infrastructure" },
+];
 ---
 
 <PageLayout title={USES.TITLE} description={USES.DESCRIPTION}>
   <Container>
-    <div class="animate mb-10">
+    <div class="animate mb-8">
       <BackToPrev href="/">
         Back to home
       </BackToPrev>
     </div>
-    <div class="space-y-16">
-      <section class="space-y-4">
-        <h1 class="animate font-semibold text-black dark:text-white">
-          Tools, tech, and gear I use daily.
-        </h1>
-        <article class="space-y-4 text-black/75 dark:text-white/75">
-          <p class="animate">
-            As a creative designer with an AuDHD brain, my setup isn't built around performative aesthetic minimalism or hoarding tactical survival gadgets. It is engineered around friction reduction: eliminating cognitive dropouts, protecting auditory bandwidth, offloading working memory to physical paper, and keeping my digital environment entirely autonomous.
+
+    <div class="space-y-12">
+      <!-- Header -->
+      <section class="animate space-y-4 border-b border-black/10 pb-8 dark:border-white/10">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/50 dark:text-white/50">
+            Mise-en-Place // {allGear.length} Items Catalogued
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:text-emerald-300">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Living Directory</span>
+          </span>
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-2xl font-semibold tracking-tight text-black sm:text-3xl dark:text-white">
+            Tools, tech, and gear I use daily.
+          </h1>
+          <p class="max-w-2xl text-sm leading-relaxed text-black/75 dark:text-white/75">
+            As a creative designer with an AuDHD brain, my setup is engineered around friction reduction: eliminating cognitive dropouts, protecting auditory bandwidth, offloading working memory to physical paper, and keeping systems autonomous.
           </p>
-          <p class="animate">
-            This is a living inventory of the hardware, carry, and software stack that keeps my day from going into the weeds.
-          </p>
-        </article>
+        </div>
+
+        <!-- Live Search -->
+        <div class="pt-2">
+          <input
+            id="uses-search-input"
+            type="search"
+            placeholder="Search items by name, role, or spec..."
+            oninput="window.filterUsesList()"
+            class="w-full max-w-sm rounded-xl border border-black/10 bg-white/80 px-3.5 py-2 text-xs text-black placeholder:text-black/40 transition focus:border-black/30 focus:outline-none dark:border-white/10 dark:bg-neutral-900/70 dark:text-white dark:placeholder:text-white/40 dark:focus:border-white/30"
+          />
+        </div>
       </section>
 
-      <!-- 01. The Split Key System -->
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          01. On-Body Carry & The Split Key Rig
-        </h5>
-        <article class="space-y-3 text-black/75 dark:text-white/75">
-          <p>
-            Keys are universally the first casualty of an absent mind. I split my keys into two dedicated functional modules to keep them lightweight, silent, and purpose-built:
-          </p>
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong class="text-black dark:text-white">Car Key Module:</strong> Paired with a <strong class="text-black dark:text-white">VAFOTON 240W Short USB-C Cable (21cm)</strong> on the ring. It bends double on itself into a clean fob loop, providing an instant 240W PD charging tether without loose cable spaghetti in my pockets.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">House Key Module:</strong> Tamed inside an <strong class="text-black dark:text-white">Orbitkey Key Organiser</strong> to kill the maddening jingle on long walks. It carries a <strong class="text-black dark:text-white">SanDisk Ultra Dual Drive Go (128GB)</strong>—partitioned into a bootable Ventoy rescue layer and an air-gapped terminal dashboard—and a spring-loaded <strong class="text-black dark:text-white">Resqme Car Escape Tool</strong>.
-            </li>
-          </ul>
-        </article>
-      </section>
+      <!-- Category Groups -->
+      <div class="space-y-14" id="gear-groups">
+        {categories.map((cat) => {
+          const items = allGear.filter((g) => g.data.category === cat.key);
+          if (items.length === 0) return null;
 
-      <!-- 02. Sensory & Memory -->
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          02. Sensory Protection & Working Memory
-        </h5>
-        <article class="space-y-3 text-black/75 dark:text-white/75">
-          <p>
-            Managing sensory noise and working memory dropouts isn't optional; it is baseline cognitive maintenance.
-          </p>
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong class="text-black dark:text-white">Google Pixel Buds Pro:</strong> Active noise cancellation acts as acoustic body armour against supermarket refrigeration hums, cafe chatter, and traffic rumble.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Loop Quiet 2 Earplugs:</strong> Kept clipped to my bag's zip pull inside their carry case. Passive silicone attenuation that never runs out of charge when an environment gets aggressive.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Field Notes (Kraft Dot-Grid 3.5" x 5.5"):</strong> Paper has zero notification badges to hijack my dopamine loop. Essential for rapid wireframes, scratchpad logic, and fleeting tasks.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Uni Jetstream 4&1 Multi-Pen:</strong> Houses four smooth hybrid ink colours, an integrated 0.5mm mechanical pencil, and an eraser in a single body.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Matador Waterproof Pill Canister:</strong> Machined aluminium capsule holding an afternoon stimulant dose and emergency analgesics.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Heavy Tactile Worry Coin & Microfibre Cloth:</strong> Silent kinetic grounding for long conversations, and clean glass to kill visual micro-irritations before they cause subconscious fatigue.
-            </li>
-          </ul>
-        </article>
-      </section>
+          return (
+            <section class="space-y-4 gear-category" data-cat={cat.key}>
+              <div class="flex items-baseline justify-between border-b border-black/10 pb-2 dark:border-white/10">
+                <h2 class="font-mono text-xs font-semibold uppercase tracking-wider text-black/70 dark:text-white/70">
+                  {cat.label}
+                </h2>
+                <span class="font-mono text-[10px] text-black/40 dark:text-white/40">
+                  {items.length} {items.length === 1 ? "item" : "items"}
+                </span>
+              </div>
 
-      <!-- 03. The Utility Pouch -->
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          03. The Utility Rig (Daily Hardware)
-        </h5>
-        <article class="space-y-3 text-black/75 dark:text-white/75">
-          <p>
-            Instead of loose tools rattling at the bottom of a pack, my mechanical gear lives indexed inside a compact fabric magazine pouch with an elastic side loop:
-          </p>
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong class="text-black dark:text-white">Olight Pro Torch:</strong> High-output dedicated beam for unlit boots and hunting behind server racks without torching phone battery.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Swann-Morton Retractable Scalpel:</strong> Surgical-grade British retractable handle for opening deliveries and precision scoring.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">B-2 Probe by STLTH:</strong> Sits in the pouch's elastic loop. A micro-probe for fiddly manipulation, prying open tight electronics tabs, and scraping labels.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Mr. Green Ultra-Thin Travel Nail Clippers:</strong> Folds wafer-flat to kill rough nail edges before they hijack hyperfocus.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Anker Nano Power Bank:</strong> Slots straight into the base of my phone via an integrated connector without trailing wires.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">The Pack:</strong> <strong class="text-black dark:text-white">Bellroy Lite Sling Mini</strong> or <strong class="text-black dark:text-white">Alpaka Go Sling Nano</strong> with a light-coloured interior lining. When unzipped, every piece of gear is visible in one second.
-            </li>
-          </ul>
-        </article>
-      </section>
+              <div class="grid gap-4 sm:grid-cols-2">
+                {items.map((item) => (
+                  <a
+                    href={`/uses/${item.slug}`}
+                    data-search={`${item.data.title} ${item.data.role} ${item.data.badge} ${item.data.why}`.toLowerCase()}
+                    class="gear-item group flex flex-col justify-between overflow-hidden rounded-xl border border-black/10 bg-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
+                  >
+                    {item.data.image && (
+                      <div class="aspect-video w-full overflow-hidden bg-neutral-900 border-b border-black/5 dark:border-white/5">
+                        <img
+                          src={item.data.image}
+                          alt={item.data.title}
+                          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
 
-      <!-- 04. Digital Workspace -->
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          04. Digital Workspace & Terminal
-        </h5>
-        <article class="space-y-3 text-black/75 dark:text-white/75">
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong class="text-black dark:text-white">Windows Terminal & PowerShell 7:</strong> GPU-accelerated tabbed terminal runner handling modern pipeline operations, paired with the <strong class="text-black dark:text-white">Starship</strong> cross-shell prompt for real-time Git status.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Typography:</strong> <strong class="text-black dark:text-white">JetBrains Mono Nerd Font</strong> for terminal ligature support and developer glyphs; <strong class="text-black dark:text-white">Inter</strong> for calm desktop UI reading.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Obsidian & Git:</strong> Local-first, markdown-based digital garden for architecture, notes, and technical documentation.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Inkscape:</strong> Standalone open-source vector graphics workhorse for branding, layouts, and SVG wireframes.
-            </li>
-          </ul>
-        </article>
-      </section>
+                    <div class="p-4 space-y-2">
+                      <div class="flex items-center justify-between font-mono text-[10px] text-black/50 dark:text-white/50">
+                        <span>{item.data.role}</span>
+                        <span class="rounded bg-black/5 px-1.5 py-0.5 dark:bg-white/10">{item.data.badge}</span>
+                      </div>
 
-      <!-- 05. Security & Cloud -->
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          05. Security, Cloud & Network
-        </h5>
-        <article class="space-y-3 text-black/75 dark:text-white/75">
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong class="text-black dark:text-white">Proton Suite:</strong> Proton Mail and Proton Drive for primary zero-knowledge communications and encrypted daily cloud storage.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">KeePassXC:</strong> Local, encrypted <code class="text-xs bg-black/5 dark:bg-white/10 px-1 py-0.5 rounded">.kdbx</code> password vaults stored offline on physical media.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Proton VPN:</strong> Standalone WireGuard profiles exported directly for encrypted network tunnels across desktop, mobile, and live Linux sessions.
-            </li>
-          </ul>
-        </article>
-      </section>
+                      <h3 class="text-base font-semibold tracking-tight text-black transition group-hover:underline underline-offset-4 dark:text-white">
+                        {item.data.title}
+                      </h3>
 
-      <!-- 06. Homelab -->
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          06. Homelab & Infrastructure
-        </h5>
-        <article class="space-y-3 text-black/75 dark:text-white/75">
-          <ul class="list-disc pl-5 space-y-2">
-            <li>
-              <strong class="text-black dark:text-white">Proxmox VE:</strong> Running bare-metal on dedicated compact x86 nodes, hosting lightweight LXC containers and isolated virtual machines.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Home Assistant:</strong> Local-first smart home telemetry, energy monitoring, and automated hardware control without vendor cloud dependencies.
-            </li>
-            <li>
-              <strong class="text-black dark:text-white">Edge Connectivity:</strong> Cloudflare Zero Trust tunnels and local DNS fallbacks.
-            </li>
-          </ul>
-        </article>
-      </section>
+                      <p class="text-xs leading-relaxed text-black/70 line-clamp-2 dark:text-white/70">
+                        {item.data.why}
+                      </p>
+                    </div>
 
-      <!-- Social Footer Links -->
-      <section class="animate space-y-4 pt-4 border-t border-black/10 dark:border-white/10">
-        <ul class="flex flex-wrap gap-2">
-          {SOCIALS.map(SOCIAL => (
+                    <div class="px-4 pb-3 pt-1 flex items-center justify-end font-mono text-[11px] text-black/40 group-hover:text-black dark:text-white/40 dark:group-hover:text-white transition">
+                      <span>Read notes →</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+
+      <!-- Social / Contact Footer -->
+      <section class="space-y-4 border-t border-black/10 pt-8 dark:border-white/10">
+        <h3 class="text-sm font-semibold text-black dark:text-white">
+          Curious about a specific tool or configuration?
+        </h3>
+        <p class="text-xs text-black/75 sm:text-sm dark:text-white/75">
+          Reach out if you'd like a config breakdown, a copy of the offline HTML terminal boilerplate, or to discuss systems architecture.
+        </p>
+        <ul class="flex flex-wrap gap-2 text-xs">
+          {SOCIALS.map((SOCIAL) => (
             <li class="flex gap-x-2 text-nowrap">
               <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
                 {SOCIAL.NAME}
@@ -202,3 +152,21 @@ const USES = {
     </div>
   </Container>
 </PageLayout>
+
+<script is:inline>
+  window.filterUsesList = function() {
+    const query = (document.getElementById('uses-search-input')?.value || '').toLowerCase().trim();
+    const items = document.querySelectorAll('.gear-item');
+    const categories = document.querySelectorAll('.gear-category');
+
+    items.forEach(el => {
+      const text = el.getAttribute('data-search') || '';
+      el.style.display = (!query || text.includes(query)) ? '' : 'none';
+    });
+
+    categories.forEach(cat => {
+      const visible = cat.querySelectorAll('.gear-item:not([style*="display: none"])').length;
+      cat.style.display = visible > 0 ? '' : 'none';
+    });
+  };
+</script>

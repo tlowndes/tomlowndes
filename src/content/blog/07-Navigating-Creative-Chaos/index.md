@@ -2,6 +2,7 @@
 title: "Navigating Creative Chaos: The Solo Navigator System"
 description: "As many of you know, I'm a creative designer, and I'm also someone who navigates the world with both ADHD and autism."
 date: "10/01/2025"
+tags: [tech, workflow, design, ui/ux, coding]
 draft: true
 ---
 

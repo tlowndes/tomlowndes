@@ -2,6 +2,7 @@
 title: "10+ Years of designing!"
 description: "Reflecting on my time as a Creative Designer. In a few weeks, I’ll hit three years at Dove Technology."
 date: "05/08/2024"
+tags: [reflection, personal]
 ---
 
 

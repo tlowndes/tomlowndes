@@ -2,6 +2,7 @@
 title: "Tiny Tools, Less Friction: Two Apps I Built to Stop Starting From Zero"
 description: "How a folder-making script grew into a desktop app, and why I built an Android app that drops tasks and links straight into my Obsidian vault."
 date: 2026-10-07
+tags: [tech, workflow, design, ui/ux, coding]
 draft: false
 ---
 

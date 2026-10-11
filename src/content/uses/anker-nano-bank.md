@@ -1,0 +1,18 @@
+---
+title: "Anker Nano Power Bank"
+category: "utility"
+role: "Zero-Cable Battery Backup"
+badge: "Built-In Foldable USB-C"
+why: "Tangled charging cords are an executive dysfunction tax when needing transit passes or navigation in a pinch."
+image: "https://m.media-amazon.com/images/I/61uNRmtEtvL._AC_SL1500_.jpg"
+buyLink: "https://www.anker.com/uk/products/a1653-anker-nano-power-bank-built-in-usb-c-connector"
+buyLabel: "Anker UK Store"
+---
+
+### Immediate Connector Power
+
+Managing long, tangled cables while on the move adds unnecessary executive strain[cite: 5].
+
+- **Integrated Plug:** Foldable USB-C connector plugs directly into the bottom of the device with no trailing leads[cite: 5, 7].
+- **Capacity:** 5,000mAh battery cell provides enough reserve power to get through extended commutes and transit connections[cite: 5].
+- **Pocket Ergonomics:** Sits flush with the base of the phone so you can continue typing or navigating uninterrupted[cite: 5, 7].

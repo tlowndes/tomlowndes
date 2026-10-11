@@ -2,7 +2,7 @@
 title: "How to Set Up pfSense with a Zyxel Switch and UniFi Access Point for VLAN Segmentation"
 description: "A practical guide to configuring VLANs for Guest, IoT, and Office networks using pfSense, a Zyxel managed switch, and UniFi access points for enhanced security and network organization."
 date: 2025-07-18
-tags: [networking, pfsense, zyxel, unifi, VLAN, homelab, small-business]
+tags: [networking, homelab]
 draft: false
 ---
 
