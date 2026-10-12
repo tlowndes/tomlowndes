@@ -27,3 +27,9 @@ export function dateRange(startDate: Date, endDate?: Date | string): string {
   const end = typeof endDate === "string" ? endDate : format(endDate);
   return `${start} – ${end}`;
 }
+
+// Local image used for a post or project's link preview: front matter image, else the first image in the body
+export function shareSource(entry: { data: { image?: string }; body: string }) {
+  const src = entry.data.image ?? entry.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
+  return src?.startsWith("/") ? src : undefined;
+}

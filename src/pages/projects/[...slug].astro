@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { readingTime } from "@lib/utils";
+import { readingTime, shareSource } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import ContactBlock from "@components/ContactBlock.astro";
@@ -25,7 +25,7 @@ type Props = {
 
 const { project, index, newer, older } = Astro.props;
 const { Content } = await project.render();
-const shareImage = project.data.image ?? project.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
+const shareImage = shareSource(project) && `/og/projects/${project.slug}.jpg`;
 // Only show a hero when the front matter image isn't already in the body
 const hero = project.data.image && !project.body.includes(project.data.image) ? project.data.image : null;
 const indexNum = String(index + 1).padStart(2, "0");
@@ -39,7 +39,7 @@ const siblings = [
 ].filter(Boolean) as { label: string; entry: CollectionEntry<"projects"> }[];
 ---
 
-<PageLayout title={project.data.title} description={project.data.description} image={shareImage}>
+<PageLayout title={project.data.title} description={project.data.description} image={shareImage} imageAlt={project.data.title}>
   <Container>
     <div class="space-y-12">
       <div class="animate">

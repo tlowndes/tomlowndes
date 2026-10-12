@@ -8,15 +8,19 @@ type Props = {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
+  article?: { published: Date };
+  // Use the title as-is, without the " | Tom Lowndes" suffix
+  fullTitle?: boolean;
 };
 
-const { title, description, image } = Astro.props;
+const { title, description, image, imageAlt, article, fullTitle } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={`${title} | ${SITE.NAME}`} description={description} image={image} />
+    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} />
   </head>
   <body>
     <Header />

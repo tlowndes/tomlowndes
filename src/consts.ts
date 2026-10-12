@@ -9,13 +9,13 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
+  TITLE: "Tom Lowndes | Creative designer",
   DESCRIPTION: "Creative designer in Staffordshire, open to remote and in-house design roles. Portfolio, field notes and experience.",
 };
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  DESCRIPTION: "Field notes on designing systems for an AuDHD brain, friction-free everyday carry, self-hosted hardware and calm technology.",
 };
 
 export const WORK: Metadata = {
@@ -25,7 +25,7 @@ export const WORK: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories.",
+  DESCRIPTION: "Selected design work: brand systems, print production, digital interfaces and the case studies behind them.",
 };
 
 export const USES: Metadata = {
