@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
-import { readingTime } from "@lib/utils";
+import { readingTime, shareSource } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import ContactBlock from "@components/ContactBlock.astro";
@@ -25,14 +25,14 @@ type Props = {
 
 const { post, newer, older } = Astro.props;
 const { Content } = await post.render();
-const shareImage = post.data.image ?? post.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
+const shareImage = shareSource(post) && `/og/blog/${post.slug}.jpg`;
 const siblings = [
   older && { label: "← Older", entry: older },
   newer && { label: "Newer →", entry: newer },
 ].filter(Boolean) as { label: string; entry: CollectionEntry<"blog"> }[];
 ---
 
-<PageLayout title={post.data.title} description={post.data.description} image={shareImage}>
+<PageLayout title={post.data.title} description={post.data.description} image={shareImage} imageAlt={post.data.title} article={{ published: post.data.date }}>
   <Container>
     <div class="space-y-12">
       <div class="animate">

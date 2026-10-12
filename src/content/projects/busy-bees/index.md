@@ -2,6 +2,7 @@
 title: "Busy Bees Childcare"
 description: "Social graphics, web banners, video thumbnails and a parent-app landing page for a nursery group"
 date: "Jan 18 2024"
+image: "/busybees-app-landing.jpg"
 demoURL: "https://www.busybeeschildcare.co.uk/app"
 ---
 

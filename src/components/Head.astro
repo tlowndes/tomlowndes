@@ -16,11 +16,14 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
+  article?: { published: Date };
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/og-default.png" } = Astro.props;
+const { title, description, image = "/og-default.png", imageAlt = `${SITE.NAME}, creative designer`, article } = Astro.props;
+const imageURL = new URL(image, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -46,19 +49,26 @@ const { title, description, image = "/og-default.png" } = Astro.props;
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<!-- Open Graph (LinkedIn, Slack, Facebook). Share images are always 1200x630 JPEG/PNG. -->
+<meta property="og:type" content={article ? "article" : "website"} />
+<meta property="og:site_name" content={SITE.NAME} />
+<meta property="og:locale" content="en_GB" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={imageAlt} />
+{article && <meta property="article:published_time" content={article.published.toISOString()} />}
+{article && <meta property="article:author" content={SITE.NAME} />}
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.site)} />
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+<meta name="twitter:image:alt" content={imageAlt} />
 
 <ClientRouter  />
 
