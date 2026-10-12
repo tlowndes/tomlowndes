@@ -1,10 +1,9 @@
 ---
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
-import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
-import { dateRange } from "@lib/utils";
+import { dateRange, readingTime as getReadingTime } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
 
 const blog = (await getCollection("blog"))
@@ -28,120 +27,228 @@ const work = await Promise.all(
   })
 );
 
+// Frontmatter image first, then the first markdown image in the body
+function getImage(entry: CollectionEntry<"projects">) {
+  const bodyMatch = entry.body ? entry.body.match(/!\[.*?\]\((.*?)\)/) : null;
+  return entry.data.image || (bodyMatch ? bodyMatch[1] : null);
+}
+
+const shortDate = (date: Date) =>
+  date.toLocaleDateString("en-GB", { year: "numeric", month: "short" });
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h1 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm Tom <span class="text-xl">👋🏻</span> 
-    </h1>
-    <div class="space-y-16">
-      <section>
-        <article class="space-y-4">
-          <p class="animate">
-            I'm a Creative Designer living in Staffordshire.
+    <div class="space-y-14">
+      <!-- Header -->
+      <section class="animate space-y-5 border-b border-black/10 dark:border-white/10 pb-8">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+            Creative Designer // Staffordshire, UK
+          </span>
+          <a
+            href="#available"
+            class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:text-emerald-300 hover:border-emerald-500/60 transition"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Open to new roles</span>
+          </a>
+        </div>
+
+        <div class="space-y-3">
+          <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+            Hi, I'm Tom. <span class="font-serif italic font-normal text-black/65 dark:text-white/65">I design things people use.</span>
+          </h1>
+          <p class="text-sm text-black/75 dark:text-white/75 leading-relaxed">
+            I'm a creative designer with over a decade of brand, print, web and video work behind me. I like crafting designs people love, untangling awkward technical problems and working with curious minds.
           </p>
-          <p class="animate">
-            Every once in a while I write about the nonsense fun stuff I'm doing, the lessons I've learned or the things that keep me busy. I wouldn't bet on it though.
-            My passion lies in crafting designs that people love, solving complex technical challenges and working with curious minds.
+          <p class="text-sm text-black/75 dark:text-white/75 leading-relaxed">
+            Every once in a while I write about the things that keep me busy and the lessons I've picked up along the way. I wouldn't bet on it being regular, though.
           </p>
-          <p class="animate">
-            Over the years I've worked with some talented people and companies. Along the way I've:
-          </p>
-          <ul class="animate list-disc pl-6 space-y-1">
+        </div>
+      </section>
+
+      <!-- Looking for a role -->
+      <section id="available" class="animate scroll-mt-8">
+        <div class="rounded-2xl border border-black/10 bg-white/80 p-5 sm:p-6 shadow-sm dark:border-white/10 dark:bg-neutral-900/60 space-y-4">
+          <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-black/45 dark:text-white/45">
+            <span>Status // Looking for my next role</span>
+            <span class="text-emerald-700 dark:text-emerald-400">Available</span>
+          </div>
+          <div class="space-y-2">
+            <h2 class="text-lg sm:text-xl font-semibold tracking-tight text-black dark:text-white">
+              I'm looking for a design role with a calm, intentional team.
+            </h2>
+            <p class="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+              Ideally remote, though the right in-house team is just as welcome. I do my best work where deep focus is protected, asynchronous communication is respected, and good design comes from thoughtful problem-solving rather than back-to-back meetings.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            {["Brand & identity", "Print & production", "Web & digital", "Video & photography"].map((skill) => (
+              <span class="rounded bg-black/5 dark:bg-white/10 px-2 py-0.5 font-mono text-[10px] text-black/70 dark:text-white/70">
+                {skill}
+              </span>
+            ))}
+          </div>
+          <div class="flex flex-wrap items-center gap-3 pt-3 border-t border-black/10 dark:border-white/10">
+            <a
+              href={`mailto:${SITE.EMAIL}`}
+              class="rounded-full bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-xs font-semibold hover:opacity-80 transition"
+            >
+              Get in touch
+            </a>
+            <a
+              href="/projects"
+              class="rounded-full border border-black/15 dark:border-white/15 px-4 py-1.5 text-xs font-semibold text-black dark:text-white hover:border-black/40 dark:hover:border-white/40 transition"
+            >
+              See my work
+            </a>
+            <a
+              href="https://www.behance.net/tomlowndes"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View my design portfolio on Behance (opens in a new tab)"
+              class="font-mono text-[11px] text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white transition"
+            >
+              Behance ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected work -->
+      <section class="animate space-y-4">
+        <div class="flex items-center gap-3">
+          <h2 class="font-mono text-xs font-semibold uppercase tracking-wider text-black/70 dark:text-white/70">
+            01. Selected Work
+          </h2>
+          <div class="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
+          <a href="/projects" class="font-mono text-[11px] text-black/45 dark:text-white/45 hover:text-black dark:hover:text-white transition">
+            All projects →
+          </a>
+        </div>
+        <ul class="grid gap-4 sm:grid-cols-3">
+          {projects.map((project) => {
+            const image = getImage(project);
+            return (
+              <li>
+                <a
+                  href={`/projects/${project.slug}`}
+                  class="group flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
+                >
+                  <div class="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950 border-b border-black/5 dark:border-white/5">
+                    {image && (
+                      <img
+                        src={image}
+                        alt=""
+                        loading="lazy"
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    )}
+                  </div>
+                  <div class="flex flex-1 flex-col p-3.5 space-y-1">
+                    <span class="font-mono text-[10px] text-black/45 dark:text-white/45">
+                      {shortDate(project.data.date)}
+                    </span>
+                    <h3 class="text-sm font-semibold text-black dark:text-white group-hover:underline underline-offset-4">
+                      {project.data.title}
+                    </h3>
+                    <p class="text-xs text-black/65 dark:text-white/65 line-clamp-2 leading-relaxed">
+                      {project.data.description}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <!-- Latest notes -->
+      <section class="animate space-y-4">
+        <div class="flex items-center gap-3">
+          <h2 class="font-mono text-xs font-semibold uppercase tracking-wider text-black/70 dark:text-white/70">
+            02. Field Notes
+          </h2>
+          <div class="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
+          <a href="/blog" class="font-mono text-[11px] text-black/45 dark:text-white/45 hover:text-black dark:hover:text-white transition">
+            All posts →
+          </a>
+        </div>
+        <ul class="flex flex-col gap-3">
+          {blog.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.slug}`}
+                class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white hover:shadow-sm dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
+              >
+                <div class="space-y-1 pr-2">
+                  <h3 class="font-semibold text-base text-black dark:text-white group-hover:underline underline-offset-4">
+                    {post.data.title}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-black/65 dark:text-white/65 line-clamp-2 leading-relaxed">
+                    {post.data.description}
+                  </p>
+                </div>
+                <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 gap-1 font-mono text-[11px] text-black/45 dark:text-white/45 pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5 dark:border-white/5">
+                  <span>
+                    {post.data.date.toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "2-digit" })}
+                  </span>
+                  <span class="text-[10px] opacity-75">{getReadingTime(post.body)}</span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Experience -->
+      <section class="animate space-y-4">
+        <div class="flex items-center gap-3">
+          <h2 class="font-mono text-xs font-semibold uppercase tracking-wider text-black/70 dark:text-white/70">
+            03. Experience
+          </h2>
+          <div class="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
+        </div>
+        <ol class="space-y-6 border-l border-black/10 dark:border-white/10 pl-5">
+          {work.map((entry) => (
+            <li class="relative space-y-1.5">
+              <span class="absolute -left-[25px] top-1.5 h-2 w-2 rounded-full border border-black/30 bg-white dark:border-white/30 dark:bg-neutral-900"></span>
+              <div class="font-mono text-[11px] text-black/45 dark:text-white/45">
+                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+              </div>
+              <div class="font-semibold text-black dark:text-white">
+                {entry.data.role} <span class="font-normal text-black/50 dark:text-white/50">at</span> {entry.data.company}
+              </div>
+              <article class="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                <entry.Content />
+              </article>
+            </li>
+          ))}
+        </ol>
+        <div class="rounded-xl border border-black/10 bg-black/[0.02] p-4 dark:border-white/10 dark:bg-white/[0.02] space-y-2">
+          <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">
+            Along the way
+          </span>
+          <ul class="list-disc pl-5 space-y-1 text-sm text-black/70 dark:text-white/70">
             <li>Worked on large corporate documents</li>
             <li>Designed countless banners, posters and leaflets for over 350 European nurseries</li>
             <li>Filmed and edited adverts for social media</li>
             <li>Filmed and edited an online company awards show during lockdown</li>
             <li>Created a few designs nobody cared about (it happens)</li>
           </ul>
-          <p class="animate">
-            <a
-              href="https://www.behance.net/tomlowndes"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View my design portfolio on Behance (opens in a new tab)"
-              class="inline-block rounded-md border border-black/25 dark:border-white/25 px-4 py-2 font-semibold text-black dark:text-white hover:bg-black/5 hover:dark:bg-white/10 transition-colors duration-300 ease-in-out"
-            >
-              View my design portfolio on Behance ↗︎
-            </a>
-          </p>
-        </article>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="font-semibold text-black dark:text-white">
-            Recent projects
-          </h2>
-          <Link href="/projects">
-            See all projects
-          </Link>
         </div>
-        <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
-        </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h2>
-          <Link href="/blog">
-            See all posts
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {blog.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h2>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Let's Connect
+      <!-- Contact -->
+      <section class="animate space-y-4 border-t border-black/10 pt-8 dark:border-white/10">
+        <h2 class="text-sm font-semibold text-black dark:text-white">
+          Let's connect
         </h2>
-        <article>
-          <p>
-            If you want to get in touch with me about something or just to say hi,
-            reach out on social media or send me an email.
-          </p>
-        </article>
-        <ul class="flex flex-wrap gap-2">
+        <p class="text-xs sm:text-sm text-black/75 dark:text-white/75">
+          Hiring, collaborating or just want to say hi? Send me an email or find me on social media.
+        </p>
+        <ul class="flex flex-wrap gap-2 text-xs">
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-2 text-nowrap">
               <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
