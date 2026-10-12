@@ -8,7 +8,7 @@ draft: false
 
 Starting things is the hard part. Not the doing, the *starting*. Making the same set of folders for the fifth time that week. Having a thought on my phone and nowhere to put it, so it quietly disappears.
 
-If you've read my posts about [ADHD and AuDHD](/blog/09-Autism-wtf/), you'll know friction at the start of a task is where things fall over for me. So I stopped looking for a cleverer system and went after something simpler: fewer steps between a thought and somewhere safe for it.
+If you've read my posts about [ADHD and AuDHD](/blog/11-the-audhd-edc-packing/), you'll know friction at the start of a task is where things fall over for me. So I stopped looking for a cleverer system and went after something simpler: fewer steps between a thought and somewhere safe for it.
 
 That led to two small apps. One for my PC, one for my phone.
 

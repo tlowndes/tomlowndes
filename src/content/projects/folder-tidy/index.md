@@ -11,7 +11,7 @@ Nobody sets out to have a "New folder (3)". It just happens. You create one, for
 
 Folder Tidy is a Windows app I built to deal with both, in a way that I can trust. It follows the same `@` folder system I use in Proton Drive, and it never does anything I can't undo.
 
-![Folder Tidy: Clean up](/folder-tidy-clean.png)
+![Folder Tidy: Clean up](/projects/folder-tidy-clean.png)
 
 ## Four jobs
 

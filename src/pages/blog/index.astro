@@ -4,15 +4,11 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import { BLOG } from "@consts";
+import { readingTime as getReadingTime } from "@lib/utils";
 
 const data = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-function getReadingTime(body: string) {
-  const words = body ? body.trim().split(/\s+/).length : 0;
-  return `${Math.max(1, Math.ceil(words / 200))} min read`;
-}
 
 function getPostImage(post: CollectionEntry<"blog">) {
   const bodyMatch = post.body ? post.body.match(/!\[.*?\]\((.*?)\)/) : null;
