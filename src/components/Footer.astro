@@ -8,25 +8,23 @@ const year = new Date().getFullYear();
 
 <footer class="animate">
   <Container>
-    <div class="relative">
-      <div class="absolute right-0 -top-20">
-        <BackToTop />
-      </div>
+    <div class="flex justify-end pb-6">
+      <BackToTop />
     </div>
-    <div class="flex justify-between items-center">
+    <div class="flex flex-wrap justify-between items-center gap-3 border-t border-black/10 dark:border-white/10 pt-5 font-mono text-[11px] uppercase tracking-wider text-black/45 dark:text-white/45">
       <div>
-        &copy; {year} {`|`} {SITE.NAME}
+        &copy; {year} // {SITE.NAME} // Staffordshire, UK
       </div>
-      <div class="flex flex-wrap gap-1 items-center">
+      <div class="flex flex-wrap gap-1 items-center rounded-full border border-black/10 dark:border-white/10 p-0.5">
         <button
           id="light-theme-button"
           aria-label="Light theme"
-          class="group size-8 flex items-center justify-center rounded-full"
+          class="group size-7 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -49,12 +47,12 @@ const year = new Date().getFullYear();
         <button
           id="dark-theme-button"
           aria-label="Dark theme"
-          class="group size-8 flex items-center justify-center rounded-full"
+          class="group size-7 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -69,12 +67,12 @@ const year = new Date().getFullYear();
         <button
           id="system-theme-button"
           aria-label="System theme"
-          class="group size-8 flex items-center justify-center rounded-full"
+          class="group size-7 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

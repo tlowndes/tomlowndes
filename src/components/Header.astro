@@ -1,39 +1,51 @@
 ---
 import Container from "@components/Container.astro";
-import Link from "@components/Link.astro";
 import { SITE } from "@consts";
+import { cn } from "@lib/utils";
+
+const NAV = [
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+  { href: "/uses", label: "Uses" },
+  { href: "/now", label: "Now" },
+];
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 ---
 
-<header>
+<header class="border-b border-black/5 dark:border-white/5">
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
-          {SITE.NAME}
-        </div>
-      </Link>
-      <nav class="flex gap-1">
-        <Link href="/projects">
-          projects
-        </Link>
-        <span>
-          {`/`}
+    <div class="flex flex-wrap items-center justify-between gap-y-2">
+      <a
+        href="/"
+        class="group flex items-baseline gap-2 text-black dark:text-white"
+        aria-current={path === "/" ? "page" : undefined}
+      >
+        <span class="font-semibold tracking-tight">{SITE.NAME}</span>
+        <span class="hidden sm:inline font-mono text-[10px] uppercase tracking-widest text-black/40 dark:text-white/40 group-hover:text-black/70 dark:group-hover:text-white/70 transition">
+          // Designer
         </span>
-        <Link href="/blog">
-          blog
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/uses">
-          uses
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/now">
-          now
-        </Link>
+      </a>
+      <nav aria-label="Main">
+        <ul class="flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider">
+          {NAV.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                class={cn(
+                  "rounded-full px-2.5 py-1 transition",
+                  isActive(item.href)
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-black/55 hover:text-black hover:bg-black/5 dark:text-white/55 dark:hover:text-white dark:hover:bg-white/10"
+                )}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
     </div>
   </Container>

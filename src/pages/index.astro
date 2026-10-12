@@ -2,9 +2,9 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
-import Link from "@components/Link.astro";
+import ContactBlock from "@components/ContactBlock.astro";
 import { dateRange, readingTime as getReadingTime } from "@lib/utils";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME } from "@consts";
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -240,30 +240,7 @@ const shortDate = (date: Date) =>
         </div>
       </section>
 
-      <!-- Contact -->
-      <section class="animate space-y-4 border-t border-black/10 pt-8 dark:border-white/10">
-        <h2 class="text-sm font-semibold text-black dark:text-white">
-          Let's connect
-        </h2>
-        <p class="text-xs sm:text-sm text-black/75 dark:text-white/75">
-          Hiring, collaborating or just want to say hi? Send me an email or find me on social media.
-        </p>
-        <ul class="flex flex-wrap gap-2 text-xs">
-          {SOCIALS.map(SOCIAL => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {"/"}
-            </li>
-          ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
-      </section>
+      <ContactBlock />
     </div>
   </Container>
 </PageLayout>

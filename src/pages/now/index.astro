@@ -3,31 +3,46 @@ import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import Link from "@components/Link.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import ContactBlock from "@components/ContactBlock.astro";
 
-import { SITE, NOW, SOCIALS } from "@consts";
+import { NOW } from "@consts";
+
+// Bump this when the page content changes
+const updated = new Date("2026-10-12");
 ---
 
 <PageLayout title={NOW.TITLE} description={NOW.DESCRIPTION}>
   <Container>
-    <div class="animate mb-10">
+    <div class="animate mb-8">
       <BackToPrev href="/">
         Back to home
       </BackToPrev>
     </div>
-    <div class="space-y-16">
+    <div class="space-y-14">
       <!-- Header -->
-      <section class="space-y-4">
-        <h1 class="animate font-semibold text-black dark:text-white">
-          Here's what keeps me busy at the moment.{" "}
-          <Link href="https://nownownow.com/about" external>
-            what?
-          </Link>
+      <section class="animate space-y-5 border-b border-black/10 pb-8 dark:border-white/10">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+            Now // Updated {updated.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
+          </span>
+          <a
+            href="https://nownownow.com/about"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-mono text-[11px] text-black/45 hover:text-black dark:text-white/45 dark:hover:text-white transition"
+          >
+            What's a now page? ↗
+          </a>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+          What keeps me busy <span class="font-serif italic font-normal text-black/65 dark:text-white/65">at the moment.</span>
         </h1>
         <article class="space-y-4 text-black/75 dark:text-white/75">
-          <p class="animate">
+          <p>
             Late summer into autumn has a way of resetting the slate. The days are shifting, and after the daily creative grind, I actually want to make things that last. The to-do list, though? That bastard only grows. From design systems that live half-finished in my second brain to house repairs, garden experiments, and the endless pottering that makes a place feel like home—it’s a juggling act. One part therapy, one part chaos.
           </p>
-          <p class="animate">
+          <p>
             I’m reading more, stepping away from notification loops, and taking my time. Life’s good.
           </p>
         </article>
@@ -35,9 +50,7 @@ import { SITE, NOW, SOCIALS } from "@consts";
 
       <!-- Day to Day: Work & Focus -->
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          The Search: Finding the Next Role
-        </h2>
+        <SectionHeading title="01. The Search: Finding the Next Role" />
         <article class="space-y-3 text-black/75 dark:text-white/75">
           <p>
             Day to day, my primary focus is finding my next design role. I’m taking a deliberate, grounded approach rather than firing off CVs into the void.
@@ -50,9 +63,7 @@ import { SITE, NOW, SOCIALS } from "@consts";
 
       <!-- Building small tools -->
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Building Small Tools
-        </h2>
+        <SectionHeading title="02. Building Small Tools" />
         <article class="space-y-3 text-black/75 dark:text-white/75">
           <p>
             Between applications, I've been building the small apps I wish already existed. Each one removes a step I was tired of repeating, and each one has taught me a new toolchain along the way. I wrote about the thinking behind the first two in <Link href="/blog/11-tiny-tools-less-friction/">Tiny Tools, Less Friction</Link>.
@@ -76,9 +87,7 @@ import { SITE, NOW, SOCIALS } from "@consts";
 
       <!-- Digital & Physical Mise-en-Place -->
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Digital Mise-en-Place & Guardrails
-        </h2>
+        <SectionHeading title="03. Digital Mise-en-Place & Guardrails" />
         <article class="space-y-3 text-black/75 dark:text-white/75">
           <p>
             When focus is finite, small paper cuts in your setup drain your bandwidth before you even touch real work. Lately, I’ve been applying strict rules to protect my working memory and attention:
@@ -102,9 +111,7 @@ import { SITE, NOW, SOCIALS } from "@consts";
 
       <!-- Server & Hardware Tinkering -->
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          Hardware & Server Overhaul
-        </h2>
+        <SectionHeading title="04. Hardware & Server Overhaul" />
         <article class="space-y-3 text-black/75 dark:text-white/75">
           <p>
             <strong class="text-black dark:text-white">Moving Away from Hypervisor Bloat:</strong> I’m planning a move away from Proxmox. While it served its purpose, managing complex virtualization and nested containers stopped being fun and turned into an administrative chore. I’m currently planning a simple, bare-metal server build to keep running costs down and maintenance minimal—tools should serve you, not demand weekend maintenance.
@@ -120,9 +127,7 @@ import { SITE, NOW, SOCIALS } from "@consts";
 
       <!-- Reading -->
       <section class="animate space-y-4">
-        <h2 class="font-semibold text-black dark:text-white">
-          What I'm Reading
-        </h2>
+        <SectionHeading title="05. What I'm Reading" />
         <article class="space-y-3 text-black/75 dark:text-white/75">
           <p>
             <strong class="text-black dark:text-white">Project Hail Mary by Andy Weir</strong>
@@ -141,24 +146,7 @@ import { SITE, NOW, SOCIALS } from "@consts";
         </article>
       </section>
 
-      <!-- Social Links / Contact -->
-      <section class="animate space-y-4 pt-4 border-t border-black/10 dark:border-white/10">
-        <ul class="flex flex-wrap gap-2">
-          {SOCIALS.map(SOCIAL => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {"/"}
-            </li>
-          ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
-      </section>
+      <ContactBlock />
     </div>
   </Container>
 </PageLayout>
