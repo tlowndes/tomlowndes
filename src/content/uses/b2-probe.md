@@ -6,7 +6,7 @@ badge: "Titanium Micro-Pry & Pick"
 why: "Saves fingernails from breaking on stubborn plastic tabs, SIM trays, or adhesive seals."
 image: "https://stlth.black/wp-content/uploads/2024/02/b-2-stlthblack.jpg"
 buyLink: "https://stlth.black/"
-buyLabel: "Buy B-2 Probe on Etsy"
+buyLabel: "STLTH Store"
 ---
 
 ### The Fine Manipulation Probe

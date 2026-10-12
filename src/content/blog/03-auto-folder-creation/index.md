@@ -9,7 +9,7 @@ If you're anything like me, you know that keeping your projects organized is cru
 
 ## The Magic of Automation
 
-When starting a new design, video, or idea project. Instead of wasting time setting up the necessary folders, with a simple keyboard shortcut Caps lock + d. To see how and why I got rid of my caps lock key and changed it into a Hyper Key, see [The Death of Caps Lock, Embracing the Hyper Key](/blog/02-death-of-caps-lock/)
+When starting a new design, video, or idea project. Instead of wasting time setting up the necessary folders, with a simple keyboard shortcut Caps lock + d. To see how and why I got rid of my caps lock key and changed it into a Hyper Key, see The Death of Caps Lock, Embracing the Hyper Key (coming soon)
 
 A terminal window will launch and walk you through the folder creation script.
 

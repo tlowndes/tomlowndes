@@ -55,13 +55,19 @@ article {
   }
 }
 
-.animate {
+html.js .animate {
   @apply opacity-0 translate-y-3;
   @apply transition-all duration-700 ease-out;
 }
 
-.animate.show {
+html.js .animate.show {
   @apply opacity-100 translate-y-0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .animate {
+    @apply opacity-100 translate-y-0 transition-none;
+  }
 }
 
 html #back-to-top {

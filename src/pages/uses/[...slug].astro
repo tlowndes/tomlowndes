@@ -24,7 +24,7 @@ const purchaseUrl = item.data.buyLink || item.data.link;
 const purchaseText = item.data.buyLabel || "Buy / View Product";
 ---
 
-<PageLayout title={`${item.data.title} — Uses`} description={item.data.why}>
+<PageLayout title={`${item.data.title} | Uses`} description={item.data.why}>
   <Container>
     <div class="animate mb-8">
       <BackToPrev href="/uses">
@@ -32,7 +32,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
       </BackToPrev>
     </div>
 
-    <article class="animate space-y-8">
+    <div class="animate space-y-8">
       <!-- Top Spec Card -->
       <div class="rounded-2xl border border-black/10 bg-white/80 p-6 sm:p-8 shadow-sm dark:border-white/10 dark:bg-neutral-900/60 space-y-6">
         
@@ -138,6 +138,6 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
           <Content />
         </div>
       </div>
-    </article>
+    </div>
   </Container>
 </PageLayout>

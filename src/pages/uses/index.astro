@@ -4,12 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import Link from "@components/Link.astro";
-import { SITE, SOCIALS } from "@consts";
-
-const USES = {
-  TITLE: "Uses",
-  DESCRIPTION: "A living index of the physical hardware, everyday carry, digital tools, and self-hosted infrastructure I use daily.",
-};
+import { SITE, SOCIALS, USES } from "@consts";
 
 const allGear = (await getCollection("uses", ({ data }) => !data.draft));
 

@@ -74,9 +74,10 @@ const projectsData = projects.map((p, index) => {
         {projectsData.map((project) =>
           project.isFeatured ? (
             /* NEWEST PROJECT: FULL-WIDTH FEATURED TILE */
-            <article
-              onclick={`window.openProjectModal('${project.id}')`}
-              class="sm:col-span-2 group cursor-pointer rounded-2xl border border-black/10 bg-white/80 p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 space-y-4"
+            <a
+              href={project.url}
+              onclick={`return window.openProjectModal(event, '${project.id}')`}
+              class="sm:col-span-2 group rounded-2xl border border-black/10 bg-white/80 p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 space-y-4"
             >
               <div class="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-black/10 dark:ring-white/10 flex flex-col justify-between p-5 text-white bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-950">
                 {project.image && (
@@ -132,12 +133,13 @@ const projectsData = projects.map((p, index) => {
                   →
                 </span>
               </div>
-            </article>
+            </a>
           ) : (
             /* STANDARD 2-COLUMN GRID TILE */
-            <article
-              onclick={`window.openProjectModal('${project.id}')`}
-              class="group cursor-pointer rounded-2xl border border-black/10 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 flex flex-col justify-between space-y-4"
+            <a
+              href={project.url}
+              onclick={`return window.openProjectModal(event, '${project.id}')`}
+              class="group rounded-2xl border border-black/10 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 flex flex-col justify-between space-y-4"
             >
               <div class="space-y-3.5">
                 <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-900 p-4 flex flex-col justify-between text-white ring-1 ring-black/5 dark:ring-white/10 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950">
@@ -190,7 +192,7 @@ const projectsData = projects.map((p, index) => {
                 <span>{project.date}</span>
                 <span>Inspect ↗</span>
               </div>
-            </article>
+            </a>
           )
         )}
       </section>
@@ -273,10 +275,12 @@ const projectsData = projects.map((p, index) => {
     });
   }
 
-  window.openProjectModal = function(id) {
+  window.openProjectModal = function(event, id) {
+    // Let new-tab / new-window clicks follow the link as normal
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return true;
     const p = window.PROJECT_MAP[id];
     const modal = document.getElementById('project-modal');
-    if (!p || !modal) return;
+    if (!p || !modal) return true;
 
     document.getElementById('modal-date').textContent = `PROJECT // ${p.indexNum} • ${p.date}`;
     document.getElementById('modal-title').textContent = p.title;
@@ -300,16 +304,17 @@ const projectsData = projects.map((p, index) => {
       linksBox.classList.remove('hidden');
       linksBox.classList.add('flex');
       if (p.demoURL) {
-        linksBox.innerHTML += `<a href="${p.demoURL}" target="_blank" class="underline underline-offset-4 hover:text-emerald-500">Live Demo ↗</a>`;
+        linksBox.innerHTML += `<a href="${p.demoURL}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-500">Live Demo ↗</a>`;
       }
       if (p.repoURL) {
-        linksBox.innerHTML += `<a href="${p.repoURL}" target="_blank" class="underline underline-offset-4 hover:text-emerald-500">Source / Repo ↗</a>`;
+        linksBox.innerHTML += `<a href="${p.repoURL}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-500">Source / Repo ↗</a>`;
       }
     } else {
       linksBox.classList.add('hidden');
     }
 
     modal.showModal();
+    return false;
   };
 
   window.closeProjectModal = function() {

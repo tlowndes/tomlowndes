@@ -30,12 +30,12 @@ export const PROJECTS: Metadata = {
 
 export const USES: Metadata = {
   TITLE: "Uses",
-  DESCRIPTION: "Digital Mise-en-Place: The Air-Gapped Rescue Kit on My Keychain.",
+  DESCRIPTION: "A living index of the physical hardware, everyday carry, digital tools, and self-hosted infrastructure I use daily.",
 };
 
 export const NOW: Metadata = {
   TITLE: "Now",
-  DESCRIPTION: "What im doing.",
+  DESCRIPTION: "What I'm focused on right now.",
 };
 
 export const SOCIALS: Socials = [
@@ -45,7 +45,7 @@ export const SOCIALS: Socials = [
   },
   { 
     NAME: "github",
-    HREF: "https://github.com/tomlowndes"
+    HREF: "https://github.com/tlowndes"
   },
   { 
     NAME: "linkedin",

@@ -19,9 +19,10 @@ type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
 const { Content } = await project.render();
+const shareImage = project.data.image ?? project.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
 ---
 
-<PageLayout title={project.data.title} description={project.data.description}>
+<PageLayout title={project.data.title} description={project.data.description} image={shareImage}>
   <Container>
     <div class="animate">
       <BackToPrev href="/projects">
