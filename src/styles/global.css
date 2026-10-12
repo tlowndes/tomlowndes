@@ -70,6 +70,24 @@ html.js .animate.show {
   }
 }
 
+@media print {
+  html.js .animate {
+    @apply opacity-100 translate-y-0 transition-none;
+  }
+  @page {
+    margin: 12mm 12mm;
+  }
+  html {
+    font-size: 13px;
+  }
+  body {
+    @apply bg-white;
+  }
+  main {
+    @apply py-0;
+  }
+}
+
 html #back-to-top {
   @apply opacity-0 pointer-events-none;
 }

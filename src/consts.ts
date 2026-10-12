@@ -38,6 +38,19 @@ export const NOW: Metadata = {
   DESCRIPTION: "What I'm focused on right now.",
 };
 
+export const CONTACT: Metadata = {
+  TITLE: "Contact",
+  DESCRIPTION: "Get in touch about design roles, freelance work or collaborations.",
+};
+
+// Web3Forms access key. Public by design: it only lets the form send to the inbox it was created for.
+export const WEB3FORMS_KEY = "2b88b315-cd04-4d42-81fe-fc3899e7ad14";
+
+export const CV: Metadata = {
+  TITLE: "CV",
+  DESCRIPTION: "Senior creative and multimedia designer with 13+ years across brand, print, packaging, digital and video. CV and portfolio downloads.",
+};
+
 export const SOCIALS: Socials = [
   { 
     NAME: "mastodon",
