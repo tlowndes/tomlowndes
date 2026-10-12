@@ -1,0 +1,23 @@
+---
+type Props = {
+  title: string;
+  href?: string;
+  linkLabel?: string;
+  id?: string;
+};
+
+const { title, href, linkLabel, id } = Astro.props;
+---
+
+<div class="flex items-center gap-3">
+  <h2 id={id} class="font-mono text-xs font-semibold uppercase tracking-wider text-black/70 dark:text-white/70">
+    {title}
+  </h2>
+  <div class="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
+  {href && (
+    <a href={href} class="font-mono text-[11px] text-black/45 dark:text-white/45 hover:text-black dark:hover:text-white transition">
+      {linkLabel}
+    </a>
+  )}
+  <slot />
+</div>

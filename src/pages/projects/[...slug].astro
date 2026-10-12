@@ -4,64 +4,121 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
-import Link from "@components/Link.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import ContactBlock from "@components/ContactBlock.astro";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  return projects.map((project) => ({
+  return projects.map((project, i) => ({
     params: { slug: project.slug },
-    props: project,
+    props: { project, index: i, newer: projects[i - 1], older: projects[i + 1] },
   }));
 }
-type Props = CollectionEntry<"projects">;
+type Props = {
+  project: CollectionEntry<"projects">;
+  index: number;
+  newer?: CollectionEntry<"projects">;
+  older?: CollectionEntry<"projects">;
+};
 
-const project = Astro.props;
+const { project, index, newer, older } = Astro.props;
 const { Content } = await project.render();
 const shareImage = project.data.image ?? project.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
+// Only show a hero when the front matter image isn't already in the body
+const hero = project.data.image && !project.body.includes(project.data.image) ? project.data.image : null;
+const indexNum = String(index + 1).padStart(2, "0");
+const links = [
+  project.data.demoURL && { href: project.data.demoURL, label: "Visit live site" },
+  project.data.repoURL && { href: project.data.repoURL, label: "View source" },
+].filter(Boolean) as { href: string; label: string }[];
+const siblings = [
+  older && { label: "← Previous project", entry: older },
+  newer && { label: "Next project →", entry: newer },
+].filter(Boolean) as { label: string; entry: CollectionEntry<"projects"> }[];
 ---
 
 <PageLayout title={project.data.title} description={project.data.description} image={shareImage}>
   <Container>
-    <div class="animate">
-      <BackToPrev href="/projects">
-        Back to projects
-      </BackToPrev>
-    </div>
-    <div class="space-y-1 my-10">
-      <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          {project.data.date.getFullYear()}
-        </div>
-        &bull;
-        <div class="font-base text-sm">
-          {readingTime(project.body)}
-        </div>
+    <div class="space-y-12">
+      <div class="animate">
+        <BackToPrev href="/projects">
+          Back to projects
+        </BackToPrev>
       </div>
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
-        {project.data.title}
-      </div>
-      {(project.data.demoURL || project.data.repoURL) && (
-        <nav class="animate flex gap-1">
-          {project.data.demoURL && (
-            <Link href={project.data.demoURL} external>
-              demo
-            </Link>
-          )}
-          {project.data.demoURL && project.data.repoURL && (
-            <span>/</span>
-          )}
-          {project.data.repoURL && (
-            <Link href={project.data.repoURL} external>
-              repo
-            </Link>
-          )}
+
+      <!-- Header -->
+      <section class="animate space-y-4 border-b border-black/10 pb-8 dark:border-white/10">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+          <span>Case Study {indexNum}</span>
+          <span>//</span>
+          <span>{project.data.date.getFullYear()}</span>
+          <span>//</span>
+          <span>{readingTime(project.body)}</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+          {project.data.title}
+        </h1>
+        <p class="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+          {project.data.description}
+        </p>
+        {links.length > 0 && (
+          <div class="flex flex-wrap gap-2 pt-1">
+            {links.map((link, i) => (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={i === 0
+                  ? "rounded-full bg-black px-4 py-1.5 text-xs font-semibold text-white hover:opacity-80 dark:bg-white dark:text-black transition"
+                  : "rounded-full border border-black/15 px-4 py-1.5 text-xs font-semibold text-black hover:border-black/40 dark:border-white/15 dark:text-white dark:hover:border-white/40 transition"}
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {hero && (
+        <div class="animate overflow-hidden rounded-2xl border border-black/10 bg-neutral-900 dark:border-white/10">
+          <img src={hero} alt="" class="h-auto w-full" />
+        </div>
+      )}
+
+      <article class="animate">
+        <Content />
+      </article>
+
+      <!-- More work -->
+      {siblings.length > 0 && (
+        <nav class="animate space-y-4" aria-label="More projects">
+          <SectionHeading title="More work" href="/projects" linkLabel="All projects →" />
+          <ul class="grid gap-3 sm:grid-cols-2">
+            {siblings.map(({ label, entry }) => (
+              <li>
+                <a
+                  href={`/projects/${entry.slug}`}
+                  class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
+                >
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">{label}</span>
+                  <span class="text-sm font-semibold text-black dark:text-white group-hover:underline underline-offset-4">
+                    {entry.data.title}
+                  </span>
+                  <span class="text-xs text-black/65 dark:text-white/65 line-clamp-2 leading-relaxed">
+                    {entry.data.description}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
       )}
+
+      <ContactBlock title="Like what you see?">
+        I'm looking for my next design role. If this is the kind of work your team needs, I'd love to talk.
+      </ContactBlock>
     </div>
-    <article class="animate">
-      <Content />
-    </article>
   </Container>
 </PageLayout>

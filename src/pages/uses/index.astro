@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
-import Link from "@components/Link.astro";
-import { SITE, SOCIALS, USES } from "@consts";
+import ContactBlock from "@components/ContactBlock.astro";
+import { USES } from "@consts";
 
 const allGear = (await getCollection("uses", ({ data }) => !data.draft));
 
@@ -120,30 +120,9 @@ const categories = [
         })}
       </div>
 
-      <!-- Social / Contact Footer -->
-      <section class="space-y-4 border-t border-black/10 pt-8 dark:border-white/10">
-        <h3 class="text-sm font-semibold text-black dark:text-white">
-          Curious about a specific tool or configuration?
-        </h3>
-        <p class="text-xs text-black/75 sm:text-sm dark:text-white/75">
-          Reach out if you'd like a config breakdown, a copy of the offline HTML terminal boilerplate, or to discuss systems architecture.
-        </p>
-        <ul class="flex flex-wrap gap-2 text-xs">
-          {SOCIALS.map((SOCIAL) => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {"/"}
-            </li>
-          ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
-      </section>
+      <ContactBlock title="Curious about a specific tool or configuration?">
+        Reach out if you'd like a config breakdown, a copy of the offline HTML terminal boilerplate, or to discuss systems architecture.
+      </ContactBlock>
     </div>
   </Container>
 </PageLayout>

@@ -5,46 +5,97 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import ContactBlock from "@components/ContactBlock.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  return posts.map((post) => ({
+  return posts.map((post, i) => ({
     params: { slug: post.slug },
-    props: post,
+    props: { post, newer: posts[i - 1], older: posts[i + 1] },
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = {
+  post: CollectionEntry<"blog">;
+  newer?: CollectionEntry<"blog">;
+  older?: CollectionEntry<"blog">;
+};
 
-const post = Astro.props;
+const { post, newer, older } = Astro.props;
 const { Content } = await post.render();
 const shareImage = post.data.image ?? post.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
+const siblings = [
+  older && { label: "← Older", entry: older },
+  newer && { label: "Newer →", entry: newer },
+].filter(Boolean) as { label: string; entry: CollectionEntry<"blog"> }[];
 ---
 
 <PageLayout title={post.data.title} description={post.data.description} image={shareImage}>
   <Container>
-    <div class="animate">
-      <BackToPrev href="/blog">
-        Back to blog
-      </BackToPrev>
-    </div>
-    <div class="space-y-1 my-10">
-      <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
+    <div class="space-y-12">
+      <div class="animate">
+        <BackToPrev href="/blog">
+          Back to field notes
+        </BackToPrev>
+      </div>
+
+      <!-- Header -->
+      <section class="animate space-y-4 border-b border-black/10 pb-8 dark:border-white/10">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+          <span>Field Note</span>
+          <span>//</span>
           <FormattedDate date={post.data.date} />
+          <span>//</span>
+          <span>{readingTime(post.body)}</span>
         </div>
-        &bull;
-        <div class="font-base text-sm">
-          {readingTime(post.body)}
-        </div>
-      </div>
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
-        {post.data.title}
-      </div>
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+          {post.data.title}
+        </h1>
+        <p class="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+          {post.data.description}
+        </p>
+        {post.data.tags && post.data.tags.length > 0 && (
+          <ul class="flex flex-wrap gap-1.5">
+            {post.data.tags.map((tag) => (
+              <li class="rounded bg-black/5 dark:bg-white/10 px-2 py-0.5 font-mono text-[10px] text-black/70 dark:text-white/70">
+                #{tag}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <article class="animate">
+        <Content />
+      </article>
+
+      <!-- More notes -->
+      {siblings.length > 0 && (
+        <nav class="animate space-y-4" aria-label="More field notes">
+          <SectionHeading title="Keep reading" href="/blog" linkLabel="All posts →" />
+          <ul class="grid gap-3 sm:grid-cols-2">
+            {siblings.map(({ label, entry }) => (
+              <li>
+                <a
+                  href={`/blog/${entry.slug}`}
+                  class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
+                >
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">{label}</span>
+                  <span class="text-sm font-semibold text-black dark:text-white group-hover:underline underline-offset-4">
+                    {entry.data.title}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <ContactBlock title="Thanks for reading">
+        If this was useful, or you think I've got it wrong, I'd love to hear from you.
+      </ContactBlock>
     </div>
-    <article class="animate">
-      <Content />
-    </article>
   </Container>
 </PageLayout>
