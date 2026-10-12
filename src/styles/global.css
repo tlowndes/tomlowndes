@@ -75,6 +75,7 @@ html.js .animate.show {
     @apply opacity-100 translate-y-0 transition-none;
   }
   @page {
+    size: A4;
     margin: 12mm 12mm;
   }
   html {
