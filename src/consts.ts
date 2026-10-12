@@ -44,7 +44,7 @@ export const CONTACT: Metadata = {
 };
 
 // Web3Forms access key. Public by design: it only lets the form send to the inbox it was created for.
-export const WEB3FORMS_KEY = "REPLACE_WITH_WEB3FORMS_KEY";
+export const WEB3FORMS_KEY = "2b88b315-cd04-4d42-81fe-fc3899e7ad14";
 
 export const CV: Metadata = {
   TITLE: "CV",
