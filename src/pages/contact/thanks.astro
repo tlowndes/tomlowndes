@@ -1,0 +1,24 @@
+---
+import Container from "@components/Container.astro";
+import BackToPrev from "@components/BackToPrev.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+---
+
+<PageLayout title="Thanks" description="Your message has been sent.">
+  <Container>
+    <div class="animate mb-8">
+      <BackToPrev href="/">
+        Back to home
+      </BackToPrev>
+    </div>
+    <section class="animate space-y-5">
+      <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+        Contact // Sent
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+        Thanks <span class="font-serif italic font-normal text-black/65 dark:text-white/65">your message is on its way.</span>
+      </h1>
+      <p class="text-black/75 dark:text-white/75">I'll reply within a couple of working days.</p>
+    </section>
+  </Container>
+</PageLayout>

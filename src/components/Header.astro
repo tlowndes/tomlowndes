@@ -8,13 +8,14 @@ const NAV = [
   { href: "/blog", label: "Blog" },
   { href: "/uses", label: "Uses" },
   { href: "/now", label: "Now" },
+  { href: "/cv", label: "CV" },
 ];
 
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 ---
 
-<header class="border-b border-black/5 dark:border-white/5">
+<header class="print:hidden border-b border-black/5 dark:border-white/5">
   <Container>
     <div class="flex flex-wrap items-center justify-between gap-y-2">
       <a

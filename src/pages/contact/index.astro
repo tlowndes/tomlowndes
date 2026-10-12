@@ -1,0 +1,129 @@
+---
+import Container from "@components/Container.astro";
+import BackToPrev from "@components/BackToPrev.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+
+import { CONTACT, SITE, SOCIALS, WEB3FORMS_KEY } from "@consts";
+
+const field =
+  "w-full rounded-md border border-black/15 bg-white/60 px-3 py-2 text-sm text-black placeholder:text-black/35 focus:border-black/50 focus:outline-none dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/35 dark:focus:border-white/50 transition";
+const label = "font-mono text-[11px] uppercase tracking-wider text-black/55 dark:text-white/55";
+---
+
+<PageLayout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
+  <Container>
+    <div class="animate mb-8">
+      <BackToPrev href="/">
+        Back to home
+      </BackToPrev>
+    </div>
+    <div class="space-y-14">
+      <!-- Header -->
+      <section class="animate space-y-5 border-b border-black/10 pb-8 dark:border-white/10">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+          Contact // Replies within a couple of working days
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+          Say hello <span class="font-serif italic font-normal text-black/65 dark:text-white/65">about a role, a project or anything else.</span>
+        </h1>
+        <p class="text-black/75 dark:text-white/75">
+          Use the form below, or email <a href={`mailto:${SITE.EMAIL}`} class="underline decoration-black/25 underline-offset-2 hover:text-black dark:decoration-white/40 dark:hover:text-white">{SITE.EMAIL}</a> directly.
+        </p>
+      </section>
+
+      <section class="animate space-y-6">
+        <SectionHeading title="01. Message" />
+        <form
+          id="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="space-y-5"
+        >
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="New message from tomlowndes.co.uk" />
+          <input type="hidden" name="from_name" value="tomlowndes.co.uk" />
+          <input type="hidden" name="redirect" value="https://tomlowndes.co.uk/contact/thanks" />
+          <!-- Honeypot: real people never see or fill this -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off" />
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="space-y-1.5">
+              <label for="name" class={label}>Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" class={field} />
+            </div>
+            <div class="space-y-1.5">
+              <label for="email" class={label}>Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" class={field} />
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label for="message" class={label}>Message</label>
+            <textarea id="message" name="message" rows="7" required class={field}></textarea>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <button
+              type="submit"
+              class="rounded-full bg-black px-4 py-1.5 text-xs font-semibold text-white hover:opacity-80 disabled:opacity-50 dark:bg-white dark:text-black transition"
+            >
+              Send message
+            </button>
+            <p id="form-status" role="status" aria-live="polite" class="font-mono text-[11px] text-black/55 dark:text-white/55"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="animate space-y-4">
+        <SectionHeading title="02. Elsewhere" />
+        <ul class="flex flex-wrap gap-1.5">
+          {SOCIALS.map((SOCIAL) => (
+            <li>
+              <a
+                href={SOCIAL.HREF}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label={`${SITE.NAME} on ${SOCIAL.NAME} (opens in a new tab)`}
+                class="inline-block rounded-full border border-black/15 px-3 py-1 font-mono text-[11px] text-black/65 hover:border-black/40 hover:text-black dark:border-white/15 dark:text-white/65 dark:hover:border-white/40 dark:hover:text-white transition"
+              >
+                {SOCIAL.NAME} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>
+
+<script>
+  // Without JS the form posts straight to Web3Forms and redirects to /contact/thanks.
+  // With JS we send it in the background and show the result inline.
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const button = form.querySelector("button[type=submit]") as HTMLButtonElement;
+    button.disabled = true;
+    if (status) status.textContent = "Sending…";
+
+    try {
+      const data = Object.fromEntries(new FormData(form));
+      delete (data as Record<string, unknown>).redirect;
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message);
+      form.reset();
+      if (status) status.textContent = "Thanks, your message is on its way.";
+    } catch {
+      if (status) status.textContent = "Sorry, that didn't send. Please email me instead.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
