@@ -1,6 +1,6 @@
 ---
 title: "Dove Technology: Website & Video"
-description: "Redesigning Dove Technology's corporate website, which cut bounce rate by 25% and lifted engagement by 40%"
+description: "Redesigning Dove Technology's corporate website in WordPress and Elementor, with my own product photography. Bounce rate fell 25% and engagement rose 40%."
 date: "Mar 18 2024"
 demoURL: "https://dovetechnology.com"
 ---

@@ -25,7 +25,7 @@ export const WORK: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "Selected design work: brand systems, print production, digital interfaces and the case studies behind them.",
+  DESCRIPTION: "Selected design work by Tom Lowndes: brand systems, print production, digital interfaces, small apps and the case studies behind them.",
 };
 
 export const USES: Metadata = {
@@ -35,12 +35,12 @@ export const USES: Metadata = {
 
 export const NOW: Metadata = {
   TITLE: "Now",
-  DESCRIPTION: "What I'm focused on right now.",
+  DESCRIPTION: "What I'm focused on right now: looking for my next design role, building small apps, keeping a calm digital setup, home server plans and current reading.",
 };
 
 export const CONTACT: Metadata = {
   TITLE: "Contact",
-  DESCRIPTION: "Get in touch about design roles, freelance work or collaborations.",
+  DESCRIPTION: "Get in touch with Tom Lowndes about design roles, freelance work or collaborations. Use the form or email, and expect a reply within a couple of working days.",
 };
 
 // Web3Forms access key. Public by design: it only lets the form send to the inbox it was created for.

@@ -43,7 +43,7 @@ const siblings = [
   <Container>
     <div class="space-y-12">
       <div class="animate">
-        <BackToPrev href="/projects">
+        <BackToPrev href="/projects/">
           Back to projects
         </BackToPrev>
       </div>
@@ -94,12 +94,12 @@ const siblings = [
       <!-- More work -->
       {siblings.length > 0 && (
         <nav class="animate space-y-4" aria-label="More projects">
-          <SectionHeading title="More work" href="/projects" linkLabel="All projects →" />
+          <SectionHeading title="More work" href="/projects/" linkLabel="All projects →" />
           <ul class="grid gap-3 sm:grid-cols-2">
             {siblings.map(({ label, entry }) => (
               <li>
                 <a
-                  href={`/projects/${entry.slug}`}
+                  href={`/projects/${entry.slug}/`}
                   class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                 >
                   <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">{label}</span>
