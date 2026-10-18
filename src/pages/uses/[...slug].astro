@@ -24,10 +24,10 @@ const purchaseUrl = item.data.buyLink || item.data.link;
 const purchaseText = item.data.buyLabel || "Buy / View Product";
 ---
 
-<PageLayout title={`${item.data.title} | Uses`} description={item.data.why}>
+<PageLayout title={`${item.data.metaTitle ?? item.data.title} | Uses`} description={item.data.description ?? item.data.why}>
   <Container>
     <div class="animate mb-8">
-      <BackToPrev href="/uses">
+      <BackToPrev href="/uses/">
         Back to Uses
       </BackToPrev>
     </div>

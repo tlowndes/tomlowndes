@@ -1,6 +1,6 @@
 ---
 title: "Auto Folder Creator"
-description: "A desktop app that builds a consistent project folder structure, job number and brief in one keystroke"
+description: "A Windows desktop app that builds a consistent project folder structure, job number and Word brief in one keystroke, with a live preview first."
 date: "Oct 7 2026"
 repoURL: "https://github.com/tlowndes/Auto-folder-creation/tree/desktop-app"
 ---

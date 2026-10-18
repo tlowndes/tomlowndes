@@ -1,5 +1,6 @@
 ---
 title: "Field Notes (Kraft Dot-Grid 3.5\" x 5.5\")"
+metaTitle: "Field Notes Kraft Dot-Grid Notebook"
 category: "sensory"
 role: "Working Memory Offload"
 badge: "Zero-Notification Scratchpad"

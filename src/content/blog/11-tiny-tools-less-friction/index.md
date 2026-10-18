@@ -1,5 +1,6 @@
 ---
 title: "Tiny Tools, Less Friction: Two Apps I Built to Stop Starting From Zero"
+metaTitle: "Tiny Tools, Less Friction: Two Apps I Built"
 description: "How a folder-making script grew into a desktop app, and why I built an Android app that drops tasks and links straight into my Obsidian vault."
 date: 2026-10-07
 tags: [tech, workflow, design, ui/ux, coding]
@@ -78,4 +79,4 @@ Looking at the two side by side, they're the same idea:
 
 Both apps are on GitHub: the [folder app](https://github.com/tlowndes/Auto-folder-creation/tree/desktop-app) and [Vault Capture](https://github.com/tlowndes/ObsidianCapture). I'll keep building more tools for my own use. If something annoys me enough twice, it's probably getting an app.
 
-Small, boring tools beat big clever systems every time. You can see both on my [projects page](/projects).
+Small, boring tools beat big clever systems every time. You can see both on my [projects page](/projects/).
