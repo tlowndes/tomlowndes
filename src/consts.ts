@@ -9,8 +9,8 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Tom Lowndes | Creative designer",
-  DESCRIPTION: "Creative designer in Staffordshire, open to remote and in-house design roles. Portfolio, field notes and experience.",
+  TITLE: "Tom Lowndes | Designer in Cannock, Staffordshire",
+  DESCRIPTION: "Freelance app, brand and web designer in Cannock, Staffordshire. Working with businesses in Hednesford, Rugeley, Lichfield, Stafford and Walsall, and with remote teams.",
 };
 
 export const BLOG: Metadata = {
