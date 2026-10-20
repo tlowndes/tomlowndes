@@ -10,7 +10,7 @@ buyLink: "https://www.anker.com/uk/products/a1653-anker-nano-power-bank-built-in
 buyLabel: "Anker UK Store"
 ---
 
-### Immediate Connector Power
+## Immediate Connector Power
 
 Managing long, tangled cables while on the move adds unnecessary executive strain[cite: 5].
 

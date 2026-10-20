@@ -9,7 +9,7 @@ buyLink: "https://www.amazon.co.uk/s?k=vafoton+240w+short+usb+c+cable+21cm"
 buyLabel: "View Cable on Amazon UK"
 ---
 
-### System Architecture
+## System Architecture
 
 Keys are universally the first casualty of an absent mind[cite: 7]. Tying long, messy cords to your pockets invites friction, while leaving cables in bags ensures you never have them when battery panic strikes[cite: 5].
 

@@ -10,7 +10,7 @@ buyLink: "https://uk.olight.com/store/arkpro-edc-torch-1500-lumens-uv-green-lase
 buyLabel: "Olight UK Store"
 ---
 
-### Purpose-Built Illumination
+## Purpose-Built Illumination
 
 Using a mobile phone as an inspection light is awkward, provides poor focus, and burns valuable battery[cite: 5, 7].
 

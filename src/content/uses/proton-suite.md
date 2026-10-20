@@ -10,7 +10,7 @@ buyLink: "https://proton.me/"
 buyLabel: "Proton.me Official Site"
 ---
 
-### Zero-Knowledge Infrastructure
+## Zero-Knowledge Infrastructure
 
 - **Communications:** End-to-end encrypted email across custom domains through Swiss privacy infrastructure[cite: 7].
 - **Storage:** **Proton Drive** provides encrypted daily backups and document syncing across devices[cite: 7].

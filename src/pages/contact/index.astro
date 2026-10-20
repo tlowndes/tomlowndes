@@ -7,8 +7,8 @@ import SectionHeading from "@components/SectionHeading.astro";
 import { CONTACT, SITE, SOCIALS, WEB3FORMS_KEY } from "@consts";
 
 const field =
-  "w-full rounded-md border border-black/15 bg-white/60 px-3 py-2 text-sm text-black placeholder:text-black/35 focus:border-black/50 focus:outline-none dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/35 dark:focus:border-white/50 transition";
-const label = "font-mono text-[11px] uppercase tracking-wider text-black/55 dark:text-white/55";
+  "w-full rounded-md border border-black/15 bg-white/60 px-3 py-2 text-sm text-black placeholder:text-black/65 focus:border-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:focus-visible:outline-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/65 dark:focus:border-white/50 transition";
+const label = "font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65";
 ---
 
 <PageLayout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
@@ -21,7 +21,7 @@ const label = "font-mono text-[11px] uppercase tracking-wider text-black/55 dark
     <div class="space-y-14">
       <!-- Header -->
       <section class="animate space-y-5 border-b border-black/10 pb-8 dark:border-white/10">
-        <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+        <span class="font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
           Contact // Replies within a couple of working days
         </span>
         <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
@@ -83,7 +83,7 @@ const label = "font-mono text-[11px] uppercase tracking-wider text-black/55 dark
             >
               Send message
             </button>
-            <p id="form-status" role="status" aria-live="polite" class="font-mono text-[11px] text-black/55 dark:text-white/55"></p>
+            <p id="form-status" role="status" aria-live="polite" class="font-mono text-[11px] text-black/65 dark:text-white/65"></p>
           </div>
         </form>
       </section>

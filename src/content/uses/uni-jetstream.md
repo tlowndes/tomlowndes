@@ -11,7 +11,7 @@ buyLink: "https://cultpens.com/products/uni-ball-jetstream-4-1-multi-pen"
 buyLabel: "Cult Pens UK"
 ---
 
-### The Workhorse Writing Rig
+## The Workhorse Writing Rig
 
 Carrying loose individual pens leads to rattling, lost caps, and wasted time digging into pockets[cite: 4, 7].
 

@@ -30,7 +30,7 @@ const categories = [
       <!-- Header -->
       <section class="animate space-y-4 border-b border-black/10 pb-8 dark:border-white/10">
         <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-widest text-black/50 dark:text-white/50">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
             Mise-en-Place // {allGear.length} Items Catalogued
           </span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:text-emerald-300">
@@ -52,10 +52,11 @@ const categories = [
         <div class="pt-2">
           <input
             id="uses-search-input"
+            aria-label="Search uses"
             type="search"
             placeholder="Search items by name, role, or spec..."
             oninput="window.filterUsesList()"
-            class="w-full max-w-sm rounded-xl border border-black/10 bg-white/80 px-3.5 py-2 text-xs text-black placeholder:text-black/40 transition focus:border-black/30 focus:outline-none dark:border-white/10 dark:bg-neutral-900/70 dark:text-white dark:placeholder:text-white/40 dark:focus:border-white/30"
+            class="w-full max-w-sm rounded-xl border border-black/10 bg-white/80 px-3.5 py-2 text-xs text-black placeholder:text-black/65 transition focus:border-black/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:focus-visible:outline-white dark:border-white/10 dark:bg-neutral-900/70 dark:text-white dark:placeholder:text-white/65 dark:focus:border-white/30"
           />
         </div>
       </section>
@@ -72,7 +73,7 @@ const categories = [
                 <h2 class="font-mono text-xs font-semibold uppercase tracking-wider text-black/70 dark:text-white/70">
                   {cat.label}
                 </h2>
-                <span class="font-mono text-[10px] text-black/40 dark:text-white/40">
+                <span class="font-mono text-[10px] text-black/65 dark:text-white/65">
                   {items.length} {items.length === 1 ? "item" : "items"}
                 </span>
               </div>
@@ -95,7 +96,7 @@ const categories = [
                     )}
 
                     <div class="p-4 space-y-2">
-                      <div class="flex items-center justify-between font-mono text-[10px] text-black/50 dark:text-white/50">
+                      <div class="flex items-center justify-between font-mono text-[10px] text-black/65 dark:text-white/65">
                         <span>{item.data.role}</span>
                         <span class="rounded bg-black/5 px-1.5 py-0.5 dark:bg-white/10">{item.data.badge}</span>
                       </div>
@@ -109,7 +110,7 @@ const categories = [
                       </p>
                     </div>
 
-                    <div class="px-4 pb-3 pt-1 flex items-center justify-end font-mono text-[11px] text-black/40 group-hover:text-black dark:text-white/40 dark:group-hover:text-white transition">
+                    <div class="px-4 pb-3 pt-1 flex items-center justify-end font-mono text-[11px] text-black/65 group-hover:text-black dark:text-white/65 dark:group-hover:text-white transition">
                       <span>Read notes →</span>
                     </div>
                   </a>

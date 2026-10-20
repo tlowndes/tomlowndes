@@ -10,7 +10,7 @@ buyLink: "https://www.amazon.co.uk/s?k=swann+morton+retractable+scalpel"
 buyLabel: "Swann-Morton on Amazon UK"
 ---
 
-### Surgical Precision
+## Surgical Precision
 
 Carrying bulky, aggressive folding pocket blades invites unnecessary complications[cite: 4, 5]. The British-made **Swann-Morton Retractable Handle** provides precise cutting performance in a slim, non-threatening footprint[cite: 5, 7]:
 

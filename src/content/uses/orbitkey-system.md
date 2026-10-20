@@ -10,7 +10,7 @@ buyLink: "https://www.orbitkey.eu/collections/key-organiser"
 buyLabel: "Official Orbitkey Store"
 ---
 
-### Eliminating the Rattle
+## Eliminating the Rattle
 
 Standard keyrings are loud, scratch screens in pockets, and create continuous auditory static on walks[cite: 4, 7]. 
 

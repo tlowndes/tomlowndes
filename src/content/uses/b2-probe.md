@@ -10,7 +10,7 @@ buyLink: "https://stlth.black/"
 buyLabel: "STLTH Store"
 ---
 
-### The Fine Manipulation Probe
+## The Fine Manipulation Probe
 
 Finger nails break and full-sized pry bars are clumsy for delicate hardware[cite: 5]. The **B-2 Probe** is a precision micro-pick designed for tight spaces[cite: 5, 7]:
 
