@@ -1,6 +1,6 @@
 ---
 title: "10+ Years of designing!"
-description: "Reflecting on my time as a Creative Designer. In a few weeks, I’ll hit three years at Dove Technology."
+description: "Looking back on more than ten years as a designer: losing a job, starting in a warehouse at Dove Technology and working my way back into design."
 date: "05/08/2024"
 tags: [reflection, personal]
 ---

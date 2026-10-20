@@ -4,7 +4,7 @@ category: "carry"
 role: "Air-Gapped Field Station"
 badge: "Dual USB-C / USB-A • Ventoy"
 why: "Ensures diagnostic ISOs, vehicle schematics, and critical offline docs are accessible in milliseconds without network reliance."
-image: "/uses/sandisk.png"
+image: "/uses/sandisk.jpg"
 buyLink: "https://www.amazon.co.uk/dp/B0842P5GBQ"
 buyLabel: "Buy on Amazon UK"
 ---

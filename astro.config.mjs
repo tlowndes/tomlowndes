@@ -5,5 +5,16 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://tomlowndes.co.uk",
-  integrations: [mdx(), sitemap(), tailwind()],
+  // Cloudflare Pages serves /page/index.html at /page/ and 308s /page to it,
+  // so every internal link, canonical and sitemap URL uses the trailing slash.
+  trailingSlash: "always",
+  build: { format: "directory" },
+  integrations: [
+    mdx(),
+    sitemap({
+      // Form confirmation page: only reached after sending a message
+      filter: (page) => !page.includes("/contact/thanks/"),
+    }),
+    tailwind(),
+  ],
 });

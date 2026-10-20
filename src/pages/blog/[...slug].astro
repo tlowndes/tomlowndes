@@ -32,11 +32,11 @@ const siblings = [
 ].filter(Boolean) as { label: string; entry: CollectionEntry<"blog"> }[];
 ---
 
-<PageLayout title={post.data.title} description={post.data.description} image={shareImage} imageAlt={post.data.title} article={{ published: post.data.date }}>
+<PageLayout title={post.data.metaTitle ?? post.data.title} description={post.data.description} image={shareImage} imageAlt={post.data.title} article={{ published: post.data.date }}>
   <Container>
     <div class="space-y-12">
       <div class="animate">
-        <BackToPrev href="/blog">
+        <BackToPrev href="/blog/">
           Back to field notes
         </BackToPrev>
       </div>
@@ -74,12 +74,12 @@ const siblings = [
       <!-- More notes -->
       {siblings.length > 0 && (
         <nav class="animate space-y-4" aria-label="More field notes">
-          <SectionHeading title="Keep reading" href="/blog" linkLabel="All posts →" />
+          <SectionHeading title="Keep reading" href="/blog/" linkLabel="All posts →" />
           <ul class="grid gap-3 sm:grid-cols-2">
             {siblings.map(({ label, entry }) => (
               <li>
                 <a
-                  href={`/blog/${entry.slug}`}
+                  href={`/blog/${entry.slug}/`}
                   class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                 >
                   <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">{label}</span>

@@ -1,6 +1,7 @@
 ---
 title: "Automating File Organization in the Downloads Folder with Python"
-description: "Coding a Download folder cleaner in python."
+metaTitle: "Tidying My Downloads Folder with Python"
+description: "A Python script that watches my Downloads folder and moves each new file into the right place by type, using the watchdog library and a few simple rules."
 date: "08/06/2024"
 tags: [tech, workflow, design, ui/ux, coding]
 ---

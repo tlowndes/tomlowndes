@@ -1,6 +1,6 @@
 ---
 title: "My Second Brain - Obsidian"
-description: "Using Obsidian to store information in an easily accessible format."
+description: "How I use Obsidian as a second brain: daily notes, folders for projects, areas and resources, and a simple split between temporary and permanent ideas."
 date: "06/18/2024"
 tags: [workflow, obsidian]
 ---
