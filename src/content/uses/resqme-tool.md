@@ -10,7 +10,7 @@ buyLink: "https://www.amazon.co.uk/dp/B000IE0EIQ"
 buyLabel: "Buy Resqme on Amazon UK"
 ---
 
-### Safety Without the Cosplay
+## Safety Without the Cosplay
 
 Most survival gear marketed online is heavy, performative tactical posturing[cite: 4]. The **Resqme tool** provides real-world vehicle escape utility without the baggage[cite: 5]:
 

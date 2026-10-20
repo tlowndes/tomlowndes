@@ -86,10 +86,10 @@ const experience = [
       <!-- Header -->
       <section class="animate space-y-5 border-b border-black/10 pb-8 dark:border-white/10 print:pb-5 print:space-y-3">
         <div class="flex flex-wrap items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
             CV // Updated {updated.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
           </span>
-          <span class="font-mono text-[11px] text-black/45 dark:text-white/45">
+          <span class="font-mono text-[11px] text-black/65 dark:text-white/65">
             Cannock, Staffordshire
           </span>
         </div>
@@ -141,7 +141,7 @@ const experience = [
         <dl class="grid gap-3 sm:grid-cols-[9rem_1fr] sm:gap-x-6 text-sm">
           {skills.map((skill) => (
             <>
-              <dt class="font-mono text-[11px] uppercase tracking-wider text-black/50 dark:text-white/50 sm:pt-0.5">{skill.label}</dt>
+              <dt class="font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65 sm:pt-0.5">{skill.label}</dt>
               <dd class="text-black/75 dark:text-white/75 -mt-2 sm:mt-0">{skill.text}</dd>
             </>
           ))}
@@ -156,11 +156,11 @@ const experience = [
             <li class="space-y-2 print:break-inside-avoid">
               <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 class="font-semibold text-black dark:text-white">{job.role}</h3>
-                <span class="font-mono text-[11px] uppercase tracking-wider text-black/45 dark:text-white/45">{job.dates}</span>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65">{job.dates}</span>
               </div>
               <p class="text-sm text-black/60 dark:text-white/60">
                 {job.company}
-                {job.note && <span class="text-black/45 dark:text-white/45"> // {job.note}</span>}
+                {job.note && <span class="text-black/65 dark:text-white/65"> // {job.note}</span>}
               </p>
               <ul class="list-disc pl-5 space-y-1.5 text-sm text-black/75 dark:text-white/75">
                 {job.points.map((point) => <li>{point}</li>)}
@@ -182,7 +182,7 @@ const experience = [
           <p class="text-black/75 dark:text-white/75">
             <strong class="font-semibold text-black dark:text-white">BA (Hons) Graphic Design</strong>, University of Salford
           </p>
-          <span class="font-mono text-[11px] uppercase tracking-wider text-black/45 dark:text-white/45">2009 – 2012</span>
+          <span class="font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65">2009 – 2012</span>
         </div>
       </section>
 
