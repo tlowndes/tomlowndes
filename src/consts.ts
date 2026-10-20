@@ -40,7 +40,7 @@ export const NOW: Metadata = {
 
 export const CONTACT: Metadata = {
   TITLE: "Contact",
-  DESCRIPTION: "Get in touch with Tom Lowndes about freelance projects, design roles or collaborations. Use the form or email, and expect a reply within a couple of working days.",
+  DESCRIPTION: "Get in touch with Tom Lowndes about design roles, freelance work or collaborations. Use the form or email, and expect a reply within a couple of working days.",
 };
 
 // Web3Forms access key. Public by design: it only lets the form send to the inbox it was created for.
