@@ -33,25 +33,37 @@ function getImage(entry: CollectionEntry<"projects">) {
   return entry.data.image || (bodyMatch ? bodyMatch[1] : null);
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Tom Lowndes",
+  url: "https://tomlowndes.co.uk/",
+  description: HOME.DESCRIPTION,
+  address: { "@type": "PostalAddress", addressLocality: "Cannock", addressRegion: "Staffordshire", addressCountry: "GB" },
+  areaServed: ["Cannock", "Hednesford", "Rugeley", "Lichfield", "Stafford", "Walsall"].map((name) => ({ "@type": "City", name })),
+  knowsAbout: ["App design", "UI design", "Branding", "Web design", "Social graphics"],
+};
+
 const shortDate = (date: Date) =>
   date.toLocaleDateString("en-GB", { year: "numeric", month: "short" });
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION} fullTitle>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <Container>
     <div class="space-y-14">
       <!-- Header -->
       <section class="animate space-y-5 border-b border-black/10 dark:border-white/10 pb-8">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
-            Creative Designer // Staffordshire, UK
+            Designer // Cannock, Staffordshire
           </span>
           <a
             href="#available"
             class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:text-emerald-300 hover:border-emerald-500/60 transition"
           >
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Open to new roles</span>
+            <span>Open to freelance and roles</span>
           </a>
         </div>
 
@@ -66,14 +78,25 @@ const shortDate = (date: Date) =>
           />
           <div class="flex-1 space-y-3">
             <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
-              Hi, I'm Tom. <span class="font-serif italic font-normal text-black/65 dark:text-white/65">I design things people use.</span>
+              Designer in Cannock, Staffordshire. <span class="font-serif italic font-normal text-black/65 dark:text-white/65">Open to freelance projects and design roles.</span>
             </h1>
             <p class="text-sm text-black/75 dark:text-white/75 leading-relaxed">
-              I'm a creative designer with over a decade of brand, print, web and video work behind me. I like crafting designs people love, untangling awkward technical problems and working with curious minds.
+              App and UI design, branding, websites and social graphics. I work with local businesses and remote teams.
             </p>
-            <p class="text-sm text-black/75 dark:text-white/75 leading-relaxed">
-              Every once in a while I write about the things that keep me busy and the lessons I've picked up along the way. I wouldn't bet on it being regular, though.
-            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href="/contact/?reason=freelance"
+                class="rounded-full bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-xs font-semibold hover:opacity-80 transition"
+              >
+                Get a quote
+              </a>
+              <a
+                href="/cv/"
+                class="rounded-full border border-black/15 dark:border-white/15 px-4 py-1.5 text-xs font-semibold text-black dark:text-white hover:border-black/40 dark:hover:border-white/40 transition"
+              >
+                View my CV
+              </a>
+            </div>
           </div>
         </div>
       </section>
