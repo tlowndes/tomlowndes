@@ -25,7 +25,7 @@ const label = "font-mono text-[11px] uppercase tracking-wider text-black/65 dark
           Contact // Replies within a couple of working days
         </span>
         <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
-          Say hello <span class="font-serif italic font-normal text-black/65 dark:text-white/65">about a role, a project or anything else.</span>
+          Say hello <span class="font-serif italic font-normal text-black/65 dark:text-white/65">about a project, a role or anything else.</span>
         </h1>
         <p class="text-black/75 dark:text-white/75">
           Use the form below, or email <a href={`mailto:${SITE.EMAIL}`} class="underline decoration-black/25 underline-offset-2 hover:text-black dark:decoration-white/40 dark:hover:text-white">{SITE.EMAIL}</a> directly.
@@ -55,6 +55,20 @@ const label = "font-mono text-[11px] uppercase tracking-wider text-black/65 dark
             <div class="space-y-1.5">
               <label for="email" class={label}>Email</label>
               <input id="email" name="email" type="email" required autocomplete="email" class={field} />
+            </div>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="space-y-1.5">
+              <label for="reason" class={label}>What is this about?</label>
+              <select id="reason" name="reason" class={field}>
+                <option value="Freelance enquiry">Freelance enquiry</option>
+                <option value="Job opportunity">Job opportunity</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+            <div class="space-y-1.5">
+              <label for="business" class={label}>Business name (optional)</label>
+              <input id="business" name="business" type="text" autocomplete="organization" class={field} />
             </div>
           </div>
           <div class="space-y-1.5">
@@ -101,6 +115,12 @@ const label = "font-mono text-[11px] uppercase tracking-wider text-black/65 dark
   // With JS we send it in the background and show the result inline.
   const form = document.getElementById("contact-form") as HTMLFormElement | null;
   const status = document.getElementById("form-status");
+
+  // Preselect "What is this about?" from ?reason=freelance|job|other
+  const reasons: Record<string, string> = { freelance: "Freelance enquiry", job: "Job opportunity", other: "Something else" };
+  const preset = reasons[new URLSearchParams(location.search).get("reason") ?? ""];
+  const reasonSelect = document.getElementById("reason") as HTMLSelectElement | null;
+  if (preset && reasonSelect) reasonSelect.value = preset;
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();

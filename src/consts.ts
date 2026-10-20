@@ -9,8 +9,8 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Tom Lowndes | Creative designer",
-  DESCRIPTION: "Creative designer in Staffordshire, open to remote and in-house design roles. Portfolio, field notes and experience.",
+  TITLE: "Tom Lowndes | Designer in Cannock, Staffordshire",
+  DESCRIPTION: "Freelance app, brand and web designer in Cannock, Staffordshire. Working with businesses in Hednesford, Rugeley, Lichfield, Stafford and Walsall, and with remote teams.",
 };
 
 export const BLOG: Metadata = {
@@ -40,7 +40,11 @@ export const NOW: Metadata = {
 
 export const CONTACT: Metadata = {
   TITLE: "Contact",
+<<<<<<< HEAD
   DESCRIPTION: "Get in touch with Tom Lowndes about design roles, freelance work or collaborations. Use the form or email, and expect a reply within a couple of working days.",
+=======
+  DESCRIPTION: "Get in touch about freelance projects, design roles or collaborations.",
+>>>>>>> claude/project-thread-qc9m5m
 };
 
 // Web3Forms access key. Public by design: it only lets the form send to the inbox it was created for.
