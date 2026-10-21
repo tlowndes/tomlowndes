@@ -18,11 +18,12 @@ interface Props {
   image?: string;
   imageAlt?: string;
   article?: { published: Date };
+  noindex?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/og-default.png", imageAlt = `${SITE.NAME}, creative designer`, article } = Astro.props;
+const { title, description, image = "/og-default.png", imageAlt = `${SITE.NAME}, creative designer`, article, noindex } = Astro.props;
 const imageURL = new URL(image, Astro.site);
 ---
 
@@ -48,6 +49,7 @@ const imageURL = new URL(image, Astro.site);
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Open Graph (LinkedIn, Slack, Facebook). Share images are always 1200x630 JPEG/PNG. -->
 <meta property="og:type" content={article ? "article" : "website"} />

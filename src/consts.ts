@@ -51,6 +51,11 @@ export const CV: Metadata = {
   DESCRIPTION: "Senior creative and multimedia designer with 13+ years across brand, print, packaging, digital and video. CV and portfolio downloads.",
 };
 
+export const SERVICES: Metadata = {
+  TITLE: "Freelance designer in Cannock, Staffordshire | Prices from £250",
+  DESCRIPTION: "Freelance app, brand, website and social graphics design from Cannock, Staffordshire. Clear starting prices and a fixed quote for every project.",
+};
+
 export const SOCIALS: Socials = [
   { 
     NAME: "mastodon",

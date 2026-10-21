@@ -12,15 +12,17 @@ type Props = {
   article?: { published: Date };
   // Use the title as-is, without the " | Tom Lowndes" suffix
   fullTitle?: boolean;
+  // Keep the page out of search results
+  noindex?: boolean;
 };
 
-const { title, description, image, imageAlt, article, fullTitle } = Astro.props;
+const { title, description, image, imageAlt, article, fullTitle, noindex } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} />
+    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} noindex={noindex} />
   </head>
   <body>
     <Header />
