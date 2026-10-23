@@ -5,8 +5,12 @@ import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import ContactBlock from "@components/ContactBlock.astro";
 import { USES } from "@consts";
+import { imageSize } from "@lib/imageSize";
 
 const allGear = (await getCollection("uses", ({ data }) => !data.draft));
+const sizes = Object.fromEntries(
+  await Promise.all(allGear.map(async (g) => [g.slug, await imageSize(g.data.image)])),
+);
 
 const categories = [
   { key: "carry", label: "01. On-Body Carry & The Split Rig" },
@@ -89,6 +93,10 @@ const categories = [
                         <img
                           src={item.data.image}
                           alt={item.data.title}
+                          width={sizes[item.slug].width}
+                          height={sizes[item.slug].height}
+                          loading="lazy"
+                          decoding="async"
                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                       </div>

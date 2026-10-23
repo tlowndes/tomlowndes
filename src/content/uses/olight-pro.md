@@ -4,7 +4,7 @@ category: "utility"
 role: "Optical Inspection"
 badge: "High-Output Dedicated Beam"
 why: "Phone flashlights are awkward, inefficient battery sinks."
-image: "https://cdn.olightstore.uk/image/3-z878cs.jpg"
+image: "/uses/olight-pro.webp"
 buyLink: "https://uk.olight.com/store/arkpro-edc-torch-1500-lumens-uv-green-laser-flat-unibody-light"
 buyLabel: "Olight UK Store"
 ---

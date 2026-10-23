@@ -4,7 +4,7 @@ category: "utility"
 role: "Fine Component Manipulation"
 badge: "Titanium Micro-Pry & Pick"
 why: "Saves fingernails from breaking on stubborn plastic tabs, SIM trays, or adhesive seals."
-image: "https://stlth.black/wp-content/uploads/2024/02/b-2-stlthblack.jpg"
+image: "/uses/b2-probe.webp"
 buyLink: "https://stlth.black/"
 buyLabel: "STLTH Store"
 ---

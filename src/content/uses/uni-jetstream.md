@@ -5,7 +5,7 @@ role: "All-in-One Writing Workhorse"
 badge: "4 Inks + 0.5mm Pencil + Eraser"
 why: "Eliminates having five loose pens rolling around the bottom of a pack."
 
-image: "/uses/Uni.jpg"
+image: "/uses/Uni.webp"
 buyLink: "https://cultpens.com/products/uni-ball-jetstream-4-1-multi-pen"
 buyLabel: "Cult Pens UK"
 ---

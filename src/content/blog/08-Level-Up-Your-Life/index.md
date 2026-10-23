@@ -30,7 +30,7 @@ As a designer, my brain thrives on the creative process, not on remembering the 
 
 For me, Obsidian is more than a note-taking app; it's a dynamic knowledge base. Here’s how I’m using it to build my toolboxes:
 
-![Obsidian Vault Image](/obsidian_toolbox.png)
+![Obsidian Vault Image](/obsidian_toolbox.webp)
 
 *   **Dedicated Folder:** I've created a "Toolboxes" folder in my vault, as you can see in the sidebar on the left, along with other folders like "Projects", "Areas" and "Notes".  This helps keep my various toolboxes organized.
 *   **Individual Files:** Each toolbox has its own file (e.g., "Morning Routine Toolbox," "Design Project Workflow," "Weekly Cleaning Toolbox").  The currently open file "Toolboxes" can be seen in the main section.

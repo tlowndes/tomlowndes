@@ -4,7 +4,7 @@ category: "security"
 role: "Primary Privacy Architecture"
 badge: "Zero-Knowledge Encryption"
 why: "Isolates private communications and client files from surveillance capitalism and data scraping."
-image: "https://static0.anpoimages.com/wordpress/wp-content/uploads/2023/11/cropped-sentinel-imagedark.jpg?q=50&fit=crop&w=1600&h=900&dpr=1.5"
+image: "/uses/proton-suite.webp"
 buyLink: "https://proton.me/"
 buyLabel: "Proton.me Official Site"
 ---

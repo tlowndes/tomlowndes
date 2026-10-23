@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
+import { imageSize } from "@lib/imageSize";
 
 export async function getStaticPaths() {
   const items = await getCollection("uses", ({ data }) => !data.draft);
@@ -18,6 +19,7 @@ type Props = {
 
 const { item } = Astro.props;
 const { Content } = await item.render();
+const { width, height } = await imageSize(item.data.image);
 
 // Supports either 'buyLink' or 'link' from frontmatter
 const purchaseUrl = item.data.buyLink || item.data.link;
@@ -62,6 +64,10 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
             <img
               src={item.data.image}
               alt={item.data.title}
+              width={width}
+              height={height}
+              loading="lazy"
+              decoding="async"
               class="h-auto max-h-[440px] w-full object-cover"
             />
           </div>

@@ -4,7 +4,7 @@ category: "carry"
 role: "Emergency Safety"
 badge: "Spring-Loaded • Glass & Belt"
 why: "Non-negotiable vehicle safety utility that adds near-zero weight or bulk to the physical key stack."
-image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.solidscrews.com%2Fwp-content%2Fuploads%2F2026%2F03%2F1774251801%2Fresqme-car-escape-tool-seatbelt-cutter-window-breaker.webp&f=1&nofb=1&ipt=b9d429c413e37039a5cf7738287807d36a245719da425f059f5fdee2fc11a213&ipo=images"
+image: "/uses/resqme-tool.webp"
 buyLink: "https://www.amazon.co.uk/dp/B000IE0EIQ"
 buyLabel: "Buy Resqme on Amazon UK"
 ---

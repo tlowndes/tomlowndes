@@ -4,7 +4,7 @@ category: "carry"
 role: "Acoustic Pocket Ergonomics"
 badge: "Silent Stack • Locking Hardware"
 why: "Jangling keys create subtle, repetitive auditory irritation that drains sensory bandwidth over time."
-image: "/uses/Orbitkey.jpg"
+image: "/uses/Orbitkey.webp"
 buyLink: "https://www.orbitkey.eu/collections/key-organiser"
 buyLabel: "Official Orbitkey Store"
 ---

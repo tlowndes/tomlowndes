@@ -4,7 +4,7 @@ category: "sensory"
 role: "Working Memory Offload"
 badge: "Zero-Notification Scratchpad"
 why: "Paper has zero notification badges to hijack the dopamine loop. Essential for rapid wireframes and scratchpad logic."
-image: "/uses/fieldnotes.jpg"
+image: "/uses/fieldnotes.webp"
 buyLink: "https://cultpens.com/products/field-notes-kraft-mixed-3-pack"
 buyLabel: "Cult Pens UK"
 ---

@@ -4,7 +4,7 @@ category: "sensory"
 role: "Passive Acoustic Shield"
 badge: "Passive Silicone • Zero Battery"
 why: "Electronic batteries inevitably go flat; passive silicone attenuation never fails."
-image: "/uses/loop.png"
+image: "/uses/loop.webp"
 buyLink: "https://www.loopearplugs.com/en-gb/products/quiet"
 buyLabel: "Loop Earplugs UK"
 ---

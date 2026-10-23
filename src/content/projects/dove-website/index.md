@@ -9,7 +9,7 @@ demoURL: "https://dovetechnology.com"
 
 Most corporate websites are built by committee and it shows: a homepage that tries to say everything, a menu with eleven items, and visitors who take one look and leave. Dove Technology needed the opposite. As Lead Creative Designer, I led the redesign.
 
-![Dove Website](/dove_website_homepage.png)
+![Dove Website](/dove_website_homepage.webp)
 
 The result speaks for itself. After launch, bounce rate dropped by 25% and engagement rose by 40%. Built with WordPress and Elementor Pro, the new site is easier to navigate and has driven more visits and conversions. There's more of it on my [Behance page](https://www.behance.net/gallery/235057167/Dove-Technology-Website-Video).
 
@@ -18,7 +18,7 @@ The result speaks for itself. After launch, bounce rate dropped by 25% and engag
 - **25%** lower bounce rate
 - **40%** higher engagement
 
-![Dove product page](/dove_product_page.png)
+![Dove product page](/dove_product_page.webp)
 
 ## What went into it
 

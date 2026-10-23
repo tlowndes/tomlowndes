@@ -11,13 +11,13 @@ Typographic posters have no photograph to hide behind. No clever illustration, n
 
 This series was for an Etsy shop client, which is a brutal place to compete. Thousands of near-identical "inspirational" quote prints, all fighting for the same thumbnail. The brief was to make a set that looked considered, hung together as a family and stood out in a very crowded marketplace.
 
-![Don't quit your day dream poster](/typo-posters-daydream.jpg)
+![Don't quit your day dream poster](/typo-posters-daydream.webp)
 
 ## Choosing the voice
 
 Every quote needs a typeface that sounds like it. "Don't quit your day dream" is set in a tall, high-contrast serif with sharp hairlines, stacked tight so the words behave like a monument. It reads as calm and a little bit grand.
 
-![Don't grow up, it's a trap poster](/typo-posters-trap.jpg)
+![Don't grow up, it's a trap poster](/typo-posters-trap.webp)
 
 "Don't grow up, it's a trap" gets the opposite treatment: a chunky, rounded geometric sans that feels playful, with the line breaks doing the comic timing. Same size of frame, same soft grey background, completely different attitude.
 
