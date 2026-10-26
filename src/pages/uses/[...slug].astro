@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
+import { articleSchema } from "@lib/schema";
 
 export async function getStaticPaths() {
   const items = await getCollection("uses", ({ data }) => !data.draft);
@@ -22,9 +23,17 @@ const { Content } = await item.render();
 // Supports either 'buyLink' or 'link' from frontmatter
 const purchaseUrl = item.data.buyLink || item.data.link;
 const purchaseText = item.data.buyLabel || "Buy / View Product";
+const jsonLd = articleSchema({
+  type: "WebPage",
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  headline: item.data.metaTitle ?? item.data.title,
+  description: item.data.description ?? item.data.why,
+  image: new URL(item.data.image ?? "/og-default.png", Astro.site).href,
+  about: item.data.metaTitle ?? item.data.title,
+});
 ---
 
-<PageLayout title={`${item.data.metaTitle ?? item.data.title} | Uses`} description={item.data.description ?? item.data.why}>
+<PageLayout title={`${item.data.metaTitle ?? item.data.title} | Uses`} description={item.data.description ?? item.data.why} jsonLd={jsonLd}>
   <Container>
     <div class="animate mb-8">
       <BackToPrev href="/uses/">

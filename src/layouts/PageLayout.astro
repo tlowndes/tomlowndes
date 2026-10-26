@@ -14,15 +14,16 @@ type Props = {
   fullTitle?: boolean;
   // Keep the page out of search results (e.g. form confirmation pages)
   noindex?: boolean;
+  jsonLd?: object;
 };
 
-const { title, description, image, imageAlt, article, fullTitle, noindex } = Astro.props;
+const { title, description, image, imageAlt, article, fullTitle, noindex, jsonLd } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} noindex={noindex} />
+    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} noindex={noindex} jsonLd={jsonLd} />
   </head>
   <body>
     <!-- Stops Cloudflare's email obfuscation rewriting mailto links to /cdn-cgi/l/email-protection, which crawlers report as broken -->
