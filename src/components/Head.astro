@@ -11,6 +11,7 @@ import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
 
 import { ClientRouter } from "astro:transitions";
 import { SITE } from "@consts";
+import { siteGraph } from "@lib/schema";
 
 interface Props {
   title: string;
@@ -19,11 +20,12 @@ interface Props {
   imageAlt?: string;
   article?: { published: Date };
   noindex?: boolean;
+  jsonLd?: object;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/og-default.png", imageAlt = `${SITE.NAME}, creative designer`, article, noindex } = Astro.props;
+const { title, description, image = "/og-default.png", imageAlt = `${SITE.NAME}, creative designer`, article, noindex, jsonLd } = Astro.props;
 const imageURL = new URL(image, Astro.site);
 ---
 
@@ -71,6 +73,10 @@ const imageURL = new URL(image, Astro.site);
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageURL} />
 <meta name="twitter:image:alt" content={imageAlt} />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(siteGraph)} />
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
 <ClientRouter  />
 
