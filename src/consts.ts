@@ -10,7 +10,7 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Tom Lowndes | Design lead in Cannock, Staffordshire",
-  DESCRIPTION: "Design lead for in-house and remote teams. App and UI design, brand and web, from Cannock, Staffordshire.",
+  DESCRIPTION: "Design lead for in-house and remote teams. Freelance app, brand and web design from Cannock, Staffordshire.",
 };
 
 export const BLOG: Metadata = {
