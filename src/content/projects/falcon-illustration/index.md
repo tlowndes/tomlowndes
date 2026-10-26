@@ -11,7 +11,7 @@ Not every piece in a portfolio comes with a client, a brief and a deadline. Some
 
 It's a detailed vector line illustration of the Millennium Falcon, drawn as a blueprint-style poster: a top-down view of the whole ship, with a side profile floating above it.
 
-![Millennium Falcon blueprint illustration](/falcon-blueprint.jpg)
+![Millennium Falcon blueprint illustration](/falcon-blueprint.webp)
 
 ## Why a blueprint
 

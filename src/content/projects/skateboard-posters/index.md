@@ -11,7 +11,7 @@ Skate graphics are loud by tradition: skulls, flames, cartoon violence. I wanted
 
 This is a skateboard-deck poster concept. A tall, rounded deck shape holds a portrait, and either side of it is a graphic built entirely from the bits that make a board work: trucks, bolts, nuts, washers and bearings.
 
-![Skateboard poster, colour portrait](/skate-poster-colour.jpg)
+![Skateboard poster, colour portrait](/skate-poster-colour.webp)
 
 ## Hardware as pattern
 

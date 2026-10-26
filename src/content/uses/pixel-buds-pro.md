@@ -4,7 +4,7 @@ category: "sensory"
 role: "Acoustic Body Armour"
 badge: "Active Noise Cancellation"
 why: "Cumulative auditory static drains executive function fast. Active attenuation protects baseline working memory."
-image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1000&q=80"
+image: "/uses/pixel-buds-pro.webp"
 buyLink: "https://store.google.com/product/pixel_buds_pro"
 buyLabel: "Google Store UK"
 ---

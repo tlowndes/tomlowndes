@@ -5,7 +5,7 @@ role: "Zero-Cable Battery Backup"
 badge: "Built-In Foldable USB-C"
 why: "Tangled charging cords are an executive dysfunction tax when needing transit passes or navigation in a pinch."
 description: "The Anker Nano power bank plugs straight into my phone with a foldable USB-C connector, so there are no cables to untangle when I need a charge on the move."
-image: "https://m.media-amazon.com/images/I/61uNRmtEtvL._AC_SL1500_.jpg"
+image: "/uses/anker-nano-bank.webp"
 buyLink: "https://www.anker.com/uk/products/a1653-anker-nano-power-bank-built-in-usb-c-connector"
 buyLabel: "Anker UK Store"
 ---
