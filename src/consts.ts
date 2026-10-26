@@ -9,8 +9,8 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Tom Lowndes | Designer in Cannock, Staffordshire",
-  DESCRIPTION: "Freelance app, brand and web designer in Cannock, Staffordshire. Working with businesses in Hednesford, Rugeley, Lichfield, Stafford and Walsall, and with remote teams.",
+  TITLE: "Tom Lowndes | Design lead in Cannock, Staffordshire",
+  DESCRIPTION: "Design lead for in-house and remote teams. App and UI design, brand and web, from Cannock, Staffordshire.",
 };
 
 export const BLOG: Metadata = {
@@ -48,7 +48,7 @@ export const WEB3FORMS_KEY = "2b88b315-cd04-4d42-81fe-fc3899e7ad14";
 
 export const CV: Metadata = {
   TITLE: "CV",
-  DESCRIPTION: "Senior creative and multimedia designer with 13+ years across brand, print, packaging, digital and video. CV and portfolio downloads.",
+  DESCRIPTION: "Design lead with 13+ years across brand, print, packaging, digital and video. CV and portfolio downloads.",
 };
 
 export const SOCIALS: Socials = [
