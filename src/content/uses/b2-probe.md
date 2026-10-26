@@ -12,8 +12,8 @@ buyLabel: "STLTH Store"
 
 ## The Fine Manipulation Probe
 
-Finger nails break and full-sized pry bars are clumsy for delicate hardware[cite: 5]. The **B-2 Probe** is a precision micro-pick designed for tight spaces[cite: 5, 7]:
+Finger nails break and full-sized pry bars are clumsy for delicate hardware. The **B-2 Probe** is a precision micro-pick designed for tight spaces:
 
-- **Mounting:** Slides into the elastic pen loop on the side of the utility pouch[cite: 5, 7].
-- **Functions:** Ejects stubborn SIM trays, pops internal electronics clips, scrapes sticky labels, and manipulates fiddly components[cite: 5, 7].
+- **Mounting:** Slides into the elastic pen loop on the side of the utility pouch.
+- **Functions:** Ejects stubborn SIM trays, pops internal electronics clips, scrapes sticky labels, and manipulates fiddly components.
 - **Construction:** Low-profile machined titanium build that withstands heavy lateral leverage without bending.

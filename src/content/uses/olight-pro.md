@@ -12,8 +12,8 @@ buyLabel: "Olight UK Store"
 
 ## Purpose-Built Illumination
 
-Using a mobile phone as an inspection light is awkward, provides poor focus, and burns valuable battery[cite: 5, 7].
+Using a mobile phone as an inspection light is awkward, provides poor focus, and burns valuable battery.
 
-- **Dedicated Beam:** Delivers clean, concentrated lumens for dark car boots, pathway navigation, and peering behind network equipment racks[cite: 5, 7].
-- **Form Factor:** Deep-carry pocket clip that stays planted upright inside the utility pouch[cite: 7].
-- **Reliability:** Direct tactile tail switch for quick activation without navigating touchscreen menus[cite: 5].
+- **Dedicated Beam:** Delivers clean, concentrated lumens for dark car boots, pathway navigation, and peering behind network equipment racks.
+- **Form Factor:** Deep-carry pocket clip that stays planted upright inside the utility pouch.
+- **Reliability:** Direct tactile tail switch for quick activation without navigating touchscreen menus.

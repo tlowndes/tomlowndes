@@ -12,8 +12,8 @@ buyLabel: "Loop Earplugs UK"
 
 ## Battery-Free Attenuation
 
-Electronics die at the worst moments[cite: 4]. When transit screeches or an unexpected drill starts whining nearby, waiting for a device to boot or charge isn't an option[cite: 4, 5].
+Electronics die at the worst moments. When transit screeches or an unexpected drill starts whining nearby, waiting for a device to boot or charge isn't an option.
 
-- **Mounting:** Clipped directly to the bag's main zip pull in their protective capsule[cite: 7].
-- **Decibel Reduction:** Soft, washable silicone that provides 24dB of passive attenuation without muffling speech clarity[cite: 7].
-- **Comfort:** Lies completely flat against the ear for calm, reliable noise isolation[cite: 7].
+- **Mounting:** Clipped directly to the bag's main zip pull in their protective capsule.
+- **Decibel Reduction:** Soft, washable silicone that provides 24dB of passive attenuation without muffling speech clarity.
+- **Comfort:** Lies completely flat against the ear for calm, reliable noise isolation.

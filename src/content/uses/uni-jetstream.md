@@ -13,8 +13,8 @@ buyLabel: "Cult Pens UK"
 
 ## The Workhorse Writing Rig
 
-Carrying loose individual pens leads to rattling, lost caps, and wasted time digging into pockets[cite: 4, 7].
+Carrying loose individual pens leads to rattling, lost caps, and wasted time digging into pockets.
 
-- **Hybrid Ink Formula:** Low-viscosity ink that writes cleanly without smudging or leaking on matte notebooks[cite: 4].
-- **Integrated Options:** Black, red, blue, and green ballpoint refills paired with an internal 0.5mm mechanical pencil and rear eraser[cite: 4].
-- **Cognitive Utility:** Lets you colour-code interface notes, bug passes, and lists without changing tools[cite: 4, 5].
+- **Hybrid Ink Formula:** Low-viscosity ink that writes cleanly without smudging or leaking on matte notebooks.
+- **Integrated Options:** Black, red, blue, and green ballpoint refills paired with an internal 0.5mm mechanical pencil and rear eraser.
+- **Cognitive Utility:** Lets you colour-code interface notes, bug passes, and lists without changing tools.
