@@ -1,0 +1,194 @@
+---
+import Container from "@components/Container.astro";
+import BackToPrev from "@components/BackToPrev.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import ContactBlock from "@components/ContactBlock.astro";
+
+import { CV, SITE } from "@consts";
+
+// Bump this when the CV content changes
+const updated = new Date("2026-10-12");
+
+const CV_PDF = "/Tom-Lowndes-CV.pdf";
+const PORTFOLIO_PDF = "/Tom-Lowndes-Portfolio.pdf";
+
+const skills = [
+  { label: "Design", text: "Adobe Creative Cloud (Photoshop, Illustrator, InDesign), Figma, branding, art direction, print, packaging, labels" },
+  { label: "Video & motion", text: "Premiere Pro, After Effects, DaVinci Resolve; scripting, storyboarding, filming, editing, colour grading" },
+  { label: "Photography", text: "Product, people and location shoots; lighting and audio setup; retouching and post-production" },
+  { label: "Digital", text: "Web and app UX/UI design in Figma (wireframes, prototypes, user flows), social content, HTML email (Mailchimp, HTML/CSS)" },
+  { label: "AI tools", text: "Claude Code and Gemini for concepting, prototyping, asset production and automating workflows" },
+  { label: "Delivery", text: "Project management (Agile, Jira, Trello), supplier and freelancer management, stakeholder presentations" },
+];
+
+const experience = [
+  {
+    role: "Freelance Creative & Multimedia Designer",
+    company: "Self-employed",
+    dates: "Nov 2025 – Present",
+    points: [
+      "Brand, web and app design for technology and app development clients, plus brand identity work for food and sports businesses.",
+      "Running projects end to end, from identity and UI in Figma to photography and video.",
+      "Work is under NDA; samples can be shared at interview where agreements allow.",
+    ],
+  },
+  {
+    role: "Lead Creative Designer",
+    company: "Dove Technology",
+    note: "Roofing adhesives manufacturer",
+    dates: "Jul 2021 – Nov 2025",
+    points: [
+      "Sole in-house designer, owning creative direction across print, digital, web, video and social and keeping the brand consistent across every channel.",
+      "Planned, shot and edited photography and video for product marketing, campaigns, social and web.",
+      "Designed print collateral, product labels and packaging from concept to production.",
+      "Briefed and managed freelance photographers, copywriters and print suppliers on quality, cost and deadlines.",
+    ],
+    key: [
+      "Website redesign: led the design of the new company website; post-launch bounce rate fell by roughly 25% and user engagement rose by around 40%.",
+    ],
+  },
+  {
+    role: "Creative Designer",
+    company: "Busy Bees Nurseries",
+    note: "350+ nurseries across the UK and Europe",
+    dates: "Jan 2013 – Jul 2021",
+    points: [
+      "Core creative for a national brand: brand assets, print, digital, social, video and photography for 350+ nurseries across the UK and Europe.",
+      "Led end-to-end video production (scripting, filming, editing, publishing), including filmed social ads, and ran professional photo shoots.",
+      "Produced websites, social, online ads, brochures, reports and signage.",
+    ],
+    key: [
+      "Lockdown awards show: conceived, produced and edited the company's online awards show during lockdown, from concept and footage to graphics and final edit, watched by around 400 to 500 staff, from managers across all 350+ nurseries to the senior head office team.",
+      "National campaigns: created full multi-channel campaigns (print, digital, social and video) rolled out across the nursery group, each bringing in around 500 new sign-ups.",
+    ],
+  },
+  {
+    role: "Owner & Operator",
+    company: "Minerva CNC",
+    note: "CNC manufacturing, run alongside Busy Bees",
+    dates: "2012 – 2014",
+    points: [
+      "Owned and ran a CNC manufacturing business, handling clients, quoting, production and delivery, and created its branding and marketing.",
+    ],
+  },
+];
+---
+
+<PageLayout title={CV.TITLE} description={CV.DESCRIPTION}>
+  <Container>
+    <div class="animate mb-8 print:hidden">
+      <BackToPrev href="/">
+        Back to home
+      </BackToPrev>
+    </div>
+    <div class="space-y-14 print:space-y-7">
+      <!-- Header -->
+      <section class="animate space-y-5 border-b border-black/10 pb-8 dark:border-white/10 print:pb-5 print:space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
+            CV // Updated {updated.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
+          </span>
+          <span class="font-mono text-[11px] text-black/65 dark:text-white/65">
+            Cannock, Staffordshire
+          </span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
+          {SITE.NAME} <span class="font-serif italic font-normal text-black/65 dark:text-white/65">Senior creative &amp; multimedia designer.</span>
+        </h1>
+        <p class="hidden print:block font-mono text-[11px] text-black/60">
+          <a href="mailto:hello@tomlowndes.co.uk">hello@tomlowndes.co.uk</a> // <a href="https://tomlowndes.co.uk">tomlowndes.co.uk</a> // Portfolio: <a href="https://tomlowndes.co.uk/projects/">tomlowndes.co.uk/projects</a>
+        </p>
+        <ul class="flex flex-wrap gap-1.5 print:hidden">
+          <li>
+            <a
+              href={CV_PDF}
+              download
+              class="inline-block rounded-full bg-black px-3.5 py-1 text-xs font-semibold text-white hover:opacity-80 dark:bg-white dark:text-black transition"
+            >
+              Download CV (PDF)
+            </a>
+          </li>
+          <li>
+            <a
+              href={PORTFOLIO_PDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block rounded-full border border-black/15 px-3.5 py-1 text-xs font-semibold text-black/75 hover:border-black/40 hover:text-black dark:border-white/15 dark:text-white/75 dark:hover:border-white/40 dark:hover:text-white transition"
+            >
+              View portfolio (PDF, 11 MB) ↗
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Profile -->
+      <section class="animate space-y-4">
+        <SectionHeading title="01. Profile" />
+        <article class="space-y-3 text-black/75 dark:text-white/75">
+          <p>
+            Senior brand and multimedia designer with 13+ years of experience. I take work from idea to finished asset: identity, print, packaging, web and app, then the photography and video, shot, edited and graded myself. Freelance since November 2025 across tech, food and sport; before that, four years as sole in-house designer at Dove Technology, a roofing adhesives manufacturer, and eight years as core creative for Busy Bees across 350+ nurseries in the UK and Europe.
+          </p>
+          <p>
+            Calm, organised and commercially minded from running my own manufacturing business. Used to managing freelancers, printers and suppliers to deliver on time and on brand.
+          </p>
+        </article>
+      </section>
+
+      <!-- Skills -->
+      <section class="animate space-y-4">
+        <SectionHeading title="02. Core skills" />
+        <dl class="grid gap-3 sm:grid-cols-[9rem_1fr] sm:gap-x-6 text-sm">
+          {skills.map((skill) => (
+            <>
+              <dt class="font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65 sm:pt-0.5">{skill.label}</dt>
+              <dd class="text-black/75 dark:text-white/75 -mt-2 sm:mt-0">{skill.text}</dd>
+            </>
+          ))}
+        </dl>
+      </section>
+
+      <!-- Experience -->
+      <section class="animate space-y-6">
+        <SectionHeading title="03. Experience" />
+        <ol class="space-y-8 print:space-y-5">
+          {experience.map((job) => (
+            <li class="space-y-2 print:break-inside-avoid">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 class="font-semibold text-black dark:text-white">{job.role}</h3>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65">{job.dates}</span>
+              </div>
+              <p class="text-sm text-black/60 dark:text-white/60">
+                {job.company}
+                {job.note && <span class="text-black/65 dark:text-white/65"> // {job.note}</span>}
+              </p>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm text-black/75 dark:text-white/75">
+                {job.points.map((point) => <li>{point}</li>)}
+                {job.key?.map((point) => (
+                  <li>
+                    <strong class="text-black dark:text-white">Key project.</strong> {point}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <!-- Education -->
+      <section class="animate space-y-4 print:break-inside-avoid">
+        <SectionHeading title="04. Education" />
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <p class="text-black/75 dark:text-white/75">
+            <strong class="font-semibold text-black dark:text-white">BA (Hons) Graphic Design</strong>, University of Salford
+          </p>
+          <span class="font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65">2009 – 2012</span>
+        </div>
+      </section>
+
+      <div class="print:hidden">
+        <ContactBlock />
+      </div>
+    </div>
+  </Container>
+</PageLayout>

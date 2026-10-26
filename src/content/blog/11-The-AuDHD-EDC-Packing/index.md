@@ -1,5 +1,6 @@
 ---
 title: "The AuDHD EDC: Packing for Friction, Not Fantasy"
+metaTitle: "AuDHD EDC: Packing for Friction, Not Fantasy"
 description: "Why my everyday carry isn't about tactical survival tools, but managing sensory overload, executive dropouts, and surviving the daily crawl."
 date: 2026-09-25
 tags: [neurodiversity, autism, ADHD, edc]

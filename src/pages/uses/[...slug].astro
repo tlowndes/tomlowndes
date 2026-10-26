@@ -26,10 +26,10 @@ const purchaseUrl = item.data.buyLink || item.data.link;
 const purchaseText = item.data.buyLabel || "Buy / View Product";
 ---
 
-<PageLayout title={`${item.data.title} | Uses`} description={item.data.why}>
+<PageLayout title={`${item.data.metaTitle ?? item.data.title} | Uses`} description={item.data.description ?? item.data.why}>
   <Container>
     <div class="animate mb-8">
-      <BackToPrev href="/uses">
+      <BackToPrev href="/uses/">
         Back to Uses
       </BackToPrev>
     </div>
@@ -40,7 +40,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
         
         <!-- Top Status Bar -->
         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-black/10 pb-4 dark:border-white/10">
-          <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-black/50 dark:text-white/50">
+          <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
             <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
             <span>{item.data.category}</span>
             <span>//</span>
@@ -76,7 +76,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
         <!-- 3-Column Spec Metadata Strip -->
         <div class="grid gap-3 sm:grid-cols-3 rounded-xl border border-black/10 bg-black/[0.02] p-4 text-xs dark:border-white/10 dark:bg-white/[0.03]">
           <div>
-            <span class="block font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">
+            <span class="block font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">
               01 // Category
             </span>
             <strong class="mt-0.5 block font-mono uppercase text-black dark:text-white">
@@ -84,7 +84,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
             </strong>
           </div>
           <div>
-            <span class="block font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">
+            <span class="block font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">
               02 // System Role
             </span>
             <strong class="mt-0.5 block font-medium text-black dark:text-white">
@@ -92,7 +92,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
             </strong>
           </div>
           <div>
-            <span class="block font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">
+            <span class="block font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">
               03 // Key Spec
             </span>
             <strong class="mt-0.5 block font-medium text-black dark:text-white">
@@ -115,7 +115,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
         {purchaseUrl && (
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-black/10 bg-black/[0.02] px-4 py-3.5 dark:border-white/10 dark:bg-white/[0.03]">
             <div class="space-y-0.5">
-              <span class="block font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">
+              <span class="block font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">
                 Source // Acquisition
               </span>
               <span class="text-xs text-black/75 dark:text-white/75">
@@ -137,7 +137,7 @@ const purchaseText = item.data.buyLabel || "Buy / View Product";
 
       <!-- Deep-Dive Markdown Content Box -->
       <div class="rounded-2xl border border-black/10 bg-white/50 p-6 sm:p-8 dark:border-white/10 dark:bg-neutral-900/30">
-        <div class="mb-4 border-b border-black/10 pb-2 font-mono text-[11px] uppercase tracking-wider text-black/45 dark:border-white/10 dark:text-white/45">
+        <div class="mb-4 border-b border-black/10 pb-2 font-mono text-[11px] uppercase tracking-wider text-black/65 dark:border-white/10 dark:text-white/65">
           System Notes & Configuration
         </div>
         <div class="prose prose-neutral dark:prose-invert max-w-none text-sm leading-relaxed">

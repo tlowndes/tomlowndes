@@ -4,12 +4,13 @@ category: "carry"
 role: "Emergency Safety"
 badge: "Spring-Loaded • Glass & Belt"
 why: "Non-negotiable vehicle safety utility that adds near-zero weight or bulk to the physical key stack."
+description: "The Resqme tool lives on my keyring: a seatbelt cutter and spring-loaded glass breaker for getting out of a car in an emergency, adding almost no weight."
 image: "/uses/resqme-tool.webp"
 buyLink: "https://www.amazon.co.uk/dp/B000IE0EIQ"
 buyLabel: "Buy Resqme on Amazon UK"
 ---
 
-### Safety Without the Cosplay
+## Safety Without the Cosplay
 
 Most survival gear marketed online is heavy, performative tactical posturing[cite: 4]. The **Resqme tool** provides real-world vehicle escape utility without the baggage[cite: 5]:
 

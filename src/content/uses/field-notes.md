@@ -1,5 +1,6 @@
 ---
 title: "Field Notes (Kraft Dot-Grid 3.5\" x 5.5\")"
+metaTitle: "Field Notes Kraft Dot-Grid Notebook"
 category: "sensory"
 role: "Working Memory Offload"
 badge: "Zero-Notification Scratchpad"
@@ -9,7 +10,7 @@ buyLink: "https://cultpens.com/products/field-notes-kraft-mixed-3-pack"
 buyLabel: "Cult Pens UK"
 ---
 
-### Uninterrupted Analog Capture
+## Uninterrupted Analog Capture
 
 Pulling out a smartphone to jot down a fleeting design thought or a passing task is an ambush[cite: 4, 5]. Between badge icons, notifications, and lock screens, the original thought frequently dissolves before you finish typing[cite: 4, 5].
 

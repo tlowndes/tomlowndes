@@ -5,6 +5,8 @@ const blog = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    // Shorter title for the <title> tag when the post title is long
+    metaTitle: z.string().optional(),
     description: z.string(),
     date: z.coerce.date(),
     draft: z.boolean().optional(),
@@ -41,6 +43,9 @@ const uses = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    metaTitle: z.string().optional(),
+    // Meta description; falls back to 'why'
+    description: z.string().optional(),
     category: z.enum(["carry", "sensory", "utility", "digital", "security", "homelab"]),
     role: z.string(),
     badge: z.string(),

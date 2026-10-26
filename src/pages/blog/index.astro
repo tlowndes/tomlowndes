@@ -47,7 +47,7 @@ const allTags = [
       <!-- Editorial Journal Header (Now with semantic H1 & RSS link) -->
       <section class="animate space-y-5 border-b border-black/10 dark:border-white/10 pb-8">
         <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
             Field Notes & Archive // {data.length} {data.length === 1 ? "Entry" : "Entries"}
           </span>
           <a
@@ -73,10 +73,11 @@ const allTags = [
           <div class="relative">
             <input
               id="blog-search"
+              aria-label="Search articles"
               type="search"
               placeholder="Search articles by title or topic..."
               oninput="window.filterBlogPosts()"
-              class="w-full rounded-xl border border-black/10 bg-white/80 px-4 py-2 text-xs text-black placeholder:text-black/40 focus:border-black/30 focus:outline-none dark:border-white/10 dark:bg-neutral-900/70 dark:text-white dark:placeholder:text-white/40 dark:focus:border-white/30 transition"
+              class="w-full rounded-xl border border-black/10 bg-white/80 px-4 py-2 text-xs text-black placeholder:text-black/65 focus:border-black/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:focus-visible:outline-white dark:border-white/10 dark:bg-neutral-900/70 dark:text-white dark:placeholder:text-white/65 dark:focus:border-white/30 transition"
             />
           </div>
 
@@ -104,7 +105,7 @@ const allTags = [
       <!-- Featured Latest Entry -->
       {latestPost && (
         <section id="latest-post-spotlight" class="animate space-y-3">
-          <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-black/45 dark:text-white/45">
+          <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-black/65 dark:text-white/65">
             <span>Latest Entry</span>
             <span>
               {latestPost.data.date.toLocaleDateString("en-GB", {
@@ -116,7 +117,7 @@ const allTags = [
           </div>
 
           <a
-            href={`/blog/${latestPost.slug}`}
+            href={`/blog/${latestPost.slug}/`}
             class="group block rounded-2xl border border-black/10 bg-white/80 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 space-y-4"
           >
             {getPostImage(latestPost) && (
@@ -133,7 +134,7 @@ const allTags = [
               <div class="flex items-center gap-2 font-mono text-[11px] text-emerald-700 dark:text-emerald-400">
                 <span>NEW</span>
                 <span>•</span>
-                <span class="text-black/50 dark:text-white/50">
+                <span class="text-black/65 dark:text-white/65">
                   {getReadingTime(latestPost.body)}
                 </span>
               </div>
@@ -172,7 +173,7 @@ const allTags = [
                 {year}
               </h2>
               <div class="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
-              <span class="font-mono text-[11px] text-black/40 dark:text-white/40">
+              <span class="font-mono text-[11px] text-black/65 dark:text-white/65">
                 {posts[year].length} {posts[year].length === 1 ? "post" : "posts"}
               </span>
             </div>
@@ -196,7 +197,7 @@ const allTags = [
                     data-tags={tagsList.join(",")}
                   >
                     <a
-                      href={`/blog/${post.slug}`}
+                      href={`/blog/${post.slug}/`}
                       class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white hover:shadow-sm dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                     >
                       <div class="space-y-1 pr-2">
@@ -217,9 +218,9 @@ const allTags = [
                         )}
                       </div>
 
-                      <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 gap-1 font-mono text-[11px] text-black/45 dark:text-white/45 pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5 dark:border-white/5">
+                      <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 gap-1 font-mono text-[11px] text-black/65 dark:text-white/65 pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5 dark:border-white/5">
                         <span>{shortDate}</span>
-                        <span class="text-[10px] opacity-75">{readTime}</span>
+                        <span class="text-[10px]">{readTime}</span>
                       </div>
                     </a>
                   </li>

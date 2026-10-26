@@ -9,7 +9,7 @@ buyLink: "https://store.google.com/product/pixel_buds_pro"
 buyLabel: "Google Store UK"
 ---
 
-### Acoustic Filtering
+## Acoustic Filtering
 
 In an AuDHD brain, ambient noise doesn't register as background hum—it competes for processor cycles alongside active working thoughts[cite: 4, 5].
 

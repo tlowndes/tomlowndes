@@ -9,7 +9,7 @@ buyLink: "https://www.amazon.co.uk/dp/B0842P5GBQ"
 buyLabel: "Buy on Amazon UK"
 ---
 
-### Architecture & Partitioning
+## Architecture & Partitioning
 
 Cloud infrastructure is convenient until you hit an authentication loop without mobile reception or need to revive a corrupted machine[cite: 5, 6]. This drive lives permanently on the Orbitkey house stack[cite: 7].
 

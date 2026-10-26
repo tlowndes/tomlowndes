@@ -43,14 +43,14 @@ const siblings = [
   <Container>
     <div class="space-y-12">
       <div class="animate">
-        <BackToPrev href="/projects">
+        <BackToPrev href="/projects/">
           Back to projects
         </BackToPrev>
       </div>
 
       <!-- Header -->
       <section class="animate space-y-4 border-b border-black/10 pb-8 dark:border-white/10">
-        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-widest text-black/45 dark:text-white/45">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-widest text-black/65 dark:text-white/65">
           <span>Case Study {indexNum}</span>
           <span>//</span>
           <span>{project.data.date.getFullYear()}</span>
@@ -94,15 +94,15 @@ const siblings = [
       <!-- More work -->
       {siblings.length > 0 && (
         <nav class="animate space-y-4" aria-label="More projects">
-          <SectionHeading title="More work" href="/projects" linkLabel="All projects →" />
+          <SectionHeading title="More work" href="/projects/" linkLabel="All projects →" />
           <ul class="grid gap-3 sm:grid-cols-2">
             {siblings.map(({ label, entry }) => (
               <li>
                 <a
-                  href={`/projects/${entry.slug}`}
+                  href={`/projects/${entry.slug}/`}
                   class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                 >
-                  <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">{label}</span>
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">{label}</span>
                   <span class="text-sm font-semibold text-black dark:text-white group-hover:underline underline-offset-4">
                     {entry.data.title}
                   </span>

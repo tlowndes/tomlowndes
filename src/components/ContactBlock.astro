@@ -13,15 +13,15 @@ const { title = "Let's connect" } = Astro.props;
     {title}
   </h2>
   <p class="text-xs sm:text-sm text-black/75 dark:text-white/75">
-    <slot>Hiring, collaborating or just want to say hi? Send me an email or find me on social media.</slot>
+    <slot>Hiring, collaborating or just want to say hi? Send me a message or find me on social media.</slot>
   </p>
   <ul class="flex flex-wrap gap-1.5">
     <li>
       <a
-        href={`mailto:${SITE.EMAIL}`}
+        href="/contact/"
         class="inline-block rounded-full bg-black px-3.5 py-1 text-xs font-semibold text-white hover:opacity-80 dark:bg-white dark:text-black transition"
       >
-        {SITE.EMAIL}
+        Send a message
       </a>
     </li>
     {SOCIALS.map((SOCIAL) => (

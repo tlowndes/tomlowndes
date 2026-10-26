@@ -27,7 +27,7 @@ const projectsData = projects.map((p, index) => {
   return {
     id: p.slug,
     indexNum: String(index + 1).padStart(2, "0"),
-    url: `/projects/${p.slug}`,
+    url: `/projects/${p.slug}/`,
     title: p.data.title,
     description: p.data.description,
     image: resolvedImage,
@@ -129,7 +129,7 @@ const projectsData = projects.map((p, index) => {
                     {project.description}
                   </p>
                 </div>
-                <span class="font-mono text-xs text-black/40 dark:text-white/40 group-hover:text-black dark:group-hover:text-white">
+                <span class="font-mono text-xs text-black/65 dark:text-white/65 group-hover:text-black dark:group-hover:text-white">
                   →
                 </span>
               </div>
@@ -188,7 +188,7 @@ const projectsData = projects.map((p, index) => {
                 </div>
               </div>
 
-              <div class="pt-2 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-[10px] font-mono text-black/50 dark:text-white/50">
+              <div class="pt-2 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-[10px] font-mono text-black/65 dark:text-white/65">
                 <span>{project.date}</span>
                 <span>Inspect ↗</span>
               </div>
@@ -204,9 +204,10 @@ const projectsData = projects.map((p, index) => {
   <!-- ========================================== -->
   <dialog id="project-modal" class="w-[92vw] max-w-xl rounded-2xl border border-black/15 bg-[#FAF9F6] p-0 text-black shadow-2xl dark:border-white/15 dark:bg-[#121215] dark:text-white overflow-hidden">
     <div class="flex items-center justify-between border-b border-black/10 px-5 py-3.5 dark:border-white/10 bg-white/60 dark:bg-black/20 backdrop-blur">
-      <span id="modal-date" class="font-mono text-[11px] text-black/50 dark:text-white/50"></span>
+      <span id="modal-date" class="font-mono text-[11px] text-black/65 dark:text-white/65"></span>
       <button
         onclick="window.closeProjectModal()"
+        aria-label="Close"
         class="rounded-lg border border-black/10 bg-black/[0.03] px-2.5 py-1 text-xs font-mono hover:bg-black/10 dark:border-white/10 dark:bg-white/[0.05] dark:hover:bg-white/15 transition"
       >
         ESC ✕
@@ -225,7 +226,7 @@ const projectsData = projects.map((p, index) => {
       </div>
 
       <div class="rounded-xl border border-black/10 bg-black/[0.02] p-4 dark:border-white/10 dark:bg-white/[0.02] space-y-1.5">
-        <span class="font-mono text-[10px] uppercase tracking-wider text-black/45 dark:text-white/45">
+        <span class="font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">
           Case Study Preview
         </span>
         <p id="modal-excerpt" class="text-sm text-black/80 dark:text-white/80 leading-relaxed"></p>
@@ -242,7 +243,7 @@ const projectsData = projects.map((p, index) => {
         </button>
         <a
           id="modal-full-link"
-          href="/projects"
+          href="/projects/"
           class="inline-flex items-center gap-1.5 rounded-xl bg-black px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition"
         >
           <span>Read Full Project</span>
@@ -303,12 +304,19 @@ const projectsData = projects.map((p, index) => {
     if (p.demoURL || p.repoURL) {
       linksBox.classList.remove('hidden');
       linksBox.classList.add('flex');
-      if (p.demoURL) {
-        linksBox.innerHTML += `<a href="${p.demoURL}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-500">Live Demo ↗</a>`;
-      }
-      if (p.repoURL) {
-        linksBox.innerHTML += `<a href="${p.repoURL}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-emerald-500">Source / Repo ↗</a>`;
-      }
+      // Built with the DOM rather than an HTML string, so crawlers don't read
+      // the placeholder as a relative link.
+      const addLink = (url, label) => {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.className = 'underline underline-offset-4 hover:text-emerald-500';
+        a.textContent = label;
+        linksBox.appendChild(a);
+      };
+      if (p.demoURL) addLink(p.demoURL, 'Live Demo ↗');
+      if (p.repoURL) addLink(p.repoURL, 'Source / Repo ↗');
     } else {
       linksBox.classList.add('hidden');
     }

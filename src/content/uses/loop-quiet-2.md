@@ -4,12 +4,13 @@ category: "sensory"
 role: "Passive Acoustic Shield"
 badge: "Passive Silicone • Zero Battery"
 why: "Electronic batteries inevitably go flat; passive silicone attenuation never fails."
+description: "Loop Quiet 2 earplugs give 24dB of passive noise reduction from soft silicone. No batteries to go flat, so they always work when a noisy place gets too much."
 image: "/uses/loop.webp"
 buyLink: "https://www.loopearplugs.com/en-gb/products/quiet"
 buyLabel: "Loop Earplugs UK"
 ---
 
-### Battery-Free Attenuation
+## Battery-Free Attenuation
 
 Electronics die at the worst moments[cite: 4]. When transit screeches or an unexpected drill starts whining nearby, waiting for a device to boot or charge isn't an option[cite: 4, 5].
 

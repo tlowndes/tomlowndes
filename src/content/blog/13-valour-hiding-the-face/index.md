@@ -1,5 +1,6 @@
 ---
 title: "Hiding the Face: How One Big Letter Became a Magazine"
+metaTitle: "Hiding the Face: Making Valour Magazine"
 description: "The story behind Valour, a concept men's lifestyle magazine from my final-year university project, from a cut-out V over the cover model's face to a screen print and a full set of editorial spreads."
 date: 2026-10-08
 tags: [projects, design]
@@ -10,7 +11,7 @@ Open any magazine rack and you'll see the same cover over and over. A face. A sm
 
 For my final-year major project at university in 2012, I wanted to see what happened if the cover simply refused to give you the face.
 
-The result was **Valour**, a concept men's lifestyle magazine about grooming, style and everyday know-how. You can see the finished work on [the Valour project page](/projects/valour-magazine), but this is the story of how it got made, and the bits that didn't go to plan.
+The result was **Valour**, a concept men's lifestyle magazine about grooming, style and everyday know-how. You can see the finished work on [the Valour project page](/projects/valour-magazine/), but this is the story of how it got made, and the bits that didn't go to plan.
 
 ![Valour cover poster](/valour-poster.jpg)
 
@@ -64,4 +65,4 @@ Two things.
 
 Valour is a concept project, not a published magazine. But it taught me the thing I still come back to: the simplest idea, committed to all the way through, beats the clever one. One big letter on one face carried a whole identity, from a poster to a screen print to a stack of pages.
 
-If you want to see the whole thing, it's [on the projects page](/projects/valour-magazine), with more of my design work on [Behance](https://www.behance.net/tomlowndes).
+If you want to see the whole thing, it's [on the projects page](/projects/valour-magazine/), with more of my design work on [Behance](https://www.behance.net/tomlowndes).

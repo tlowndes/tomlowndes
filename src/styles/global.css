@@ -20,7 +20,7 @@ body {
   @apply font-sans antialiased;
   @apply flex flex-col;
   @apply bg-stone-50 dark:bg-sky-950;
-  @apply text-black/50 dark:text-white/75;
+  @apply text-black/65 dark:text-white/75;
 }
 
 header {
@@ -67,6 +67,25 @@ html.js .animate.show {
 @media (prefers-reduced-motion: reduce) {
   html.js .animate {
     @apply opacity-100 translate-y-0 transition-none;
+  }
+}
+
+@media print {
+  html.js .animate {
+    @apply opacity-100 translate-y-0 transition-none;
+  }
+  @page {
+    size: A4;
+    margin: 12mm 12mm;
+  }
+  html {
+    font-size: 13px;
+  }
+  body {
+    @apply bg-white;
+  }
+  main {
+    @apply py-0;
   }
 }
 

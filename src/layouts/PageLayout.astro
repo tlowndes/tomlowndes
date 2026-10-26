@@ -12,21 +12,27 @@ type Props = {
   article?: { published: Date };
   // Use the title as-is, without the " | Tom Lowndes" suffix
   fullTitle?: boolean;
+  // Keep the page out of search results (e.g. form confirmation pages)
+  noindex?: boolean;
 };
 
-const { title, description, image, imageAlt, article, fullTitle } = Astro.props;
+const { title, description, image, imageAlt, article, fullTitle, noindex } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} />
+    <Head title={fullTitle ? title : `${title} | ${SITE.NAME}`} description={description} image={image} imageAlt={imageAlt} article={article} noindex={noindex} />
   </head>
   <body>
+    <!-- Stops Cloudflare's email obfuscation rewriting mailto links to /cdn-cgi/l/email-protection, which crawlers report as broken -->
+    <!--email_off-->
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-black focus:px-3 focus:py-2 focus:text-sm focus:text-white dark:focus:bg-white dark:focus:text-black">Skip to content</a>
     <Header />
-    <main>
+    <main id="main" tabindex="-1" class="focus:outline-none">
       <slot />
     </main>
     <Footer />
+    <!--/email_off-->
   </body>
 </html>

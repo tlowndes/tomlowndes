@@ -9,8 +9,8 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Tom Lowndes | Creative designer",
-  DESCRIPTION: "Creative designer in Staffordshire, open to remote and in-house design roles. Portfolio, field notes and experience.",
+  TITLE: "Tom Lowndes | Designer in Cannock, Staffordshire",
+  DESCRIPTION: "Freelance app, brand and web designer in Cannock, Staffordshire. Working with businesses in Hednesford, Rugeley, Lichfield, Stafford and Walsall, and with remote teams.",
 };
 
 export const BLOG: Metadata = {
@@ -25,7 +25,7 @@ export const WORK: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "Selected design work: brand systems, print production, digital interfaces and the case studies behind them.",
+  DESCRIPTION: "Selected design work by Tom Lowndes: brand systems, print production, digital interfaces, small apps and the case studies behind them.",
 };
 
 export const USES: Metadata = {
@@ -35,7 +35,20 @@ export const USES: Metadata = {
 
 export const NOW: Metadata = {
   TITLE: "Now",
-  DESCRIPTION: "What I'm focused on right now.",
+  DESCRIPTION: "What I'm focused on right now: looking for my next design role, building small apps, keeping a calm digital setup, home server plans and current reading.",
+};
+
+export const CONTACT: Metadata = {
+  TITLE: "Contact",
+  DESCRIPTION: "Get in touch with Tom Lowndes about design roles, freelance work or collaborations. Use the form or email, and expect a reply within a couple of working days.",
+};
+
+// Web3Forms access key. Public by design: it only lets the form send to the inbox it was created for.
+export const WEB3FORMS_KEY = "2b88b315-cd04-4d42-81fe-fc3899e7ad14";
+
+export const CV: Metadata = {
+  TITLE: "CV",
+  DESCRIPTION: "Senior creative and multimedia designer with 13+ years across brand, print, packaging, digital and video. CV and portfolio downloads.",
 };
 
 export const SOCIALS: Socials = [
