@@ -7,6 +7,7 @@ import { readingTime, shareSource } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import ContactBlock from "@components/ContactBlock.astro";
+import { articleSchema } from "@lib/schema";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -26,13 +27,20 @@ type Props = {
 const { post, newer, older } = Astro.props;
 const { Content } = await post.render();
 const shareImage = shareSource(post) && `/og/blog/${post.slug}.jpg`;
+const jsonLd = articleSchema({
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  headline: post.data.title,
+  description: post.data.description,
+  image: new URL(shareImage ?? "/og-default.png", Astro.site).href,
+  published: post.data.date,
+});
 const siblings = [
   older && { label: "← Older", entry: older },
   newer && { label: "Newer →", entry: newer },
 ].filter(Boolean) as { label: string; entry: CollectionEntry<"blog"> }[];
 ---
 
-<PageLayout title={post.data.metaTitle ?? post.data.title} description={post.data.description} image={shareImage} imageAlt={post.data.title} article={{ published: post.data.date }}>
+<PageLayout title={post.data.metaTitle ?? post.data.title} description={post.data.description} image={shareImage} imageAlt={post.data.title} article={{ published: post.data.date }} jsonLd={jsonLd}>
   <Container>
     <div class="space-y-12">
       <div class="animate">
