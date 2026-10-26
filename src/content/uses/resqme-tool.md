@@ -12,7 +12,7 @@ buyLabel: "Buy Resqme on Amazon UK"
 
 ## Safety Without the Cosplay
 
-Most survival gear marketed online is heavy, performative tactical posturing[cite: 4]. The **Resqme tool** provides real-world vehicle escape utility without the baggage[cite: 5]:
+Most survival gear marketed online is heavy, performative tactical posturing. The **Resqme tool** provides real-world vehicle escape utility without the baggage:
 
 - **Concealed Razor:** Slices through jammed seatbelts in a single pull.
 - **Spring-Loaded Spike:** Shatters tempered side glass when pressed directly against the window corner with minimal force.

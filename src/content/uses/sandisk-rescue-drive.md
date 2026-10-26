@@ -11,7 +11,7 @@ buyLabel: "Buy on Amazon UK"
 
 ## Architecture & Partitioning
 
-Cloud infrastructure is convenient until you hit an authentication loop without mobile reception or need to revive a corrupted machine[cite: 5, 6]. This drive lives permanently on the Orbitkey house stack[cite: 7].
+Cloud infrastructure is convenient until you hit an authentication loop without mobile reception or need to revive a corrupted machine. This drive lives permanently on the Orbitkey house stack.
 
 ```text
 SANDISK-128GB/

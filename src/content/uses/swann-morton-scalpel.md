@@ -12,8 +12,8 @@ buyLabel: "Swann-Morton on Amazon UK"
 
 ## Surgical Precision
 
-Carrying bulky, aggressive folding pocket blades invites unnecessary complications[cite: 4, 5]. The British-made **Swann-Morton Retractable Handle** provides precise cutting performance in a slim, non-threatening footprint[cite: 5, 7]:
+Carrying bulky, aggressive folding pocket blades invites unnecessary complications. The British-made **Swann-Morton Retractable Handle** provides precise cutting performance in a slim, non-threatening footprint:
 
-- **Mechanism:** Solid metal slider that locks standard surgical blades away safely when closed[cite: 5, 7].
-- **Utility:** Cuts cleanly through parcel tape, heavy card packaging, and craft material without tearing[cite: 5, 7].
+- **Mechanism:** Solid metal slider that locks standard surgical blades away safely when closed.
+- **Utility:** Cuts cleanly through parcel tape, heavy card packaging, and craft material without tearing.
 - **Maintenance:** Dull blades swap out in seconds with fresh factory replacements.

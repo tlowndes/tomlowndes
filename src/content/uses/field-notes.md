@@ -12,8 +12,8 @@ buyLabel: "Cult Pens UK"
 
 ## Uninterrupted Analog Capture
 
-Pulling out a smartphone to jot down a fleeting design thought or a passing task is an ambush[cite: 4, 5]. Between badge icons, notifications, and lock screens, the original thought frequently dissolves before you finish typing[cite: 4, 5].
+Pulling out a smartphone to jot down a fleeting design thought or a passing task is an ambush. Between badge icons, notifications, and lock screens, the original thought frequently dissolves before you finish typing.
 
-- **Zero Digital Interference:** Paper never asks for an update or tempts you with an endless feed[cite: 5].
-- **Dot-Grid Layout:** Provides subtle alignment guides for interface wireframes, architectural block diagrams, and quick calculations without the stiffness of ruled lines[cite: 5].
-- **Portability:** Fits comfortably in back pockets, utility sleeves, or slim slings[cite: 5].
+- **Zero Digital Interference:** Paper never asks for an update or tempts you with an endless feed.
+- **Dot-Grid Layout:** Provides subtle alignment guides for interface wireframes, architectural block diagrams, and quick calculations without the stiffness of ruled lines.
+- **Portability:** Fits comfortably in back pockets, utility sleeves, or slim slings.

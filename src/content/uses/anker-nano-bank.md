@@ -12,8 +12,8 @@ buyLabel: "Anker UK Store"
 
 ## Immediate Connector Power
 
-Managing long, tangled cables while on the move adds unnecessary executive strain[cite: 5].
+Managing long, tangled cables while on the move adds unnecessary executive strain.
 
-- **Integrated Plug:** Foldable USB-C connector plugs directly into the bottom of the device with no trailing leads[cite: 5, 7].
-- **Capacity:** 5,000mAh battery cell provides enough reserve power to get through extended commutes and transit connections[cite: 5].
-- **Pocket Ergonomics:** Sits flush with the base of the phone so you can continue typing or navigating uninterrupted[cite: 5, 7].
+- **Integrated Plug:** Foldable USB-C connector plugs directly into the bottom of the device with no trailing leads.
+- **Capacity:** 5,000mAh battery cell provides enough reserve power to get through extended commutes and transit connections.
+- **Pocket Ergonomics:** Sits flush with the base of the phone so you can continue typing or navigating uninterrupted.
