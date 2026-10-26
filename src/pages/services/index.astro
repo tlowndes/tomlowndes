@@ -6,8 +6,6 @@ import SectionHeading from "@components/SectionHeading.astro";
 
 import { SERVICES } from "@consts";
 
-// Draft: hidden from the nav, sitemap and search. To publish, remove `noindex` below,
-// the sitemap filter in astro.config.mjs, and re-add the Services link in Header.astro.
 const QUOTE_HREF = "/contact/?reason=freelance";
 
 const services = [
@@ -51,7 +49,7 @@ const pill =
   "inline-block rounded-full bg-black px-3.5 py-1 text-xs font-semibold text-white hover:opacity-80 dark:bg-white dark:text-black transition";
 ---
 
-<PageLayout title={SERVICES.TITLE} description={SERVICES.DESCRIPTION} fullTitle noindex>
+<PageLayout title={SERVICES.TITLE} description={SERVICES.DESCRIPTION} fullTitle>
   <Container>
     <div class="animate mb-8">
       <BackToPrev href="/">

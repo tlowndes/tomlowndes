@@ -12,9 +12,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // Form confirmation page: only reached after sending a message.
-      // Services is a draft until the freelance offer launches.
-      filter: (page) => !page.includes("/contact/thanks/") && !page.includes("/services/"),
+      // Form confirmation page: only reached after sending a message
+      filter: (page) => !page.includes("/contact/thanks/"),
     }),
     tailwind(),
   ],
