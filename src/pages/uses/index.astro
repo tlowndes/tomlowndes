@@ -138,18 +138,18 @@ const categories = [
 
 <script is:inline>
   window.filterUsesList = function() {
-    const query = (document.getElementById('uses-search-input')?.value || '').toLowerCase().trim();
-    const items = document.querySelectorAll('.gear-item');
-    const categories = document.querySelectorAll('.gear-category');
+    const query = (document.getElementById("uses-search-input")?.value || "").toLowerCase().trim();
+    const items = document.querySelectorAll(".gear-item");
+    const categories = document.querySelectorAll(".gear-category");
 
     items.forEach(el => {
-      const text = el.getAttribute('data-search') || '';
-      el.style.display = (!query || text.includes(query)) ? '' : 'none';
+      const text = el.getAttribute("data-search") || "";
+      el.style.display = (!query || text.includes(query)) ? "" : "none";
     });
 
     categories.forEach(cat => {
-      const visible = cat.querySelectorAll('.gear-item:not([style*="display: none"])').length;
-      cat.style.display = visible > 0 ? '' : 'none';
+      const visible = cat.querySelectorAll(".gear-item:not([style*=\"display: none\"])").length;
+      cat.style.display = visible > 0 ? "" : "none";
     });
   };
 </script>
