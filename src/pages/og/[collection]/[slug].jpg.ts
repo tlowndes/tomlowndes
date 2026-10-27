@@ -19,7 +19,7 @@ export async function getStaticPaths() {
   return entries
     .filter(({ e }) => !e.data.draft && shareSource(e))
     .map(({ collection, e }) => ({
-      params: { collection, slug: e.slug },
+      params: { collection, slug: e.id },
       props: { src: shareSource(e)! },
     }));
 }

@@ -26,9 +26,9 @@ const projectsData = projects.map((p, index) => {
     : p.data.description;
 
   return {
-    id: p.slug,
+    id: p.id,
     indexNum: String(index + 1).padStart(2, "0"),
-    url: `/projects/${p.slug}/`,
+    url: `/projects/${p.id}/`,
     title: p.data.title,
     description: p.data.description,
     image: resolvedImage,
@@ -269,7 +269,13 @@ const projectsData = projects.map((p, index) => {
   }
 </style>
 
-<script is:inline define:vars={{ projectsData }}>
+<script
+  type="application/json"
+  id="projects-data"
+  set:html={JSON.stringify(projectsData).replace(/</g, "\\u003c")}
+></script>
+<script is:inline>
+  const projectsData = JSON.parse(document.getElementById("projects-data").textContent);
   window.PROJECT_MAP = {};
   if (Array.isArray(projectsData)) {
     projectsData.forEach((p) => {

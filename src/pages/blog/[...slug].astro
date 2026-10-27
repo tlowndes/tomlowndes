@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post, i) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post, newer: posts[i - 1], older: posts[i + 1] },
   }));
 }
@@ -25,8 +25,8 @@ type Props = {
 };
 
 const { post, newer, older } = Astro.props;
-const { Content } = await post.render();
-const shareImage = shareSource(post) && `/og/blog/${post.slug}.jpg`;
+const { Content } = await render(post);
+const shareImage = shareSource(post) && `/og/blog/${post.id}.jpg`;
 const jsonLd = articleSchema({
   url: new URL(Astro.url.pathname, Astro.site).href,
   headline: post.data.title,
@@ -87,7 +87,7 @@ const siblings = [
             {siblings.map(({ label, entry }) => (
               <li>
                 <a
-                  href={`/blog/${entry.slug}/`}
+                  href={`/blog/${entry.id}/`}
                   class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                 >
                   <span class="font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">{label}</span>

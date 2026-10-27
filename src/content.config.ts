@@ -1,8 +1,9 @@
-// src/content/config.ts
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     // Shorter title for the <title> tag when the post title is long
@@ -16,7 +17,7 @@ const blog = defineCollection({
 });
 
 const work = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/work" }),
   schema: z.object({
     company: z.string(),
     role: z.string(),
@@ -26,7 +27,7 @@ const work = defineCollection({
 });
 
 const projects = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -40,7 +41,7 @@ const projects = defineCollection({
 });
 
 const uses = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/uses" }),
   schema: z.object({
     title: z.string(),
     metaTitle: z.string().optional(),
@@ -51,8 +52,8 @@ const uses = defineCollection({
     badge: z.string(),
     why: z.string(),
     image: z.string().optional(),
-    buyLink: z.string().optional(),  // <-- Optional Buy/Store URL
-    buyLabel: z.string().optional(), // <-- Optional custom button text (e.g. "Buy on Amazon" or "Official Store")
+    buyLink: z.string().optional(),
+    buyLabel: z.string().optional(),
     draft: z.boolean().optional(),
     date: z.coerce.date().optional(),
     link: z.string().optional(),
