@@ -140,7 +140,8 @@ const label = "font-mono text-[11px] uppercase tracking-wider text-black/65 dark
       if (!response.ok || !result.success) throw new Error(result.message);
       form.reset();
       if (status) status.textContent = "Thanks, your message is on its way.";
-    } catch {
+    } catch (error) {
+      console.error(error);
       if (status) status.textContent = "Sorry, that didn't send. Please email me instead.";
     } finally {
       button.disabled = false;
