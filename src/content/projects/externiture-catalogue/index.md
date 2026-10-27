@@ -11,7 +11,7 @@ Nobody has ever picked up a catalogue of bus stop poles for fun. It gets opened 
 
 I designed and laid out the Externiture Bus Stop Infrastructure Catalogue for 2013 to 2014, working in InDesign and Photoshop.
 
-![Externiture catalogue cover](/externiture-cover.jpg)
+![Externiture catalogue cover](../../../assets/externiture-cover.jpg)
 
 ## The cover
 
@@ -21,21 +21,21 @@ The cover is almost entirely black. A single bus stop pole runs down the right-h
 
 Product photography of street furniture has a problem: it's grey metal on grey sky. To make the images feel deliberate, I treated them in black and white and let the colour of the signage show through, so the sign itself is the thing you notice.
 
-![Bus stop sign photograph](/externiture-photo.webp)
+![Bus stop sign photograph](../../../assets/externiture-photo.webp)
 
 ## Product pages and spec tables
 
 The core of the catalogue is the product page. Each one has a clear heading, a short explanation, product images and a specification table with sizes, part numbers and fitting information.
 
-![Linear Flat Flag product page](/externiture-spec-page.webp)
+![Linear Flat Flag product page](../../../assets/externiture-spec-page.webp)
 
 These pages carry the most information, so the layout has to do the work. Two columns of readable copy sit above the product images, and the table sits at the bottom, where a reader scanning for a part number expects it. Order notes and contact details sit in a quiet footer.
 
-![Catalogue page](/externiture-page-1.webp)
+![Catalogue page](../../../assets/externiture-page-1.webp)
 
-![Catalogue page](/externiture-page-2.webp)
+![Catalogue page](../../../assets/externiture-page-2.webp)
 
-![Catalogue page](/externiture-page-3.webp)
+![Catalogue page](../../../assets/externiture-page-3.webp)
 
 **Design:** the cover, grid, typography and page layouts.
 

@@ -5,7 +5,7 @@ role: "Precision Cutting"
 badge: "Surgical-Grade British Handle"
 why: "Replaces oversized, aggressive pocket knives with clean, replaceable surgical precision."
 description: "A Swann-Morton retractable scalpel replaces a bulky pocket knife for parcel tape, card packaging and craft work, with blades that lock away and swap in seconds."
-image: "/uses/swann-morton-scalpel.webp"
+image: ../../assets/uses/swann-morton-scalpel.webp
 buyLink: "https://www.amazon.co.uk/s?k=swann+morton+retractable+scalpel"
 buyLabel: "Swann-Morton on Amazon UK"
 ---

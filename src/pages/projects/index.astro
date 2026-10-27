@@ -1,19 +1,30 @@
 ---
 import { getCollection } from "astro:content";
+import { getImage } from "astro:assets";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
+import ContentPicture from "@components/ContentPicture.astro";
 import { PROJECTS } from "@consts";
 import { byDateDesc } from "@lib/utils";
+import { entryImage } from "@lib/images";
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort(byDateDesc);
 
-const projectsData = projects.map((p, index) => {
-  // Check frontmatter 'image' first, or fallback to the first markdown image in the body
-  const bodyImageMatch = p.body ? p.body.match(/!\[.*?\]\((.*?)\)/) : null;
-  const resolvedImage = p.data.image || (bodyImageMatch ? bodyImageMatch[1] : null);
+const projectCards = await Promise.all(projects.map(async (p, index) => {
+  const picture = entryImage(p);
+  const remote = p.body?.match(/!\[[^\]]*\]\((https?:[^)\s]+)\)/)?.[1] ?? null;
+  let image: string | null = remote;
+  if (picture) {
+    const optimized = await getImage({
+      src: picture,
+      width: Math.min(picture.width, 1400),
+      format: "webp",
+    });
+    image = optimized.src;
+  }
 
   // Strip markdown formatting for a clean popup preview text
   const cleanExcerpt = p.body
@@ -26,12 +37,13 @@ const projectsData = projects.map((p, index) => {
     : p.data.description;
 
   return {
+    picture,
     id: p.id,
     indexNum: String(index + 1).padStart(2, "0"),
     url: `/projects/${p.id}/`,
     title: p.data.title,
     description: p.data.description,
-    image: resolvedImage,
+    image,
     excerpt: cleanExcerpt,
     date: p.data.date.toLocaleDateString("en-GB", {
       year: "numeric",
@@ -41,6 +53,12 @@ const projectsData = projects.map((p, index) => {
     repoURL: p.data.repoURL || null,
     isFeatured: index === 0,
   };
+}));
+
+const projectsData = projectCards.map((card) => {
+  const data = { ...card };
+  delete data.picture;
+  return data;
 });
 ---
 
@@ -72,7 +90,7 @@ const projectsData = projects.map((p, index) => {
 
       <!-- Dynamic Projects Grid -->
       <section class="animate grid gap-5 sm:grid-cols-2">
-        {projectsData.map((project) =>
+        {projectCards.map((project) =>
           project.isFeatured ? (
             /* NEWEST PROJECT: FULL-WIDTH FEATURED TILE */
             <a
@@ -81,13 +99,23 @@ const projectsData = projects.map((p, index) => {
               class="sm:col-span-2 group rounded-2xl border border-black/10 bg-white/80 p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 dark:hover:border-white/25 space-y-4"
             >
               <div class="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-black/10 dark:ring-white/10 flex flex-col justify-between p-5 text-white bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-950">
-                {project.image && (
+                {(project.picture || project.image) && (
                   <>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    {project.picture ? (
+                      <ContentPicture
+                        src={project.picture}
+                        alt={project.title}
+                        sizes="(min-width: 640px) 720px, 100vw"
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        pictureClass="absolute inset-0 block h-full w-full"
+                      />
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/40" />
                   </>
                 )}
@@ -144,13 +172,23 @@ const projectsData = projects.map((p, index) => {
             >
               <div class="space-y-3.5">
                 <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-900 p-4 flex flex-col justify-between text-white ring-1 ring-black/5 dark:ring-white/10 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950">
-                  {project.image && (
+                  {(project.picture || project.image) && (
                     <>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                      {project.picture ? (
+                        <ContentPicture
+                          src={project.picture}
+                          alt={project.title}
+                          sizes="(min-width: 640px) 360px, 100vw"
+                          class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          pictureClass="absolute inset-0 block h-full w-full"
+                        />
+                      ) : (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      )}
                       <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/40" />
                     </>
                   )}

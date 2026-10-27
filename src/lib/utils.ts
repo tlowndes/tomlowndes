@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { shareFile } from "@lib/images";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -38,8 +39,8 @@ export function byDateDesc<T extends { id: string; data: { date: Date } }>(a: T,
   return a.id.localeCompare(b.id, "en");
 }
 
-// Local image used for a post or project's link preview: front matter image, else the first image in the body
-export function shareSource(entry: { data: { image?: string }; body?: string | null }) {
-  const src = entry.data.image ?? entry.body?.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];
-  return src?.startsWith("/") ? src : undefined;
+// Local image used for a post or project's link preview: front matter image, else the first image in the body.
+// Returns the file on disk so the preview JPEG can be rendered from it.
+export function shareSource(entry: { filePath?: string; data: { image?: string }; body?: string | null }) {
+  return shareFile(entry);
 }

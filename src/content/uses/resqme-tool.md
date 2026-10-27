@@ -5,7 +5,7 @@ role: "Emergency Safety"
 badge: "Spring-Loaded • Glass & Belt"
 why: "Non-negotiable vehicle safety utility that adds near-zero weight or bulk to the physical key stack."
 description: "The Resqme tool lives on my keyring: a seatbelt cutter and spring-loaded glass breaker for getting out of a car in an emergency, adding almost no weight."
-image: "/uses/resqme-tool.webp"
+image: ../../assets/uses/resqme-tool.webp
 buyLink: "https://www.amazon.co.uk/dp/B000IE0EIQ"
 buyLabel: "Buy Resqme on Amazon UK"
 ---

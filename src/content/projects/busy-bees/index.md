@@ -2,7 +2,7 @@
 title: "Busy Bees Childcare"
 description: "Social graphics, web banners, video thumbnails and a parent-app landing page for the Busy Bees nursery group, made to be warm, clear and quick to read."
 date: "Jan 18 2024"
-image: "/busybees-app-landing.jpg"
+image: ../../../assets/busybees-app-landing.jpg
 demoURL: "https://www.busybeeschildcare.co.uk/app"
 ---
 
@@ -12,7 +12,7 @@ A nursery group is a strange client. Your audience is anxious parents, tired sta
 
 I was Creative Designer at Busy Bees Nurseries until 2021, working in a small, agile team across brand, digital and print, business communications, video and photography. This page covers the digital side.
 
-![Busy Bees web banner](/busybees-banner.jpg)
+![Busy Bees web banner](../../../assets/busybees-banner.jpg)
 
 ## Social media
 
@@ -20,27 +20,27 @@ Most of the work was social graphics, and they had jobs to do. Recruitment posts
 
 The key to all of it was the mascot. A cartoon bee in a hi-vis jacket and a woolly hat can say "please don't give your under-fives sparklers" without sounding like a lecture.
 
-![Safety Buzz social graphic](/busybees-safety.jpg)
+![Safety Buzz social graphic](../../../assets/busybees-safety.jpg)
 
-![Vacancy social graphic](/busybees-vacancy.jpg)
+![Vacancy social graphic](../../../assets/busybees-vacancy.jpg)
 
-![Awards social graphic](/busybees-awards.jpg)
+![Awards social graphic](../../../assets/busybees-awards.jpg)
 
-![Social graphic](/busybees-italy.jpg)
+![Social graphic](../../../assets/busybees-italy.jpg)
 
 ## Banners, thumbnails and the YouTube channel
 
 The same visual language ran through web banners, video thumbnails and the Busy Bees YouTube channel, so that a parent, a candidate or a child watching a story session could tell where they were within a second.
 
-![Busy Bees YouTube channel](/busybees-youtube.jpg)
+![Busy Bees YouTube channel](../../../assets/busybees-youtube.jpg)
 
-![Video thumbnail](/busybees-video-1.jpg)
+![Video thumbnail](../../../assets/busybees-video-1.jpg)
 
 ## The parent app landing page
 
 I also designed the landing page for the Busy Bees parent app, the place where parents get photos, updates and milestones from their child's day. It had to explain what the app does in about ten seconds and get a worried parent to the user guide.
 
-![Busy Bees parent app landing page](/busybees-app-landing.jpg)
+![Busy Bees parent app landing page](../../../assets/busybees-app-landing.jpg)
 
 The page is live at [busybeeschildcare.co.uk/app](https://www.busybeeschildcare.co.uk/app).
 

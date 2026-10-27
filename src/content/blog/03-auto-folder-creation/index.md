@@ -17,7 +17,7 @@ A terminal window will launch and walk you through the folder creation script.
 
 When you run the script, it prompts you to select the type of project you're working on. Here's a quick rundown of the options:
 
-![Auto Folder launched on terminal](/Auto-folder-terminal.png)
+![Auto Folder launched on terminal](../../../assets/Auto-folder-terminal.png)
 
 After making a choice, it asks me to enter the project name. The script then takes over, creating a main project folder in a pre-defined directory based on the project type.
 

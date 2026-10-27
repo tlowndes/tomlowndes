@@ -8,7 +8,7 @@ date: "Jun 1 2012"
 
 Every magazine cover wants to be looked at. Faces, smiles, a bit of teeth. I wanted the opposite. Valour is a concept men's lifestyle magazine covering grooming, style and everyday know-how, and the whole thing hangs on one stubborn move: a big, cut-out "V" parked right over the cover model's face.
 
-![Valour cover poster](/valour-poster.jpg)
+![Valour cover poster](../../../assets/valour-poster.jpg)
 
 ## The identity
 
@@ -22,17 +22,17 @@ Pixels are easy. Ink is honest. So I took the cover design into the print studio
 
 Screen printing is slow, messy and unforgiving. You get one pull of the squeegee, a smell you never quite wash out, and a result that either works or doesn't. That's the appeal. The "V" held up.
 
-![Screen printing the V](/valour-screenprint.webp)
+![Screen printing the V](../../../assets/valour-screenprint.webp)
 
 ## Editorial design
 
 Once you're past the cover, the "V" steps aside and the headlines take over: big, chunky type slammed over black-and-white portraits and sharp product shots. The issue covers wet shaving, whisky, coffee, wardrobe classics and the contents of a decent weekend wash bag, plus the practical stuff nobody teaches you, like networking in person and 25 style tips.
 
-![Feature spreads: Why Wet Shaving? and Anatomy of a Classic](/valour-spreads.webp)
+![Feature spreads: Why Wet Shaving? and Anatomy of a Classic](../../../assets/valour-spreads.webp)
 
 The contents spread lays out the whole issue at a glance, from the perfect cup of coffee to a beginner's guide to whisky.
 
-![Valour contents and issue overview](/valour-contents.webp)
+![Valour contents and issue overview](../../../assets/valour-contents.webp)
 
 **Design:** the identity, the cover and poster, the page layouts and every type decision, for better or worse.
 

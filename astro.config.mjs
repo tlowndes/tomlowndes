@@ -11,6 +11,11 @@ export default defineConfig({
   // so every internal link, canonical and sitemap URL uses the trailing slash.
   trailingSlash: "always",
   build: { format: "directory" },
+  image: {
+    // Markdown pictures become responsive WebP. Components add AVIF as well.
+    layout: "constrained",
+    responsiveStyles: true,
+  },
   integrations: [
     mdx(),
     sitemap({

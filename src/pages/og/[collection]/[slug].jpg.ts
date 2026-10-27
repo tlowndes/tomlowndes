@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-import path from "node:path";
 import sharp from "sharp";
 import { shareSource } from "@lib/utils";
 
@@ -25,7 +24,7 @@ export async function getStaticPaths() {
 }
 
 export const GET: APIRoute = async ({ props }) => {
-  const file = path.join(process.cwd(), "public", props.src);
+  const file = props.src;
   const input = sharp(file, { density: 300 });
   const { width = WIDTH, height = HEIGHT } = await input.metadata();
   const ratio = width / height;

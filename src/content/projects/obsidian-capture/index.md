@@ -11,7 +11,7 @@ You think of something. Open the notes app, find the right note, scroll to the r
 
 Vault Capture is a small Android app I built to fix that. A task or a link goes from my phone into my Obsidian vault in a couple of taps, without opening Obsidian at all.
 
-![Vault Capture app mockup](/capture-mockup.webp)
+![Vault Capture app mockup](../../../assets/capture-mockup.webp)
 
 ## Two jobs, and nothing else
 
