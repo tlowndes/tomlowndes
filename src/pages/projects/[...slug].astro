@@ -1,8 +1,10 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import { byDateDesc, readingTime, shareSource } from "@lib/utils";
+import { assetFor, isLocalImageRef } from "@lib/images";
+import ContentPicture from "@components/ContentPicture.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import ContactBlock from "@components/ContactBlock.astro";
@@ -12,7 +14,7 @@ export async function getStaticPaths() {
     .filter(post => !post.data.draft)
     .sort(byDateDesc);
   return projects.map((project, i) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id },
     props: { project, index: i, newer: projects[i - 1], older: projects[i + 1] },
   }));
 }
@@ -24,10 +26,12 @@ type Props = {
 };
 
 const { project, index, newer, older } = Astro.props;
-const { Content } = await project.render();
-const shareImage = shareSource(project) && `/og/projects/${project.slug}.jpg`;
+const { Content } = await render(project);
+const shareImage = shareSource(project) && `/og/projects/${project.id}.jpg`;
 // Only show a hero when the front matter image isn't already in the body
-const hero = project.data.image && !project.body.includes(project.data.image) ? project.data.image : null;
+const hero = isLocalImageRef(project.data.image) && !project.body?.includes(project.data.image)
+  ? assetFor(project.filePath, project.data.image)
+  : null;
 const indexNum = String(index + 1).padStart(2, "0");
 const links = [
   project.data.demoURL && { href: project.data.demoURL, label: "Visit live site" },
@@ -83,7 +87,7 @@ const siblings = [
 
       {hero && (
         <div class="animate overflow-hidden rounded-2xl border border-black/10 bg-neutral-900 dark:border-white/10">
-          <img src={hero} alt={project.data.title} class="h-auto w-full" />
+          <ContentPicture src={hero} alt={project.data.title} class="h-auto w-full" />
         </div>
       )}
 
@@ -99,7 +103,7 @@ const siblings = [
             {siblings.map(({ label, entry }) => (
               <li>
                 <a
-                  href={`/projects/${entry.slug}/`}
+                  href={`/projects/${entry.id}/`}
                   class="group flex h-full flex-col gap-1 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                 >
                   <span class="font-mono text-[10px] uppercase tracking-wider text-black/65 dark:text-white/65">{label}</span>

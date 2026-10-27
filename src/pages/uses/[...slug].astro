@@ -1,15 +1,16 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
-import { imageSize } from "@lib/imageSize";
+import { assetFor } from "@lib/images";
+import ContentPicture from "@components/ContentPicture.astro";
 import { articleSchema } from "@lib/schema";
 
 export async function getStaticPaths() {
   const items = await getCollection("uses", ({ data }) => !data.draft);
   return items.map((item) => ({
-    params: { slug: item.slug },
+    params: { slug: item.id },
     props: { item },
   }));
 }
@@ -19,8 +20,8 @@ type Props = {
 };
 
 const { item } = Astro.props;
-const { Content } = await item.render();
-const { width, height } = await imageSize(item.data.image);
+const { Content } = await render(item);
+const hero = assetFor(item.filePath, item.data.image);
 
 // Supports either 'buyLink' or 'link' from frontmatter
 const purchaseUrl = item.data.buyLink || item.data.link;
@@ -30,7 +31,7 @@ const jsonLd = articleSchema({
   url: new URL(Astro.url.pathname, Astro.site).href,
   headline: item.data.metaTitle ?? item.data.title,
   description: item.data.description ?? item.data.why,
-  image: new URL(item.data.image ?? "/og-default.png", Astro.site).href,
+  image: new URL(hero?.src ?? "/og-default.png", Astro.site).href,
   about: item.data.metaTitle ?? item.data.title,
 });
 ---
@@ -68,15 +69,12 @@ const jsonLd = articleSchema({
         </div>
 
         <!-- Optional Hero Image -->
-        {item.data.image && (
+        {hero && (
           <div class="overflow-hidden rounded-xl border border-black/10 bg-neutral-950 ring-1 ring-black/5 dark:border-white/10 dark:ring-white/10">
-            <img
-              src={item.data.image}
+            <ContentPicture
+              src={hero}
               alt={item.data.title}
-              width={width}
-              height={height}
-              loading="lazy"
-              decoding="async"
+              sizes="(min-width: 768px) 720px, 100vw"
               class="h-auto max-h-[440px] w-full object-cover"
             />
           </div>

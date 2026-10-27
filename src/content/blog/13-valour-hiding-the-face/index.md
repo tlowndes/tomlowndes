@@ -13,7 +13,7 @@ For my final-year major project at university in 2012, I wanted to see what happ
 
 The result was **Valour**, a concept men's lifestyle magazine about grooming, style and everyday know-how. You can see the finished work on [the Valour project page](/projects/valour-magazine/), but this is the story of how it got made, and the bits that didn't go to plan.
 
-![Valour cover poster](/valour-poster.jpg)
+![Valour cover poster](../../../assets/valour-poster.jpg)
 
 ## One letter, found the hard way
 
@@ -31,7 +31,7 @@ Pixels are forgiving. Ink isn't. So I took the cover design into the print studi
 
 Screen printing is a lesson in how much you rely on the undo button. The setup is fussy: the screen, the exposure, lining everything up. It needed a few attempts before I got a print I was happy with, and every failed one taught me something a monitor never would. When it finally worked, the "V" held up with ink on paper.
 
-![Screen printing the V](/valour-screenprint.webp)
+![Screen printing the V](../../../assets/valour-screenprint.webp)
 
 ## Everything behind the cover
 
@@ -39,9 +39,9 @@ Once you're past the cover, the "V" steps aside and the headlines take over: big
 
 I filled the issue with the kind of thing I actually wanted to read: the perfect cup of coffee, a beginner's guide to whisky, why wet shaving is worth the effort, the anatomy of a classic jacket, a weekend wash bag, how to grow a beard, and the practical stuff nobody teaches you, like networking in person.
 
-![Feature spreads: Why Wet Shaving? and Anatomy of a Classic](/valour-spreads.webp)
+![Feature spreads: Why Wet Shaving? and Anatomy of a Classic](../../../assets/valour-spreads.webp)
 
-![Valour contents and issue overview](/valour-contents.webp)
+![Valour contents and issue overview](../../../assets/valour-contents.webp)
 
 I had help. Friends lent a hand with things like photography, styling and illustrations, which is a big reason it looks like a proper magazine and not one person's attempt at one.
 

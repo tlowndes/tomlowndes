@@ -1,11 +1,15 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ContactBlock from "@components/ContactBlock.astro";
+import { Picture } from "astro:assets";
 import { byDateDesc, dateRange, readingTime as getReadingTime } from "@lib/utils";
+import { entryImage } from "@lib/images";
 import { SITE, HOME, SOCIALS } from "@consts";
 import { PERSON_ID } from "@lib/schema";
+import ContentPicture from "@components/ContentPicture.astro";
+import headshot from "../assets/tom-headshot.jpg";
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -23,15 +27,14 @@ const allwork = (await getCollection("work"))
 
 const work = await Promise.all(
   allwork.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
   })
 );
 
 // Frontmatter image first, then the first markdown image in the body
-function getImage(entry: CollectionEntry<"projects">) {
-  const bodyMatch = entry.body ? entry.body.match(/!\[.*?\]\((.*?)\)/) : null;
-  return entry.data.image || (bodyMatch ? bodyMatch[1] : null);
+function projectPicture(entry: CollectionEntry<"projects">) {
+  return entryImage(entry);
 }
 
 const jsonLd = {
@@ -74,13 +77,18 @@ const shortDate = (date: Date) =>
         </div>
 
         <div class="flex flex-col gap-4 sm:flex-row-reverse sm:items-start sm:gap-6">
-          <img
-            src="/tom-headshot.jpg"
+          <Picture
+            src={headshot}
             alt="Tom Lowndes"
-            width="128"
-            height="128"
-            loading="eager"
+            formats={["avif", "webp"]}
+            fallbackFormat="webp"
+            width={128}
+            height={128}
+            densities={[1, 2]}
             class="h-20 w-20 sm:h-32 sm:w-32 shrink-0 rounded-2xl object-cover shadow-sm ring-1 ring-black/10 dark:ring-white/15"
+            pictureAttributes={{ class: "shrink-0" }}
+            loading="eager"
+            priority
           />
           <div class="flex-1 space-y-3">
             <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white">
@@ -174,20 +182,21 @@ const shortDate = (date: Date) =>
         </div>
         <ul class="grid gap-4 sm:grid-cols-3">
           {projects.map((project) => {
-            const image = getImage(project);
+            const image = projectPicture(project);
             return (
               <li>
                 <a
-                  href={`/projects/${project.slug}/`}
+                  href={`/projects/${project.id}/`}
                   class="group flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                 >
                   <div class="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950 border-b border-black/5 dark:border-white/5">
                     {image && (
-                      <img
+                      <ContentPicture
                         src={image}
                         alt=""
-                        loading="lazy"
+                        sizes="(min-width: 640px) 240px, 100vw"
                         class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        pictureClass="block h-full w-full"
                       />
                     )}
                   </div>
@@ -224,7 +233,7 @@ const shortDate = (date: Date) =>
           {blog.map((post) => (
             <li>
               <a
-                href={`/blog/${post.slug}/`}
+                href={`/blog/${post.id}/`}
                 class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 rounded-xl border border-black/10 bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white hover:shadow-sm dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
               >
                 <div class="space-y-1 pr-2">

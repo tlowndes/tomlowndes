@@ -4,7 +4,7 @@ category: "carry"
 role: "Rapid Power Tether"
 badge: "21cm • 240W PD 3.1 Loop"
 why: "Eliminates cable clutter while ensuring an ultra-high-wattage charging tether is physically anchored to the car keys at all times."
-image: "/uses/car-key-module.webp"
+image: ../../assets/uses/car-key-module.webp
 buyLink: "https://www.amazon.co.uk/s?k=vafoton+240w+short+usb+c+cable+21cm"
 buyLabel: "View Cable on Amazon UK"
 ---

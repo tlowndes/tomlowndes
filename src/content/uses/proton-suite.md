@@ -5,7 +5,7 @@ role: "Primary Privacy Architecture"
 badge: "Zero-Knowledge Encryption"
 why: "Isolates private communications and client files from surveillance capitalism and data scraping."
 description: "Why I use Proton Mail, Drive and Pass: end-to-end encrypted email, backups and passwords that keep private messages and client files away from data scraping."
-image: "/uses/proton-suite.webp"
+image: ../../assets/uses/proton-suite.webp
 buyLink: "https://proton.me/"
 buyLabel: "Proton.me Official Site"
 ---

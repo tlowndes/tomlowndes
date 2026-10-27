@@ -2,7 +2,7 @@
 title: "Folder Tidy"
 description: "A Windows app that cleans up empty folders, sorts finished downloads into the right place and lets you undo any of it"
 date: "Oct 8 2026"
-image: "/projects/folder-tidy-clean.png"
+image: ../../../assets/projects/folder-tidy-clean.png
 ---
 
 ## Folders breed when you're not looking
@@ -11,7 +11,7 @@ Nobody sets out to have a "New folder (3)". It just happens. You create one, for
 
 Folder Tidy is a Windows app I built to deal with both, in a way that I can trust. It follows the same `@` folder system I use in Proton Drive, and it never does anything I can't undo.
 
-![Folder Tidy: Clean up](/projects/folder-tidy-clean.png)
+![Folder Tidy: Clean up](../../../assets/projects/folder-tidy-clean.png)
 
 ## Four jobs
 
@@ -20,7 +20,7 @@ Folder Tidy is a Windows app I built to deal with both, in a way that I can trus
 - **Structure.** It sets up your folder layout anywhere you like. The **Proton** profile uses the `@` names (`@archives`, `@documents`, and so on). The **This PC** profile uses plain, capitalised names and reuses Windows' own Music, Documents and Videos folders. Folders that already exist are left alone.
 - **History.** Every move, removal and new folder can be undone, and redone, for 30 days.
 
-![Folder Tidy: Downloads, in dark mode](/folder-tidy-downloads.png)
+![Folder Tidy: Downloads, in dark mode](../../../assets/folder-tidy-downloads.png)
 
 ## It's careful
 
@@ -31,7 +31,7 @@ Tools that move your files around make me nervous, so the safety rules are the m
 - **Name clashes keep both.** If a name is already taken, you get `invoice (2).pdf`, not an overwrite.
 - **It shows you first.** The Structure page says how many folders are new and how many already exist before it creates anything.
 
-![Folder Tidy: Structure](/folder-tidy-structure.png)
+![Folder Tidy: Structure](../../../assets/folder-tidy-structure.png)
 
 ## Sorting rules
 

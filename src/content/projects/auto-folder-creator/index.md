@@ -11,7 +11,7 @@ Every new job begins the same way. Make a folder. Make the same subfolders insid
 
 I'd already automated it once, with a [Python script triggered by Caps Lock + D](/blog/03-auto-folder-creation/). It worked, but it lived in a terminal window, and I had to run it every time. So I rebuilt it as a proper desktop app.
 
-![Auto Folder Creator main window](/afc-final-create.png)
+![Auto Folder Creator main window](../../../assets/afc-final-create.png)
 
 ## One keystroke, one structure
 
@@ -29,7 +29,7 @@ Pick a project type, type a name, hit Enter. The folders, a Word brief and any t
 - **Nested subfolders:** `Export/Web` creates `Web` inside `Export`.
 - **Keyboard first:** `Ctrl+1` to `Ctrl+4` picks a type, `Enter` creates, `Esc` goes back. A recent projects list and a duplicate warning keep you honest.
 
-![Organise existing folders](/afc-final-organise.png)
+![Organise existing folders](../../../assets/afc-final-organise.png)
 
 ## From terminal to app
 

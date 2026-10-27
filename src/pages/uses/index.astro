@@ -5,12 +5,10 @@ import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import ContactBlock from "@components/ContactBlock.astro";
 import { USES } from "@consts";
-import { imageSize } from "@lib/imageSize";
+import { assetFor } from "@lib/images";
+import ContentPicture from "@components/ContentPicture.astro";
 
 const allGear = (await getCollection("uses", ({ data }) => !data.draft));
-const sizes = Object.fromEntries(
-  await Promise.all(allGear.map(async (g) => [g.slug, await imageSize(g.data.image)])),
-);
 
 const categories = [
   { key: "carry", label: "01. On-Body Carry & The Split Rig" },
@@ -83,22 +81,22 @@ const categories = [
               </div>
 
               <div class="grid gap-4 sm:grid-cols-2">
-                {items.map((item) => (
+                {items.map((item) => {
+                  const picture = assetFor(item.filePath, item.data.image);
+                  return (
                   <a
-                    href={`/uses/${item.slug}/`}
+                    href={`/uses/${item.id}/`}
                     data-search={`${item.data.title} ${item.data.role} ${item.data.badge} ${item.data.why}`.toLowerCase()}
                     class="gear-item group flex flex-col justify-between overflow-hidden rounded-xl border border-black/10 bg-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/25 dark:hover:bg-neutral-900/80"
                   >
-                    {item.data.image && (
+                    {picture && (
                       <div class="aspect-video w-full overflow-hidden bg-neutral-900 border-b border-black/5 dark:border-white/5">
-                        <img
-                          src={item.data.image}
+                        <ContentPicture
+                          src={picture}
                           alt={item.data.title}
-                          width={sizes[item.slug].width}
-                          height={sizes[item.slug].height}
-                          loading="lazy"
-                          decoding="async"
+                          sizes="(min-width: 640px) 360px, 100vw"
                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          pictureClass="block h-full w-full"
                         />
                       </div>
                     )}
@@ -122,7 +120,8 @@ const categories = [
                       <span>Read notes →</span>
                     </div>
                   </a>
-                ))}
+                  );
+                })}
               </div>
             </section>
           );

@@ -27,7 +27,7 @@ Before I wrote the new app I mocked up the design and agreed the layout first. T
 
 ![Concept sketch: layout options](/afc-sketch-3-options.svg)
 
-![The finished app](/afc-final-create.png)
+![The finished app](../../../assets/afc-final-create.png)
 
 ### The decisions that mattered
 
@@ -45,7 +45,7 @@ So Vault Capture does two jobs and nothing else:
 - **Task:** adds a line to the `## Active` list in my Quick Task note, with a due date (Today, Tomorrow or pick one).
 - **Read later:** saves a link into my Read It Later inbox in the vault.
 
-![Vault Capture app mockup](/capture-mockup.webp)
+![Vault Capture app mockup](../../../assets/capture-mockup.webp)
 
 The bit I'm happiest with is that it shows up in the Android Share sheet. See something worth keeping in Chrome, YouTube or Reddit, hit Share, tap Vault Capture, and it's saved with no screen at all.
 
