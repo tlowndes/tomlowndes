@@ -1,0 +1,25 @@
+# Security headers for Cloudflare Pages.
+# Content-Security-Policy-Report-Only reports violations in the browser console and does not block anything.
+# HSTS intentionally has no preload.
+# script-src hashes are sha256 of the built inline script text (leading whitespace included).
+# Recompute them from dist/ if an inline script, an onclick/oninput handler, or the HTML minifier changes.
+#   theme toggle (Head.astro, every page): sha256-4//1P97lyxiHC5H24/vK1hj8nY1mFxopEUlNAiVseS4=
+#   astro:before-swap font-preload removal (every page): sha256-jlh3Z7NSNiaGgMz/AYl3fe12VVY0lkLIDTasn8Mb100=
+#   /blog/ tag filter: sha256-DkO+U06ZG17k5AAH1JlCgcDu7PQVu0606qblx/BfdKI=
+#   /contact/ form: sha256-e4l+BCGeyElprmiJGFg6nM4HCEOW7xMrtoBpGViOzR4=
+#   /projects/ modal: sha256-gwiQDIvhT1tL4Lue5vKIdR2L5C9UMLSxsUSikL1xkPw=
+#   /uses/ filter: sha256-CZdqihRDynp0Nx6yFUrx/AOmdQvGIDG3GvL2xroWozw=
+# The other script-src hashes are the built onclick/oninput handlers on those pages.
+# 'unsafe-hashes' lets those handler hashes apply. It does not allow other inline scripts.
+# style-src 'unsafe-inline' covers Astro's image <style>, Shiki code colours, the honeypot style attribute,
+# and the theme toggle's temporary <style> element. Fonts are self-hosted. No analytics scripts are in the build.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), bluetooth=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), serial=(), usb=()
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-hashes' sha256-4//1P97lyxiHC5H24/vK1hj8nY1mFxopEUlNAiVseS4= sha256-jlh3Z7NSNiaGgMz/AYl3fe12VVY0lkLIDTasn8Mb100= sha256-DkO+U06ZG17k5AAH1JlCgcDu7PQVu0606qblx/BfdKI= sha256-e4l+BCGeyElprmiJGFg6nM4HCEOW7xMrtoBpGViOzR4= sha256-gwiQDIvhT1tL4Lue5vKIdR2L5C9UMLSxsUSikL1xkPw= sha256-CZdqihRDynp0Nx6yFUrx/AOmdQvGIDG3GvL2xroWozw= sha256-0abwjE0QSjCZz9fD9Oe0ghZTMMRWJ6HZC/NLnO5S8uU= sha256-lbokavS1WrE0t8hyga4wosh0tHZJzaHBYxECXdZVZAU= sha256-8NZ4/hS4K3ebOePbnhK4qssagRl++y1XjeMXl2EKD/s= sha256-UPuuXKTz7oHsuPCuieWUV3cyd4e2HjQewnQuE0qC2ug= sha256-qVHnF4KhqCsfc5vtMo8y9rodd1LT2PJoL3pF1zgFUvg= sha256-BWVIkZQjcvynet6pjBU6ygMonHGhllFKnsLZi7LRCWw= sha256-j3vojxCD9DO+rsZx61s9M7P6iYFCHu99No5z2wjW8Gw= sha256-TrT4WcDEd1xvKeVz8vgypTe2+O1/rFZBcGbih44WKGE= sha256-hcuPWYemXz1GId9bV2ihawGHSZHYvVasDNF6Mcglo4E= sha256-UBYzTKJQjPMya9reSAymLSTN6S9e31ub0bKd8+KxKjo= sha256-RCNl7nR1fPGBYBCMfHmDgun4vTn1G3WskqpZHUgyAys= sha256-UpdAYY32DnPGgeaJDLI9E+KSoThWFCA1eNyz2ip9/qY= sha256-pBsf1uaV5bnkWcGxbksoWLJb0gxg8dfGaIxgPrTWzaI= sha256-M/LlGn/rq7NILSVuOTHtLluOIMu7svB+yjCES54P+Eo= sha256-R9IZ71HnDFDZ90Ul9tnJO7xLa79nElDHHkrUlLgJKbA= sha256-Bz28MZLLGHbH1VMKKVXJx0T6I1W+HUay/z/nhtX1sSM= sha256-PbphwbCkHJ2iyZgYMKzAmasY587/tBgBfMprtsyIsH4= sha256-I3afxTrsuENYfMfMCGLUnaVIsEtgHH3ISGtnm5lb/10= sha256-PkCbvrxpcqsb+kP1+0udDXiTbXg1wo9Tiii67UHamA4= sha256-vR1eEi3K67AKeSps5SWRnWORy4OieWgFBfdA74ekvz4= sha256-4RKzahC+09jfOUWRhJXnT9dtVOhP03GJfeSU5FH8J+A=; style-src 'self' 'unsafe-inline'; img-src 'self' https://images.unsplash.com; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
