@@ -3,11 +3,13 @@ import "../styles/global.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import "@fontsource/lora/latin-400.css";
+import "@fontsource/lora/latin-400-italic.css";
+// Bold text in articles is Lora at weight 600, so this face stays. It is not preloaded.
 import "@fontsource/lora/latin-600.css";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
 import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
 import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
-import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
+import lora400italic from "@fontsource/lora/files/lora-latin-400-italic.woff2";
 
 import { ClientRouter } from "astro:transitions";
 import { SITE } from "@consts";
@@ -42,7 +44,7 @@ const imageURL = new URL(image, Astro.site);
 <link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={inter600} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={lora400} as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href={lora600} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={lora400italic} as="font" type="font/woff2" crossorigin/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

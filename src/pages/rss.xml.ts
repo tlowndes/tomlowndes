@@ -1,6 +1,7 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { SITE, BLOG } from "@consts";
+import { byDateDesc } from "@lib/utils";
 
 type Context = {
   site: string
@@ -14,7 +15,7 @@ export async function GET(context: Context) {
     .filter(project => !project.data.draft);
 
   const items = [...blog, ...projects]
-    .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+    .sort(byDateDesc);
 
   return rss({
     title: SITE.NAME,

@@ -7,7 +7,8 @@ The source for my personal site: portfolio, CV, blog and a few extra pages. It's
 ## What's on the site
 
 - **Projects:** selected design work, from brand systems and print to the small desktop and mobile tools I build
-- **Work:** roles and experience
+- **Services:** freelance branding, websites, app design and social graphics, with starting prices
+- **Experience:** recent roles, shown on the homepage
 - **CV:** an online CV, with the CV and portfolio PDFs to download
 - **Blog:** notes on design, workflow, AuDHD-friendly systems and self-hosting
 - **Uses:** the hardware, everyday carry and software I use daily
@@ -36,7 +37,7 @@ All content is Markdown, in `src/content/`:
 |-------------|--------------------------------|
 | `blog/`     | Blog posts, one folder each    |
 | `projects/` | Portfolio projects             |
-| `work/`     | Roles shown on the Work page   |
+| `work/`     | Roles shown on the homepage    |
 | `uses/`     | Items on the Uses page         |
 
 Each collection's frontmatter fields are defined in `src/content/config.ts`. Set `draft: true` to hide a post or project. Site-wide settings (name, email, page titles and social links) are in `src/consts.ts`.
