@@ -4,10 +4,11 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import { PROJECTS } from "@consts";
+import { byDateDesc } from "@lib/utils";
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort(byDateDesc);
 
 const projectsData = projects.map((p, index) => {
   // Check frontmatter 'image' first, or fallback to the first markdown image in the body
@@ -18,7 +19,7 @@ const projectsData = projects.map((p, index) => {
   const cleanExcerpt = p.body
     ? p.body
         .replace(/!\[.*?\]\(.*?\)/g, "")
-        .replace(/[#*`>_~\[\]()!-]/g, " ")
+        .replace(/[#*`>_~[\]()!-]/g, " ")
         .replace(/\s+/g, " ")
         .trim()
         .slice(0, 280) + "..."
@@ -55,7 +56,7 @@ const projectsData = projects.map((p, index) => {
       <!-- Page Header -->
       <section class="animate space-y-4 border-b border-black/10 dark:border-white/10 pb-8">
         <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] font-mono text-emerald-700 dark:text-emerald-300">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 motion-safe:animate-pulse"></span>
           <span>Available for remote & in-house design roles</span>
         </div>
 
@@ -280,45 +281,45 @@ const projectsData = projects.map((p, index) => {
     // Let new-tab / new-window clicks follow the link as normal
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return true;
     const p = window.PROJECT_MAP[id];
-    const modal = document.getElementById('project-modal');
+    const modal = document.getElementById("project-modal");
     if (!p || !modal) return true;
 
-    document.getElementById('modal-date').textContent = `PROJECT // ${p.indexNum} • ${p.date}`;
-    document.getElementById('modal-title').textContent = p.title;
-    document.getElementById('modal-desc').textContent = p.description;
-    document.getElementById('modal-excerpt').textContent = p.excerpt;
-    document.getElementById('modal-full-link').href = p.url;
+    document.getElementById("modal-date").textContent = `PROJECT // ${p.indexNum} • ${p.date}`;
+    document.getElementById("modal-title").textContent = p.title;
+    document.getElementById("modal-desc").textContent = p.description;
+    document.getElementById("modal-excerpt").textContent = p.excerpt;
+    document.getElementById("modal-full-link").href = p.url;
 
-    const imgWrapper = document.getElementById('modal-image-wrapper');
-    const imgEl = document.getElementById('modal-image');
+    const imgWrapper = document.getElementById("modal-image-wrapper");
+    const imgEl = document.getElementById("modal-image");
     if (p.image && imgWrapper && imgEl) {
       imgEl.src = p.image;
       imgEl.alt = p.title;
-      imgWrapper.classList.remove('hidden');
+      imgWrapper.classList.remove("hidden");
     } else if (imgWrapper) {
-      imgWrapper.classList.add('hidden');
+      imgWrapper.classList.add("hidden");
     }
 
-    const linksBox = document.getElementById('modal-links');
-    linksBox.innerHTML = '';
+    const linksBox = document.getElementById("modal-links");
+    linksBox.innerHTML = "";
     if (p.demoURL || p.repoURL) {
-      linksBox.classList.remove('hidden');
-      linksBox.classList.add('flex');
+      linksBox.classList.remove("hidden");
+      linksBox.classList.add("flex");
       // Built with the DOM rather than an HTML string, so crawlers don't read
       // the placeholder as a relative link.
       const addLink = (url, label) => {
-        const a = document.createElement('a');
+        const a = document.createElement("a");
         a.href = url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.className = 'underline underline-offset-4 hover:text-emerald-500';
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "underline underline-offset-4 hover:text-emerald-500";
         a.textContent = label;
         linksBox.appendChild(a);
       };
-      if (p.demoURL) addLink(p.demoURL, 'Live Demo ↗');
-      if (p.repoURL) addLink(p.repoURL, 'Source / Repo ↗');
+      if (p.demoURL) addLink(p.demoURL, "Live Demo ↗");
+      if (p.repoURL) addLink(p.repoURL, "Source / Repo ↗");
     } else {
-      linksBox.classList.add('hidden');
+      linksBox.classList.add("hidden");
     }
 
     modal.showModal();
@@ -326,14 +327,14 @@ const projectsData = projects.map((p, index) => {
   };
 
   window.closeProjectModal = function() {
-    const modal = document.getElementById('project-modal');
+    const modal = document.getElementById("project-modal");
     if (modal) modal.close();
   };
 
   function setupModalClose() {
-    const modal = document.getElementById('project-modal');
+    const modal = document.getElementById("project-modal");
     if (modal) {
-      modal.addEventListener('click', (e) => {
+      modal.addEventListener("click", (e) => {
         const rect = modal.getBoundingClientRect();
         const clickedInDialog = (
           rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
@@ -344,9 +345,9 @@ const projectsData = projects.map((p, index) => {
     }
   }
 
-  document.addEventListener('astro:page-load', setupModalClose);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupModalClose);
+  document.addEventListener("astro:page-load", setupModalClose);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupModalClose);
   } else {
     setupModalClose();
   }

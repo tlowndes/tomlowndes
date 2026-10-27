@@ -38,7 +38,7 @@ const categories = [
             Mise-en-Place // {allGear.length} Items Catalogued
           </span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:text-emerald-300">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 motion-safe:animate-pulse"></span>
             <span>Living Directory</span>
           </span>
         </div>
@@ -138,18 +138,18 @@ const categories = [
 
 <script is:inline>
   window.filterUsesList = function() {
-    const query = (document.getElementById('uses-search-input')?.value || '').toLowerCase().trim();
-    const items = document.querySelectorAll('.gear-item');
-    const categories = document.querySelectorAll('.gear-category');
+    const query = (document.getElementById("uses-search-input")?.value || "").toLowerCase().trim();
+    const items = document.querySelectorAll(".gear-item");
+    const categories = document.querySelectorAll(".gear-category");
 
     items.forEach(el => {
-      const text = el.getAttribute('data-search') || '';
-      el.style.display = (!query || text.includes(query)) ? '' : 'none';
+      const text = el.getAttribute("data-search") || "";
+      el.style.display = (!query || text.includes(query)) ? "" : "none";
     });
 
     categories.forEach(cat => {
-      const visible = cat.querySelectorAll('.gear-item:not([style*="display: none"])').length;
-      cat.style.display = visible > 0 ? '' : 'none';
+      const visible = cat.querySelectorAll(".gear-item:not([style*=\"display: none\"])").length;
+      cat.style.display = visible > 0 ? "" : "none";
     });
   };
 </script>

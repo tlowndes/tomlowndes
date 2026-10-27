@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { readingTime, shareSource } from "@lib/utils";
+import { byDateDesc, readingTime, shareSource } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import ContactBlock from "@components/ContactBlock.astro";
@@ -10,7 +10,7 @@ import ContactBlock from "@components/ContactBlock.astro";
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
     .filter(post => !post.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    .sort(byDateDesc);
   return projects.map((project, i) => ({
     params: { slug: project.slug },
     props: { project, index: i, newer: projects[i - 1], older: projects[i + 1] },

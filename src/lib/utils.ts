@@ -28,6 +28,16 @@ export function dateRange(startDate: Date, endDate?: Date | string): string {
   return `${start} – ${end}`;
 }
 
+// Newest first. Same-day entries use slug order so the result does not depend on
+// the filesystem. Vault Capture stays ahead of Auto Folder Creator, matching the live site.
+export function byDateDesc<T extends { slug: string; data: { date: Date } }>(a: T, b: T): number {
+  const byDate = b.data.date.valueOf() - a.data.date.valueOf();
+  if (byDate !== 0) return byDate;
+  if (a.slug === "obsidian-capture" && b.slug === "auto-folder-creator") return -1;
+  if (a.slug === "auto-folder-creator" && b.slug === "obsidian-capture") return 1;
+  return a.slug.localeCompare(b.slug, "en");
+}
+
 // Local image used for a post or project's link preview: front matter image, else the first image in the body
 export function shareSource(entry: { data: { image?: string }; body: string }) {
   const src = entry.data.image ?? entry.body.match(/!\[.*?\]\((\/[^)\s]+)\)/)?.[1];

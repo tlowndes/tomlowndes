@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ContactBlock from "@components/ContactBlock.astro";
-import { dateRange, readingTime as getReadingTime } from "@lib/utils";
+import { byDateDesc, dateRange, readingTime as getReadingTime } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
 import { PERSON_ID } from "@lib/schema";
 
@@ -14,7 +14,7 @@ const blog = (await getCollection("blog"))
 
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .sort(byDateDesc)
   .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
 const allwork = (await getCollection("work"))
@@ -68,7 +68,7 @@ const shortDate = (date: Date) =>
             href="#available"
             class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:text-emerald-300 hover:border-emerald-500/60 transition"
           >
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 motion-safe:animate-pulse"></span>
             <span>Open to in-house and remote roles</span>
           </a>
         </div>
