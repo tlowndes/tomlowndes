@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwindcss from "tailwindcss";
-import autoprefixer from "autoprefixer";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://tomlowndes.co.uk",
@@ -19,12 +18,7 @@ export default defineConfig({
       filter: (page) => !page.includes("/contact/thanks/"),
     }),
   ],
-  // @astrojs/tailwind has no Astro 7 release. This is the same Tailwind 3 pipeline it used to add.
   vite: {
-    css: {
-      postcss: {
-        plugins: [tailwindcss(), autoprefixer()],
-      },
-    },
+    plugins: [tailwindcss()],
   },
 });
