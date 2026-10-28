@@ -24,14 +24,22 @@ export function assetFor(fromFile: string | undefined, ref: string | undefined):
   return key ? modules[key] : undefined;
 }
 
+// First markdown image in the body that's a usable local image, skipping any
+// remote or unsupported-format (e.g. SVG) images that appear before it.
+function firstLocalBodyImage(body?: string | null): string | undefined {
+  for (const match of body?.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g) ?? []) {
+    if (isLocalImageRef(match[1])) return match[1];
+  }
+  return undefined;
+}
+
 // Front matter image, otherwise the first local picture in the markdown.
 export function entryImage(entry: {
   filePath?: string;
   data: { image?: string };
   body?: string | null;
 }): ImageMetadata | undefined {
-  const fromBody = entry.body?.match(/!\[[^\]]*\]\(([^)\s]+)\)/)?.[1];
-  const ref = isLocalImageRef(entry.data.image) ? entry.data.image : fromBody;
+  const ref = isLocalImageRef(entry.data.image) ? entry.data.image : firstLocalBodyImage(entry.body);
   if (!isLocalImageRef(ref)) return;
   return assetFor(entry.filePath, ref);
 }
@@ -42,8 +50,7 @@ export function shareFile(entry: {
   data: { image?: string };
   body?: string | null;
 }): string | undefined {
-  const fromBody = entry.body?.match(/!\[[^\]]*\]\(([^)\s]+)\)/)?.[1];
-  const ref = isLocalImageRef(entry.data.image) ? entry.data.image : fromBody;
+  const ref = isLocalImageRef(entry.data.image) ? entry.data.image : firstLocalBodyImage(entry.body);
   if (!entry.filePath || !isLocalImageRef(ref)) return;
   const from = path.isAbsolute(entry.filePath) ? entry.filePath : path.join(process.cwd(), entry.filePath);
   const abs = path.resolve(path.dirname(from), ref);
