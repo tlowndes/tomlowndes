@@ -19,7 +19,7 @@ Here’s what actually makes the cut—stripped of ego, posturing, and romantic 
 
 ---
 
-![Flat lay of every day carry essentials laid out neatly on a table](https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80)
+![Patagonia tote backpack laid flat on a white background](/blog/edc-packing/bag.jpg)
 
 ---
 
@@ -61,7 +61,7 @@ The world is loud, abrasive, and relentlessly uncaring. When sensory static pile
 
 Working memory is a treacherous thing. Rely on it, and it will drop your keys in the bin and forget where you parked your life. Digital note apps are loaded with landmines—you pull out a screen to write down a sudden spark, hit an app badge, and boom, the thought is gone forever.
 
-![Pocket notebook open with a multi-pen](https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=80)
+![Open pocket notebook with a pen and pencil on a white background](/blog/edc-packing/notebook.jpg)
 
 * **Field Notes Kraft Dot-Grid Notebook:** Paper doesn't ping, nag, or demand a firmware update. It just sits there, waiting for the ink. A quick scribble, a rough wireframe, a fleeting thought—captured before it evaporates.
 * **Uni Jetstream 4&1 Multi-Pen:** One tool, four ink colours, a pencil, and an eraser. It’s the kitchen workhorse knife of stationeries: functional, unpretentious, and completely reliable.
