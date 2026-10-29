@@ -3,7 +3,6 @@ title: "Navigating Creative Chaos: The Solo Navigator System"
 description: "As many of you know, I'm a creative designer, and I'm also someone who navigates the world with both ADHD and autism."
 date: "10/01/2025"
 tags: [tech, workflow, design, ui/ux, coding]
-draft: true
 ---
 
 I’m a creative designer, and I also navigate the world with both ADHD and autism. It’s a fantastic combo—like having a high-speed processor with a dozen tabs open at all times. It gives me a unique way of seeing design, noticing details others might miss, and making unexpected creative connections. But let’s be real: it can also make projects feel like trying to herd cats.

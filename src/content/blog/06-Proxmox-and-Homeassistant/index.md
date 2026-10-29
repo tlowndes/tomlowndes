@@ -2,7 +2,6 @@
 title: "Proxmox and Homeassistant"
 description: "Creating a proxmox server."
 date: "12/12/2024"
-draft: true
 ---
 
 For years now I have had Home Assistant running on a Raspberry PI 3 with great sucsess and hardly any issues, but as I have added more sensors and automations I noticed the lack of 

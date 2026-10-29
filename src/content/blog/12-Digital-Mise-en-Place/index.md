@@ -3,7 +3,6 @@ title: "Digital Mise-en-Place: The Air-Gapped Rescue Kit on My Keychain"
 description: "Why 100% cloud reliance is an executive function trap, and how a dual-partitioned SanDisk drive on my Orbitkey keeps my digital life running completely off-grid."
 date: 2026-09-26
 tags: [tech, workflow, self-hosted, edc]
-draft: true
 ---
 
 We live under the comfortable, collective delusion that the internet is permanent and our operating systems are our friends.

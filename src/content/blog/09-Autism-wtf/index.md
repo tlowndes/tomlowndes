@@ -3,7 +3,6 @@ title: "Diagnosed at 34: Autism, Maybe ADHD, and Finally Making Sense of Things"
 description: "At 34, I was diagnosed with autism — and possibly ADHD. Here’s how that late diagnosis reshaped how I understand myself, work, and everyday life."
 date: 2025-06-02
 tags: [autism, ADHD, personal]
-draft: true
 ---
 
 For most of my life, I thought I was just bad at “life stuff.”
