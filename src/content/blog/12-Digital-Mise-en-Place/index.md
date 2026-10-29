@@ -17,7 +17,7 @@ This is the digital half of the kit: a 128GB SanDisk Ultra Dual Drive Go sitting
 
 ---
 
-![Dual USB drive and compact tech setup on a clean desk](https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80)
+![SanDisk USB-C drive attached to a key ring with keys on a white background](/blog/digital-mise-en-place/sandisk.jpg)
 
 ---
 

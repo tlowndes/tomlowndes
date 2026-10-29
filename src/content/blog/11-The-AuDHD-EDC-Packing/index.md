@@ -48,7 +48,7 @@ Keys are universally the first casualty of an absent mind. A single massive bunc
 
 The world is loud, abrasive, and relentlessly uncaring. When sensory static piles up, your executive function doesn't slowly degrade—it collapses. Noise and glare aren't minor gripes; they are slow poisons.
 
-![Earbuds and earplugs laid out on a clean desk surface](https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1000&q=80)
+![Everyday carry laid out on a wooden desk: notebook, earbuds, keys, power bank and sling bag](/blog/edc-packing/flatlay.jpg)
 
 * **Google Pixel Buds Pro:** Active noise cancellation isn't for background tunes; it's acoustic body armour. They cut through the low-frequency drone of supermarket chillers, scraping chairs, and the unbearable scrape of ambient human chatter with a low profile that stays comfortable for hours.
 * **Loop Quiet 2 Earplugs:** Lithium-ion batteries die; simple silicone doesn't. Kept on the bag's zip pull like an old cook's pocket steel, they offer immediate acoustic relief the second an environment turns hostile.
@@ -87,8 +87,6 @@ Instead of loose tools rattling at the bottom of the bag, I keep the functional 
 ## The Bag: You Need Line of Sight
 
 The pack itself determines whether this system survives or dies a messy death in a dark cupboard. 
-
-![Small crossbody sling bag open to show interior contents](https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80)
 
 Do not buy bags sporting forty bespoke tactical compartments. Those aren't pockets; they are blind drawers where your gear crawls away to die. 
 
