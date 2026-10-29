@@ -88,8 +88,6 @@ Instead of loose tools rattling at the bottom of the bag, I keep the functional 
 
 The pack itself determines whether this system survives or dies a messy death in a dark cupboard. 
 
-![SanDisk USB-C drive attached to a key ring with keys on a white background](/blog/digital-mise-en-place/sandisk.jpg)
-
 Do not buy bags sporting forty bespoke tactical compartments. Those aren't pockets; they are blind drawers where your gear crawls away to die. 
 
 Grab a low-profile sling like the Bellroy Lite Sling Mini or Alpaka Go Sling Nano. The non-negotiable detail is a **light, high-contrast interior**. When you pull the zip, you want eyes-on everything in one glance. If you have to dig past your wrist like a vet delivering a calf, the bag will quickly fill up with receipts and sweet wrappers, and you’ll leave it behind.
