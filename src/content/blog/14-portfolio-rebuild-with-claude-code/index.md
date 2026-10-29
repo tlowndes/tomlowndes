@@ -4,7 +4,7 @@ metaTitle: "Rebuilding My Portfolio With Claude Code"
 description: "How I used Claude Code to audit, redesign and fix my own portfolio site, what I decided, where I pushed back and what other designers can take from it."
 date: 2026-10-18
 tags: [tech, workflow, design, ai]
-draft: true
+draft: false
 ---
 
 Earlier this month I started job hunting properly, and that meant looking at my portfolio the way a hiring manager would. It looked fine. It also had a quiet problem: when I pasted a link into Slack or LinkedIn, nothing showed up. No image, no title worth reading. Hardly ideal when the whole point of the site is to get me hired.
