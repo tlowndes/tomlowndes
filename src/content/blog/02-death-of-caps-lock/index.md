@@ -2,7 +2,6 @@
 title: "The Death of Caps Lock, Embracing the Hyper Key"
 description: "I hate Caps lock, it does one thing and one thing only, this needs to change."
 date: "05/14/2024"
-draft: true
 tags: [tech, workflow, design, ui/ux, coding]
 ---
 
