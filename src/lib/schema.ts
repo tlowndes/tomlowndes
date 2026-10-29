@@ -4,6 +4,7 @@ const ORIGIN = "https://tomlowndes.co.uk";
 
 export const PERSON_ID = `${ORIGIN}/#person`;
 export const ORG_ID = `${ORIGIN}/#organization`;
+export const WEBSITE_ID = `${ORIGIN}/#website`;
 
 const sameAs = SOCIALS.map((s) => s.HREF);
 
@@ -17,7 +18,7 @@ export const siteGraph = {
       name: SITE.NAME,
       url: `${ORIGIN}/`,
       image: `${ORIGIN}/tom-headshot.jpg`,
-      jobTitle: "Creative designer",
+      jobTitle: "Design lead",
       address: { "@type": "PostalAddress", addressLocality: "Cannock", addressRegion: "Staffordshire", addressCountry: "GB" },
       sameAs,
     },
@@ -30,6 +31,14 @@ export const siteGraph = {
       founder: { "@id": PERSON_ID },
       address: { "@type": "PostalAddress", addressLocality: "Cannock", addressRegion: "Staffordshire", addressCountry: "GB" },
       sameAs,
+    },
+    {
+      "@type": "WebSite",
+      "@id": WEBSITE_ID,
+      name: SITE.NAME,
+      url: `${ORIGIN}/`,
+      inLanguage: "en-GB",
+      publisher: { "@id": PERSON_ID },
     },
   ],
 };
