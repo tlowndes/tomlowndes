@@ -48,7 +48,7 @@ Keys are universally the first casualty of an absent mind. A single massive bunc
 
 The world is loud, abrasive, and relentlessly uncaring. When sensory static piles up, your executive function doesn't slowly degrade—it collapses. Noise and glare aren't minor gripes; they are slow poisons.
 
-![Everyday carry laid out on a wooden desk: notebook, earbuds, keys, power bank and sling bag](/blog/edc-packing/flatlay.jpg)
+![Everyday carry laid out on a wooden desk: notebook, earbuds, keys, power bank, sling bag and blue utility knife](/blog/edc-packing/flatlay.jpg)
 
 * **Google Pixel Buds Pro:** Active noise cancellation isn't for background tunes; it's acoustic body armour. They cut through the low-frequency drone of supermarket chillers, scraping chairs, and the unbearable scrape of ambient human chatter with a low profile that stays comfortable for hours.
 * **Loop Quiet 2 Earplugs:** Lithium-ion batteries die; simple silicone doesn't. Kept on the bag's zip pull like an old cook's pocket steel, they offer immediate acoustic relief the second an environment turns hostile.
