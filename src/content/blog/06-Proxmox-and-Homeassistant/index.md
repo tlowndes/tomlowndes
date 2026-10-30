@@ -1,6 +1,6 @@
 ---
 title: "Proxmox and Homeassistant"
-description: "Creating a proxmox server."
+description: "Notes on creating a Proxmox server at home and setting up Home Assistant on it."
 date: "12/12/2024"
 ---
 

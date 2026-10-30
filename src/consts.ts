@@ -52,7 +52,7 @@ export const CV: Metadata = {
 };
 
 export const SERVICES: Metadata = {
-  TITLE: "Freelance brand and web designer in Cannock, Staffordshire | Prices from £250",
+  TITLE: "Freelance Brand and Web Designer, Cannock | From £250",
   DESCRIPTION: "Freelance branding, websites, app design and social graphics from Cannock, Staffordshire. Clear starting prices and a fixed quote for every project.",
 };
 
