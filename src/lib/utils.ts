@@ -39,6 +39,14 @@ export function byDateDesc<T extends { id: string; data: { date: Date } }>(a: T,
   return a.id.localeCompare(b.id, "en");
 }
 
+// Featured projects first (lowest number wins), then newest first.
+export function byFeaturedThenDate<T extends { id: string; data: { date: Date; featured?: number } }>(a: T, b: T): number {
+  const fa = a.data.featured ?? Infinity;
+  const fb = b.data.featured ?? Infinity;
+  if (fa !== fb) return fa - fb;
+  return byDateDesc(a, b);
+}
+
 // Local image used for a post or project's link preview: front matter image, else the first image in the body.
 // Returns the file on disk so the preview JPEG can be rendered from it.
 export function shareSource(entry: { filePath?: string; data: { image?: string }; body?: string | null }) {

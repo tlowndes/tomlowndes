@@ -2,6 +2,7 @@
 title: "Vault Capture"
 description: "A small Android app that saves tasks and links straight into my Obsidian vault in a couple of taps, including from the Share sheet, without opening Obsidian."
 date: "Oct 7 2026"
+featured: 1
 repoURL: "https://github.com/tlowndes/ObsidianCapture"
 ---
 
