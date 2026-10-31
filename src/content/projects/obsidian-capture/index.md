@@ -31,6 +31,12 @@ I designed the look and the logo first, as a mockup, then built it. It's dark, b
 
 **Design:** the interface and the faceted gem identity, a nod to the obsidian it feeds.
 
-**Coding:** Kotlin and Android Studio, with Jetpack Compose for the interface.
+**Coding:** Kotlin and Android Studio, with Jetpack Compose for the interface, built with Claude Code.
+
+## How I built it with AI
+
+I'm a designer, not an Android developer, so I built Vault Capture with Claude Code. I worked as the art director: I set the brief, designed the screens and the logo, and decided how each part should behave. Claude Code wrote the Kotlin to match.
+
+That meant I spent my time on the design calls: what goes on screen, what gets left out, and how a tap should feel. It took me from a mockup to a working app on my phone much faster than learning Android development from scratch. I wrote about the same way of working in [Rebuilding My Portfolio With Claude Code](/blog/14-portfolio-rebuild-with-claude-code/).
 
 I wrote more about how this and my [Auto Folder Creator](/projects/auto-folder-creator/) came together in the blog post [Tiny Tools, Less Friction](/blog/11-tiny-tools-less-friction/).
